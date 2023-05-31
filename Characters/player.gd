@@ -2,16 +2,19 @@ extends CharacterBody2D
 
 @onready var player_sprite = $AnimatedSprite2D
 @onready var collision_shape = $CollisionShape2D
+@onready var crawl_raycast_1 = $CrawlRayCast1
+@onready var crawl_raycast_2 = $CrawlRayCast2
 
 const SPEED = 180.0
 const CRAWL_SPEED = 90.0
 const JUMP_VELOCITY = -340.0
-const STANDING_COLLISION_Y_POS = 11.25
-const CROUCHING_COLLISION_Y_POS = 17.25
+const STANDING_COLLISION_Y_POS = 11
+const CROUCHING_COLLISION_Y_POS = 17
 
 enum PlayerState {STANDING, WALKING, CRAWL, JUMPING, FALLING} 
 var state = PlayerState.STANDING
 var is_crouching = false 
+var stuck_under_object = false
 var standing_collision_shape = preload("res://Characters/CollisionBoxes/player.tres")
 var crouching_collision_shape = preload("res://Characters/CollisionBoxes/playerCROUCHING.tres")
 
@@ -46,7 +49,17 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_down"):
 		crouch()
 	elif Input.is_action_just_released("ui_down"):
-		uncrouch()
+		if above_head_is_empty():
+			uncrouch()
+		else:
+			if !stuck_under_object:
+				stuck_under_object = true
+				
+	if stuck_under_object && above_head_is_empty():
+		if !Input.is_action_pressed("ui_down"):
+			uncrouch()
+			stuck_under_object = false
+				
 		
 	if direction:
 		velocity.x = direction * (SPEED if state != PlayerState.CRAWL else CRAWL_SPEED)
@@ -57,6 +70,10 @@ func _physics_process(delta):
 
 	move_and_slide()
 	update_animations()
+
+func above_head_is_empty() -> bool:
+	return !crawl_raycast_1.is_colliding() && !crawl_raycast_2.is_colliding()
+	
 
 func update_animations():
 	match state:

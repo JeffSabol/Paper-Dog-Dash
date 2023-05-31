@@ -324,9 +324,17 @@ script = ExtResource("1_w8uk2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_f4mak")
 animation = &"idle"
-frame_progress = 0.16194
+frame_progress = 0.761291
 script = SubResource("GDScript_n62bp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, 11.25)
+position = Vector2(-2.75, 11.25)
 shape = ExtResource("11_n6il4")
+
+[node name="CrawlRayCast1" type="RayCast2D" parent="."]
+position = Vector2(-18, 24)
+target_position = Vector2(0, -26)
+
+[node name="CrawlRayCast2" type="RayCast2D" parent="."]
+position = Vector2(11, 24)
+target_position = Vector2(0, -26)
