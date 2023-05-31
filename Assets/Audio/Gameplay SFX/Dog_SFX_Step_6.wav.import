@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://hwbag6dm21cj"
+path="res://.godot/imported/Dog_SFX_Step_6.wav-cffaec7bfd0549c6b176d5768ee35e26.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Gameplay SFX/Dog_SFX_Step_6.wav"
+dest_files=["res://.godot/imported/Dog_SFX_Step_6.wav-cffaec7bfd0549c6b176d5768ee35e26.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wecj4aitcieq"
+path="res://.godot/imported/Menu_SFX_Click.wav-418f52b1b623a3b1ca28aef83cb3dd4f.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/menu/Menu SFX/Menu_SFX_Click.wav"
+dest_files=["res://.godot/imported/Menu_SFX_Click.wav-418f52b1b623a3b1ca28aef83cb3dd4f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
