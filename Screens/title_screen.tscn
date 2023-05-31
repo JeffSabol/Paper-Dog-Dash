@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3nakj0q3fy6p"]
+
+[ext_resource type="FontFile" uid="uid://cop4gfg1ob5fg" path="res://Assets/Fonts/ComicNeue-Regular.ttf" id="1_swwls"]
+[ext_resource type="FontFile" uid="uid://dqchirtf6gdcu" path="res://Assets/Fonts/ComicNeue-Bold.ttf" id="2_yty54"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ft0vi"]
+bg_color = Color(0.870588, 0.862745, 0.74902, 1)
+
+[sub_resource type="Theme" id="Theme_upg5p"]
+default_font = ExtResource("1_swwls")
+default_font_size = 22
+Button/colors/font_color = Color(0.113725, 0.113725, 0.113725, 1)
+Button/colors/font_hover_pressed_color = Color(0.113725, 0.113725, 0.113725, 1)
+Button/colors/font_outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 10
+Button/styles/normal = SubResource("StyleBoxFlat_ft0vi")
+
+[sub_resource type="LabelSettings" id="LabelSettings_sp2fn"]
+font = ExtResource("2_yty54")
+font_size = 32
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = SubResource("Theme_upg5p")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 175.0
+offset_right = 702.0
+offset_bottom = 215.0
+text = "PAPER DOG DASH"
+label_settings = SubResource("LabelSettings_sp2fn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 535.0
+offset_top = 243.0
+offset_right = 634.0
+offset_bottom = 299.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "PLAY"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "SETTINGS"
