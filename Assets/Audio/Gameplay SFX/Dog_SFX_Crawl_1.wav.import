@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://iyqcm41k8wfo"
+path="res://.godot/imported/Dog_SFX_Crawl_1.wav-281716d012b879b847b4a056c4bd839f.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Gameplay SFX/Dog_SFX_Crawl_1.wav"
+dest_files=["res://.godot/imported/Dog_SFX_Crawl_1.wav-281716d012b879b847b4a056c4bd839f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
