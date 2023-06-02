@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cir0fiprkupvv"]
+
+[ext_resource type="Texture2D" uid="uid://b6w2jj7le874k" path="res://Assets/Menu/EndOfLevel/NewspaperScreen.png" id="1_tn713"]
+[ext_resource type="Texture2D" uid="uid://bv8o7tk4wgi5y" path="res://Assets/Menu/EndOfLevel/ContinueButton.png" id="2_c5mh8"]
+[ext_resource type="Script" path="res://Menus/ContinueButton.gd" id="3_i8jip"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_tn713")
+
+[node name="ContinueButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 497.0
+offset_right = 944.0
+offset_bottom = 677.0
+texture_normal = ExtResource("2_c5mh8")
+stretch_mode = 0
+script = ExtResource("3_i8jip")
+
+[connection signal="pressed" from="ContinueButton" to="ContinueButton" method="_on_pressed"]
