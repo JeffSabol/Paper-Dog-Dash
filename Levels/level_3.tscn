@@ -516,7 +516,8 @@ position = Vector2(81, -24)
 zoom = Vector2(2.5, 2.5)
 
 [node name="House" parent="." instance=ExtResource("5_nirdb")]
-position = Vector2(1448, -215)
+position = Vector2(1381, -226)
+scale = Vector2(1.5, 1.5)
 
 [node name="MoleSideways" type="Sprite2D" parent="."]
 position = Vector2(728, 9)
