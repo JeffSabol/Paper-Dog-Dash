@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dy8ldt2040dsu"]
+
+[ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_47k16"]
+[ext_resource type="PackedScene" uid="uid://dpavor7dfr3hp" path="res://FireHydrant.tscn" id="3_d7usb"]
+[ext_resource type="PackedScene" path="res://Assets/Tilemaps/level2_tilemap.tscn" id="3_flxq1"]
+[ext_resource type="PackedScene" uid="uid://ble575txva0hm" path="res://Characters/player.tscn" id="4_ibfob"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = -523.0
+offset_top = -834.0
+offset_right = 2034.0
+offset_bottom = 358.0
+texture = ExtResource("1_47k16")
+stretch_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("4_ibfob")]
+position = Vector2(81, -24)
+collision_mask = 14
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(81, -24)
+zoom = Vector2(2.5, 2.5)
+
+[node name="TilemapLevel" parent="." instance=ExtResource("3_flxq1")]
+position = Vector2(0, -176)
+
+[node name="HydrantList" type="Node2D" parent="."]
+
+[node name="FireHydrant" parent="HydrantList" instance=ExtResource("3_d7usb")]
+position = Vector2(283, 16)
+
+[node name="FireHydrant3" parent="HydrantList" instance=ExtResource("3_d7usb")]
+position = Vector2(853, 79)
+
+[node name="FireHydrant2" parent="HydrantList" instance=ExtResource("3_d7usb")]
+position = Vector2(664, 16)
