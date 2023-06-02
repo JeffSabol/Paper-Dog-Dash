@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://tr7r78cu1i56"]
+[gd_scene load_steps=9 format=3 uid="uid://tr7r78cu1i56"]
 
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_ateu6"]
 [ext_resource type="PackedScene" uid="uid://ble575txva0hm" path="res://Characters/player.tscn" id="2_a56jg"]
 [ext_resource type="Texture2D" uid="uid://b1gijyai74025" path="res://Assets/PixelFrog/Terrain/Terrain (16x16).png" id="2_iew6x"]
 [ext_resource type="PackedScene" uid="uid://dpavor7dfr3hp" path="res://Objects/FireHydrant.tscn" id="4_kex6k"]
 [ext_resource type="PackedScene" uid="uid://dtsc0g5olhra3" path="res://Objects/House.tscn" id="5_kgb76"]
+[ext_resource type="PackedScene" uid="uid://cyn0a1hyfvvwa" path="res://Objects/Newspaper.tscn" id="6_1165n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oytpd"]
 texture = ExtResource("2_iew6x")
@@ -509,3 +510,6 @@ remote_path = NodePath("../../Camera2D")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(81, -24)
 zoom = Vector2(2.5, 2.5)
+
+[node name="Newspaper" parent="." instance=ExtResource("6_1165n")]
+position = Vector2(160, -7)

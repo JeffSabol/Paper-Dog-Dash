@@ -3,6 +3,7 @@ extends Node
 var current_scene = null
 var level_count = 2 # we want to change to level 2 after level 1
 var path_level = "res://Levels/level_" + str(level_count) + ".tscn"
+var has_newspaper = false
 
 func _ready():
 	var root = get_tree().root
@@ -55,3 +56,4 @@ func _deferred_goto_next_level():
 	
 	level_count += 1
 	path_level = "res://Levels/level_" + str(level_count) + ".tscn"
+	has_newspaper = false

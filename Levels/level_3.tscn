@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8fnpvfr24obf"]
+[gd_scene load_steps=10 format=3 uid="uid://b8fnpvfr24obf"]
 
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_5vcrj"]
 [ext_resource type="Texture2D" uid="uid://b1gijyai74025" path="res://Assets/PixelFrog/Terrain/Terrain (16x16).png" id="2_b6xox"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ble575txva0hm" path="res://Characters/player.tscn" id="4_whwk6"]
 [ext_resource type="PackedScene" uid="uid://dtsc0g5olhra3" path="res://Objects/House.tscn" id="5_nirdb"]
 [ext_resource type="Texture2D" uid="uid://b8hldunsfvi67" path="res://Assets/Enemies/MoleSideways.png" id="6_j11eq"]
+[ext_resource type="PackedScene" uid="uid://cyn0a1hyfvvwa" path="res://Objects/Newspaper.tscn" id="7_gj2pd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oytpd"]
 texture = ExtResource("2_b6xox")
@@ -522,3 +523,6 @@ zoom = Vector2(2.5, 2.5)
 [node name="MoleSideways" type="Sprite2D" parent="."]
 position = Vector2(728, 9)
 texture = ExtResource("6_j11eq")
+
+[node name="Newspaper" parent="." instance=ExtResource("7_gj2pd")]
+position = Vector2(214, -230)
