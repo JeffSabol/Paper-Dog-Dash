@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyn0a1hyfvvwa"]
+
+[ext_resource type="Script" path="res://Objects/Newspaper.gd" id="1_sqfwc"]
+[ext_resource type="Texture2D" uid="uid://dgltf607bu5o1" path="res://Assets/Environment/Newspaper.png" id="2_yakqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5eass"]
+size = Vector2(14, 14)
+
+[node name="Newspaper" type="Area2D"]
+script = ExtResource("1_sqfwc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yakqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5eass")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
