@@ -1,20 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3nakj0q3fy6p"]
+[gd_scene load_steps=5 format=3 uid="uid://b3nakj0q3fy6p"]
 
-[ext_resource type="FontFile" uid="uid://cop4gfg1ob5fg" path="res://Assets/Fonts/ComicNeue-Regular.ttf" id="1_swwls"]
+[ext_resource type="Theme" uid="uid://bdpfgawly0y5a" path="res://Assets/Themes/ui_theme_a.tres" id="1_cet8c"]
+[ext_resource type="Script" path="res://Screens/title_screen.gd" id="2_jq6c1"]
 [ext_resource type="FontFile" uid="uid://dqchirtf6gdcu" path="res://Assets/Fonts/ComicNeue-Bold.ttf" id="2_yty54"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ft0vi"]
-bg_color = Color(0.870588, 0.862745, 0.74902, 1)
-
-[sub_resource type="Theme" id="Theme_upg5p"]
-default_font = ExtResource("1_swwls")
-default_font_size = 22
-Button/colors/font_color = Color(0.113725, 0.113725, 0.113725, 1)
-Button/colors/font_hover_pressed_color = Color(0.113725, 0.113725, 0.113725, 1)
-Button/colors/font_outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
-Button/colors/font_pressed_color = Color(1, 1, 1, 1)
-Button/constants/h_separation = 10
-Button/styles/normal = SubResource("StyleBoxFlat_ft0vi")
 
 [sub_resource type="LabelSettings" id="LabelSettings_sp2fn"]
 font = ExtResource("2_yty54")
@@ -23,28 +11,38 @@ font_size = 32
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-theme = SubResource("Theme_upg5p")
+offset_left = 471.0
+offset_top = 184.0
+offset_right = 471.0
+offset_bottom = 184.0
+theme = ExtResource("1_cet8c")
+script = ExtResource("2_jq6c1")
+game_world_path = "res://Screens/game_world.tscn"
+settings_scene_path = "res://Screens/settings_screen.tscn"
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 449.0
-offset_top = 175.0
-offset_right = 702.0
-offset_bottom = 215.0
+layout_mode = 2
+offset_left = 27.0
+offset_top = 77.0
+offset_right = 280.0
+offset_bottom = 117.0
 text = "PAPER DOG DASH"
 label_settings = SubResource("LabelSettings_sp2fn")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-offset_left = 535.0
-offset_top = 243.0
-offset_right = 634.0
-offset_bottom = 299.0
+layout_mode = 2
+offset_left = 25.0
+offset_top = 168.0
+offset_right = 278.0
+offset_bottom = 224.0
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "PLAY"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "SETTINGS"
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

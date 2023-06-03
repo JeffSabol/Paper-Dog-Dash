@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnlyhu1pkqo14"]
+
+[ext_resource type="Script" path="res://Screens/game_world.gd" id="1_n0hpk"]
+[ext_resource type="Theme" uid="uid://bdpfgawly0y5a" path="res://Assets/Themes/ui_theme_a.tres" id="2_uoxnu"]
+
+[node name="GameWorld" type="Node2D"]
+script = ExtResource("1_n0hpk")
+title_screen_path = "res://Screens/title_screen.tscn"
+
+[node name="BackToMenuButton" type="Button" parent="."]
+offset_left = 537.0
+offset_top = 341.0
+offset_right = 749.0
+offset_bottom = 372.0
+theme = ExtResource("2_uoxnu")
+text = "BACK TO MAIN MENU"
+
+[connection signal="pressed" from="BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]

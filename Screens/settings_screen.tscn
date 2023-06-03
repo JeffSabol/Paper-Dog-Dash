@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddjl2t5pff2cr"]
+
+[ext_resource type="Theme" uid="uid://bdpfgawly0y5a" path="res://Assets/Themes/ui_theme_a.tres" id="1_pnqr1"]
+[ext_resource type="Script" path="res://Screens/settings_screen.gd" id="2_n1wrk"]
+
+[node name="SettingsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 471.0
+offset_top = 184.0
+offset_right = 471.0
+offset_bottom = 184.0
+theme = ExtResource("1_pnqr1")
+script = ExtResource("2_n1wrk")
+title_screen_path = "res://Screens/title_screen.tscn"
+
+[node name="BackToMenuButton" type="Button" parent="."]
+offset_left = 67.0
+offset_top = 181.0
+offset_right = 279.0
+offset_bottom = 212.0
+theme = ExtResource("1_pnqr1")
+text = "BACK TO MAIN MENU"
+
+[connection signal="pressed" from="BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]
