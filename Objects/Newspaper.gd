@@ -8,5 +8,4 @@ func _ready():
 func _on_body_entered(body):
 		if body is Player:
 			Global.has_newspaper = true
-			print("dog picked up newspaper")
 			hide()

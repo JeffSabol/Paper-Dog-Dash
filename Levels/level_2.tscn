@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://tmwlvhqowwli"]
+[gd_scene load_steps=10 format=3 uid="uid://tmwlvhqowwli"]
 
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_7j8ed"]
 [ext_resource type="Texture2D" uid="uid://b1gijyai74025" path="res://Assets/PixelFrog/Terrain/Terrain (16x16).png" id="2_5ve0v"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ble575txva0hm" path="res://Characters/player.tscn" id="4_qfih0"]
 [ext_resource type="PackedScene" uid="uid://dtsc0g5olhra3" path="res://Objects/House.tscn" id="5_buqb3"]
 [ext_resource type="PackedScene" uid="uid://cyn0a1hyfvvwa" path="res://Objects/Newspaper.tscn" id="6_cilcn"]
+[ext_resource type="PackedScene" uid="uid://bh524wb3pvctb" path="res://Objects/Bone.tscn" id="7_tqrdu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oytpd"]
 texture = ExtResource("2_5ve0v")
@@ -511,6 +512,20 @@ position = Vector2(629, 32)
 
 [node name="FireHydrant3" parent="HydrantList" instance=ExtResource("3_iidkq")]
 position = Vector2(853, 80)
+
+[node name="BoneList" type="Node2D" parent="."]
+
+[node name="bone" parent="BoneList" instance=ExtResource("7_tqrdu")]
+position = Vector2(686, 40)
+
+[node name="bone2" parent="BoneList" instance=ExtResource("7_tqrdu")]
+position = Vector2(496, 88)
+
+[node name="bone3" parent="BoneList" instance=ExtResource("7_tqrdu")]
+position = Vector2(904, 40)
+
+[node name="bone4" parent="BoneList" instance=ExtResource("7_tqrdu")]
+position = Vector2(951, -8)
 
 [node name="House" parent="." instance=ExtResource("5_buqb3")]
 position = Vector2(1088, -52)
