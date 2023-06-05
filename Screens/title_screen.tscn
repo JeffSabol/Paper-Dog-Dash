@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3nakj0q3fy6p"]
+[gd_scene load_steps=6 format=3 uid="uid://b3nakj0q3fy6p"]
 
 [ext_resource type="Theme" uid="uid://bdpfgawly0y5a" path="res://Assets/Themes/ui_theme_a.tres" id="1_cet8c"]
 [ext_resource type="Script" path="res://Screens/title_screen.gd" id="2_jq6c1"]
-[ext_resource type="FontFile" uid="uid://dqchirtf6gdcu" path="res://Assets/Fonts/ComicNeue-Bold.ttf" id="2_yty54"]
+[ext_resource type="FontFile" uid="uid://ct10ax4yd7th0" path="res://Assets/Fonts/dpcomic.ttf" id="4_i8m80"]
+[ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="4_o4cha"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sp2fn"]
-font = ExtResource("2_yty54")
-font_size = 32
+font = ExtResource("4_i8m80")
+font_size = 128
+font_color = Color(0.780392, 0.490196, 0.129412, 1)
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -20,29 +22,58 @@ script = ExtResource("2_jq6c1")
 game_world_path = "res://Screens/game_world.tscn"
 settings_scene_path = "res://Screens/settings_screen.tscn"
 
-[node name="Label" type="Label" parent="."]
+[node name="Background" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -471.0
+offset_top = -184.0
+offset_right = 809.0
+offset_bottom = 536.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_o4cha")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -471.0
+offset_top = -184.0
+offset_right = 809.0
+offset_bottom = 536.0
+theme_override_constants/margin_left = 240
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 240
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-offset_left = 27.0
-offset_top = 77.0
-offset_right = 280.0
-offset_bottom = 117.0
+theme_override_constants/separation = 75
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
 text = "PAPER DOG DASH"
 label_settings = SubResource("LabelSettings_sp2fn")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="ButtonContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_left = 25.0
-offset_top = 168.0
-offset_right = 278.0
-offset_bottom = 224.0
+theme_override_constants/separation = 25
 
-[node name="PlayButton" type="Button" parent="VBoxContainer"]
+[node name="NewGameButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer"]
 layout_mode = 2
-text = "PLAY"
+text = "NEW GAME"
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+[node name="LevelSelectButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer"]
+layout_mode = 2
+text = "LEVEL SELECT"
+
+[node name="SettingsButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer"]
 layout_mode = 2
 text = "SETTINGS"
 
-[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonContainer/NewGameButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

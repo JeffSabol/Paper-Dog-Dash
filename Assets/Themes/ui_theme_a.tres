@@ -13,4 +13,5 @@ Button/colors/font_hover_pressed_color = Color(0.113725, 0.113725, 0.113725, 1)
 Button/colors/font_outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
 Button/colors/font_pressed_color = Color(1, 1, 1, 1)
 Button/constants/h_separation = 10
+Button/font_sizes/font_size = 64
 Button/styles/normal = SubResource("StyleBoxFlat_ft0vi")
