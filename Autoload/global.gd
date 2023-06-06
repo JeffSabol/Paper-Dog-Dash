@@ -11,6 +11,8 @@ var has_newspaper = false
 # bone handling
 var total_bones = 0
 
+# time handling
+var total_time = 50
 
 func _ready():
 	var root = get_tree().root
