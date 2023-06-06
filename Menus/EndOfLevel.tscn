@@ -45,4 +45,13 @@ offset_bottom = 419.0
 text = "Bones Collected: 0"
 label_settings = SubResource("LabelSettings_8nj0v")
 
+[node name="TimeDisplay" type="Label" parent="."]
+layout_mode = 0
+offset_left = 813.0
+offset_top = 356.0
+offset_right = 1174.0
+offset_bottom = 419.0
+text = "Time: 0"
+label_settings = SubResource("LabelSettings_8nj0v")
+
 [connection signal="pressed" from="ContinueButton" to="ContinueButton" method="_on_pressed"]
