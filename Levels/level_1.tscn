@@ -475,22 +475,21 @@ texture = ExtResource("2_iew6x")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_oytpd")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q38es"]
-bg_color = Color(0, 0, 0, 0.219608)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
 [sub_resource type="LabelSettings" id="LabelSettings_mdrut"]
 font = ExtResource("9_og2fd")
 font_size = 32
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_ryc8a"]
+[sub_resource type="LabelSettings" id="LabelSettings_ew5pt"]
 font = ExtResource("9_og2fd")
-font_size = 57
+font_size = 39
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0qbx0"]
+font = ExtResource("9_og2fd")
+font_size = 39
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
@@ -566,14 +565,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Panel" type="Panel" parent="Player/HUD/BoneCounter"]
-layout_mode = 0
-offset_left = -172.0
-offset_top = -163.0
-offset_right = -49.0
-offset_bottom = -122.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_q38es")
-
 [node name="BoneTexture" type="TextureRect" parent="Player/HUD/BoneCounter"]
 layout_mode = 0
 offset_left = -164.0
@@ -585,38 +576,28 @@ texture = ExtResource("8_gdbg3")
 
 [node name="X" type="Label" parent="Player/HUD/BoneCounter"]
 layout_mode = 0
-offset_left = -123.0
-offset_top = -148.0
-offset_right = -83.0
-offset_bottom = -115.0
-scale = Vector2(0.75, 0.75)
+offset_left = -124.0
+offset_top = -154.0
+offset_right = -84.0
+offset_bottom = -121.0
 text = "x"
 label_settings = SubResource("LabelSettings_mdrut")
 
 [node name="Bones" type="Label" parent="Player/HUD/BoneCounter"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -101.0
-offset_top = -161.0
-offset_right = -17.0
-offset_bottom = -99.0
-scale = Vector2(0.75, 0.75)
+offset_left = -98.0
+offset_top = -159.0
+offset_right = -14.0
+offset_bottom = -97.0
 text = "32"
-label_settings = SubResource("LabelSettings_ryc8a")
+label_settings = SubResource("LabelSettings_ew5pt")
 
 [node name="TimeCounter" type="Control" parent="Player/HUD"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="Panel" type="Panel" parent="Player/HUD/TimeCounter"]
-layout_mode = 0
-offset_left = 208.0
-offset_top = -163.0
-offset_right = 331.0
-offset_bottom = -122.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_q38es")
 
 [node name="HourGlass" type="TextureRect" parent="Player/HUD/TimeCounter"]
 layout_mode = 0
@@ -629,27 +610,25 @@ texture = ExtResource("10_16xw2")
 
 [node name="Colon" type="Label" parent="Player/HUD/TimeCounter"]
 layout_mode = 0
-offset_left = 263.0
-offset_top = -155.0
-offset_right = 303.0
-offset_bottom = -122.0
-scale = Vector2(0.75, 0.75)
+offset_left = 264.0
+offset_top = -159.0
+offset_right = 304.0
+offset_bottom = -126.0
 text = ":"
 label_settings = SubResource("LabelSettings_mdrut")
+
+[node name="LevelTimer" type="Timer" parent="Player/HUD/TimeCounter"]
+autostart = true
 
 [node name="Seconds" type="Label" parent="Player/HUD/TimeCounter"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 279.0
-offset_top = -161.0
-offset_right = 363.0
-offset_bottom = -99.0
-scale = Vector2(0.75, 0.75)
+offset_left = 280.0
+offset_top = -159.0
+offset_right = 364.0
+offset_bottom = -97.0
 text = "32"
-label_settings = SubResource("LabelSettings_ryc8a")
-
-[node name="LevelTimer" type="Timer" parent="Player/HUD/TimeCounter"]
-autostart = true
+label_settings = SubResource("LabelSettings_0qbx0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(81, -24)
