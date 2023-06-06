@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://tr7r78cu1i56"]
+[gd_scene load_steps=16 format=3 uid="uid://tr7r78cu1i56"]
 
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_ateu6"]
 [ext_resource type="PackedScene" uid="uid://ble575txva0hm" path="res://Characters/player.tscn" id="2_a56jg"]
@@ -6,7 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dpavor7dfr3hp" path="res://Objects/FireHydrant.tscn" id="4_kex6k"]
 [ext_resource type="PackedScene" uid="uid://dtsc0g5olhra3" path="res://Objects/House.tscn" id="5_kgb76"]
 [ext_resource type="PackedScene" uid="uid://cyn0a1hyfvvwa" path="res://Objects/Newspaper.tscn" id="6_1165n"]
+[ext_resource type="Script" path="res://Levels/HUD.gd" id="7_3cfhs"]
 [ext_resource type="PackedScene" uid="uid://bh524wb3pvctb" path="res://Objects/Bone.tscn" id="7_8yygl"]
+[ext_resource type="Texture2D" uid="uid://cv8kemvndniu3" path="res://Assets/Environment/Bone.png" id="8_gdbg3"]
+[ext_resource type="FontFile" uid="uid://cuo28wcy83qw8" path="res://Assets/Font/dpcomic.ttf" id="9_og2fd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oytpd"]
 texture = ExtResource("2_iew6x")
@@ -471,6 +474,25 @@ texture = ExtResource("2_iew6x")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_oytpd")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0od10"]
+bg_color = Color(0, 0, 0, 0.219608)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_2mkts"]
+font = ExtResource("9_og2fd")
+font_size = 32
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qvhlj"]
+font = ExtResource("9_og2fd")
+font_size = 57
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Level1" type="Node2D"]
 metadata/_edit_vertical_guides_ = []
 
@@ -503,16 +525,19 @@ position = Vector2(897, 0)
 
 [node name="BoneList" type="Node2D" parent="."]
 
-[node name="Bone" parent="BoneList" instance=ExtResource("7_8yygl")]
+[node name="Bone1" parent="BoneList" instance=ExtResource("7_8yygl")]
 position = Vector2(416, 40)
 
 [node name="Bone2" parent="BoneList" instance=ExtResource("7_8yygl")]
-position = Vector2(752, 24)
+position = Vector2(656, 8)
 
 [node name="Bone3" parent="BoneList" instance=ExtResource("7_8yygl")]
-position = Vector2(936, -40)
+position = Vector2(752, 24)
 
 [node name="Bone4" parent="BoneList" instance=ExtResource("7_8yygl")]
+position = Vector2(936, -40)
+
+[node name="Bone5" parent="BoneList" instance=ExtResource("7_8yygl")]
 position = Vector2(1089, -56)
 
 [node name="House" parent="." instance=ExtResource("5_kgb76")]
@@ -525,9 +550,60 @@ position = Vector2(81, -24)
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 
+[node name="HUD" type="Control" parent="Player"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -81.0
+offset_top = 24.0
+offset_right = -41.0
+offset_bottom = 64.0
+script = ExtResource("7_3cfhs")
+
+[node name="Panel" type="Panel" parent="Player/HUD"]
+visible = false
+layout_mode = 0
+offset_left = -172.0
+offset_top = -163.0
+offset_right = -25.0
+offset_bottom = -112.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0od10")
+
+[node name="BoneTexture" type="TextureRect" parent="Player/HUD"]
+layout_mode = 0
+offset_left = -164.0
+offset_top = -159.0
+offset_right = -124.0
+offset_bottom = -119.0
+texture = ExtResource("8_gdbg3")
+
+[node name="X" type="Label" parent="Player/HUD"]
+layout_mode = 0
+offset_left = -115.0
+offset_top = -146.0
+offset_right = -75.0
+offset_bottom = -113.0
+text = "x"
+label_settings = SubResource("LabelSettings_2mkts")
+
+[node name="Bones" type="Label" parent="Player/HUD"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -83.0
+offset_top = -163.0
+offset_right = 1.0
+offset_bottom = -101.0
+text = "32"
+label_settings = SubResource("LabelSettings_qvhlj")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(81, -24)
 zoom = Vector2(2.5, 2.5)
 
 [node name="Newspaper" parent="." instance=ExtResource("6_1165n")]
 position = Vector2(160, -7)
+
+[connection signal="bone_picked_up" from="BoneList/Bone1" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone2" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone3" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone4" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone5" to="Player/HUD" method="_on_bone_picked_up"]

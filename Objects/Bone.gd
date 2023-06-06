@@ -1,7 +1,9 @@
 extends Area2D
 
+signal bone_picked_up
+
 func _on_body_entered(body):
 		if body is Player:
-			hide()
+			queue_free()
 			Global.total_bones += 1
-			print(Global.total_bones)
+			bone_picked_up.emit()
