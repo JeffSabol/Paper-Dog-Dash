@@ -1,9 +1,18 @@
 extends Node
 
+# changing levels
 var current_scene = null
 var level_count = 2 # we want to change to level 2 after level 1
 var path_level = "res://Levels/level_" + str(level_count) + ".tscn"
+
+# newspaper handling
 var has_newspaper = false
+
+# bone handling
+var total_bones = 0
+
+# time handling
+var total_time = 50
 
 func _ready():
 	var root = get_tree().root

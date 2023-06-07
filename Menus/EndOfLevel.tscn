@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cir0fiprkupvv"]
+[gd_scene load_steps=7 format=3 uid="uid://cir0fiprkupvv"]
 
+[ext_resource type="Script" path="res://Menus/EndOfLevel.gd" id="1_bu11d"]
 [ext_resource type="Texture2D" uid="uid://b6w2jj7le874k" path="res://Assets/Menu/EndOfLevel/NewspaperScreen.png" id="1_tn713"]
 [ext_resource type="Texture2D" uid="uid://bv8o7tk4wgi5y" path="res://Assets/Menu/EndOfLevel/ContinueButton.png" id="2_c5mh8"]
 [ext_resource type="Script" path="res://Menus/ContinueButton.gd" id="3_i8jip"]
+[ext_resource type="FontFile" uid="uid://cuo28wcy83qw8" path="res://Assets/Font/dpcomic.ttf" id="5_c6fl4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8nj0v"]
+font = ExtResource("5_c6fl4")
+font_size = 53
+font_color = Color(0, 0, 0, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,6 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_bu11d")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -27,5 +35,23 @@ offset_bottom = 677.0
 texture_normal = ExtResource("2_c5mh8")
 stretch_mode = 0
 script = ExtResource("3_i8jip")
+
+[node name="BoneCountDisplay" type="Label" parent="."]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 356.0
+offset_right = 473.0
+offset_bottom = 419.0
+text = "Bones Collected: 0"
+label_settings = SubResource("LabelSettings_8nj0v")
+
+[node name="TimeDisplay" type="Label" parent="."]
+layout_mode = 0
+offset_left = 813.0
+offset_top = 356.0
+offset_right = 1174.0
+offset_bottom = 419.0
+text = "Time: 0"
+label_settings = SubResource("LabelSettings_8nj0v")
 
 [connection signal="pressed" from="ContinueButton" to="ContinueButton" method="_on_pressed"]
