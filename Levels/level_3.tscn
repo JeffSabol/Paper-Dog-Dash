@@ -603,6 +603,7 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("10_3cebc")
 
 [node name="X" type="Label" parent="Player/HUD/BoneCounter"]
+layout_mode = 0
 offset_left = -124.0
 offset_top = -154.0
 offset_right = -84.0
@@ -612,6 +613,7 @@ label_settings = SubResource("LabelSettings_8ub1x")
 
 [node name="Bones" type="Label" parent="Player/HUD/BoneCounter"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -98.0
 offset_top = -159.0
 offset_right = -14.0
@@ -637,6 +639,7 @@ texture = ExtResource("10_g05qr")
 autostart = true
 
 [node name="Colon" type="Label" parent="Player/HUD/TimeCounter"]
+layout_mode = 0
 offset_left = 264.0
 offset_top = -159.0
 offset_right = 304.0
@@ -646,6 +649,7 @@ label_settings = SubResource("LabelSettings_shc6y")
 
 [node name="Seconds" type="Label" parent="Player/HUD/TimeCounter"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 280.0
 offset_top = -159.0
 offset_right = 364.0
