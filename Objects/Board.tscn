@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccuxb4wmj6o86"]
+
+[ext_resource type="Texture2D" uid="uid://b0ige3ltpjraa" path="res://Assets/Buttons/Levels.png" id="1_rqang"]
+[ext_resource type="FontFile" uid="uid://cuo28wcy83qw8" path="res://Assets/Font/dpcomic.ttf" id="2_se50c"]
+[ext_resource type="Script" path="res://Objects/Board.gd" id="2_xryya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1c1e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ydss5"]
+font = ExtResource("2_se50c")
+
+[node name="Board" type="Sprite2D"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_rqang")
+script = ExtResource("2_xryya")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_f1c1e")
+
+[node name="LevelDesc" type="PanelContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.5
+offset_top = -44.0
+offset_right = 40.5
+offset_bottom = -18.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="LevelDesc"]
+layout_mode = 2
+text = "Level Desc heere"
+label_settings = SubResource("LabelSettings_ydss5")
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

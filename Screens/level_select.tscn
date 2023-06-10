@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://4jrmuuf63qul"]
+[gd_scene load_steps=5 format=3 uid="uid://4jrmuuf63qul"]
 
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_53d7q"]
 [ext_resource type="TileSet" uid="uid://kftdefec4peb" path="res://Resource/tilemap.tres" id="2_jk55y"]
 [ext_resource type="PackedScene" uid="uid://ble575txva0hm" path="res://Characters/player.tscn" id="3_3wf40"]
+[ext_resource type="PackedScene" uid="uid://ccuxb4wmj6o86" path="res://Objects/Board.tscn" id="4_o8yci"]
 
 [node name="LevelSelect" type="Node2D"]
 
@@ -28,3 +29,6 @@ collision_mask = 8
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(81, -24)
 zoom = Vector2(2.5, 2.5)
+
+[node name="Board" parent="." instance=ExtResource("4_o8yci")]
+position = Vector2(176, 8)
