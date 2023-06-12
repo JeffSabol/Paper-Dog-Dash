@@ -144,4 +144,6 @@ func _on_pee_timer_timeout():
 	is_hurt = false
 	if above_head_is_empty():
 		is_crouching = false
+		collision_shape.shape = standing_collision_shape
+		collision_shape.position.y = STANDING_COLLISION_Y_POS
 	state = PlayerState.STANDING

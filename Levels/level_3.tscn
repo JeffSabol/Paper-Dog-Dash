@@ -636,6 +636,7 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("10_g05qr")
 
 [node name="LevelTimer" type="Timer" parent="Player/HUD/TimeCounter"]
+wait_time = 0.639
 autostart = true
 
 [node name="Colon" type="Label" parent="Player/HUD/TimeCounter"]

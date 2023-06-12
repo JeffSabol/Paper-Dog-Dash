@@ -543,14 +543,14 @@ position = Vector2(853, 80)
 
 [node name="BoneList" type="Node2D" parent="."]
 
-[node name="Bone3" parent="BoneList" instance=ExtResource("7_tqrdu")]
-position = Vector2(686, 40)
+[node name="Bone1" parent="BoneList" instance=ExtResource("7_tqrdu")]
+position = Vector2(361, 136)
 
 [node name="Bone2" parent="BoneList" instance=ExtResource("7_tqrdu")]
 position = Vector2(496, 88)
 
-[node name="Bone1" parent="BoneList" instance=ExtResource("7_tqrdu")]
-position = Vector2(361, 136)
+[node name="Bone3" parent="BoneList" instance=ExtResource("7_tqrdu")]
+position = Vector2(686, 40)
 
 [node name="Bone4" parent="BoneList" instance=ExtResource("7_tqrdu")]
 position = Vector2(904, 40)
@@ -655,9 +655,9 @@ zoom = Vector2(2.5, 2.5)
 [node name="Newspaper" parent="." instance=ExtResource("6_cilcn")]
 position = Vector2(224, 137)
 
-[connection signal="bone_picked_up" from="BoneList/Bone3" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone2" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone1" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone2" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone3" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone4" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone5" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="timeout" from="Player/HUD/TimeCounter/LevelTimer" to="Player/HUD" method="_on_level_timer_timeout"]
