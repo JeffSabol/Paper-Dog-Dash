@@ -2,7 +2,6 @@ extends Control
 
 var bones = 0
 var time_left = 50
-@onready var timer = $LevelTimer
 
 func _ready():
 	$BoneCounter/Bones.text = str(bones)

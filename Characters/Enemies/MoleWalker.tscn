@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn24k33odklvc"]
+
+[ext_resource type="Texture2D" uid="uid://b8hldunsfvi67" path="res://Assets/Enemies/MoleSideways.png" id="1_xk8si"]
+
+[node name="MoleWalker" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xk8si")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-7, -8, -7, -7, -9, -7, -9, -6, -10, -6, -10, -5, -12, -5, -12, -4, -15, -4, -15, -3, -16, -3, -16, 8, 16, 8, 16, 1, 15, 1, 15, 0, 14, 0, 14, -3, 13, -3, 13, -4, 12, -4, 12, -5, 2, -5, 2, -6, 0, -6, 0, -7, -1, -7, -1, -8)
