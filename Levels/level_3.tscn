@@ -603,6 +603,7 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("10_3cebc")
 
 [node name="X" type="Label" parent="Player/HUD/BoneCounter"]
+layout_mode = 0
 offset_left = -124.0
 offset_top = -154.0
 offset_right = -84.0
@@ -612,6 +613,7 @@ label_settings = SubResource("LabelSettings_8ub1x")
 
 [node name="Bones" type="Label" parent="Player/HUD/BoneCounter"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -98.0
 offset_top = -159.0
 offset_right = -14.0
@@ -634,9 +636,11 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("10_g05qr")
 
 [node name="LevelTimer" type="Timer" parent="Player/HUD/TimeCounter"]
+wait_time = 0.639
 autostart = true
 
 [node name="Colon" type="Label" parent="Player/HUD/TimeCounter"]
+layout_mode = 0
 offset_left = 264.0
 offset_top = -159.0
 offset_right = 304.0
@@ -646,6 +650,7 @@ label_settings = SubResource("LabelSettings_shc6y")
 
 [node name="Seconds" type="Label" parent="Player/HUD/TimeCounter"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 280.0
 offset_top = -159.0
 offset_right = 364.0
@@ -667,7 +672,6 @@ position = Vector2(214, -230)
 [connection signal="bone_picked_up" from="BoneList/Bone1" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone2" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone3" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone4" to="Player/HUD" method="_on_bone_4_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone4" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone5" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone6" to="Player/HUD" method="_on_bone_picked_up"]

@@ -543,14 +543,14 @@ position = Vector2(853, 80)
 
 [node name="BoneList" type="Node2D" parent="."]
 
-[node name="Bone3" parent="BoneList" instance=ExtResource("7_tqrdu")]
-position = Vector2(686, 40)
+[node name="Bone1" parent="BoneList" instance=ExtResource("7_tqrdu")]
+position = Vector2(361, 136)
 
 [node name="Bone2" parent="BoneList" instance=ExtResource("7_tqrdu")]
 position = Vector2(496, 88)
 
-[node name="Bone1" parent="BoneList" instance=ExtResource("7_tqrdu")]
-position = Vector2(361, 136)
+[node name="Bone3" parent="BoneList" instance=ExtResource("7_tqrdu")]
+position = Vector2(686, 40)
 
 [node name="Bone4" parent="BoneList" instance=ExtResource("7_tqrdu")]
 position = Vector2(904, 40)
@@ -593,6 +593,7 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("8_t1s3i")
 
 [node name="X" type="Label" parent="Player/HUD/BoneCounter"]
+layout_mode = 0
 offset_left = -124.0
 offset_top = -154.0
 offset_right = -84.0
@@ -602,6 +603,7 @@ label_settings = SubResource("LabelSettings_t4b16")
 
 [node name="Bones" type="Label" parent="Player/HUD/BoneCounter"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -98.0
 offset_top = -159.0
 offset_right = -14.0
@@ -628,6 +630,7 @@ texture = ExtResource("10_8xnt2")
 autostart = true
 
 [node name="Colon" type="Label" parent="Player/HUD/TimeCounter"]
+layout_mode = 0
 offset_left = 264.0
 offset_top = -159.0
 offset_right = 304.0
@@ -637,6 +640,7 @@ label_settings = SubResource("LabelSettings_mb5rj")
 
 [node name="Seconds" type="Label" parent="Player/HUD/TimeCounter"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 280.0
 offset_top = -159.0
 offset_right = 364.0
@@ -651,9 +655,9 @@ zoom = Vector2(2.5, 2.5)
 [node name="Newspaper" parent="." instance=ExtResource("6_cilcn")]
 position = Vector2(224, 137)
 
-[connection signal="bone_picked_up" from="BoneList/Bone3" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone2" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone1" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone2" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone3" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone4" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone5" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="timeout" from="Player/HUD/TimeCounter/LevelTimer" to="Player/HUD" method="_on_level_timer_timeout"]
