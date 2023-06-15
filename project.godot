@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Dog Days Delivery"
-run/main_scene="res://Levels/level_1.tscn"
+run/main_scene="res://Screens/main.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
