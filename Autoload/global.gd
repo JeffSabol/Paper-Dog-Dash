@@ -26,7 +26,7 @@ func goto_scene(path):
 
 func _deferred_goto_scene(path):
 	# It is now safe to remove the current scene
-	current_scene.free()
+	current_scene.queue_free()
 
 	# Load the new scene.
 	var s = ResourceLoader.load(path)
@@ -49,7 +49,7 @@ func goto_next_level():
 
 func _deferred_goto_next_level():
 	# It is now safe to remove the current scene
-	current_scene.free()
+	current_scene.queue_free()
 
 	# Load the new scene.
 	var s = ResourceLoader.load(path_level)
