@@ -82,27 +82,34 @@ position = Vector2(1224, -116)
 scale = Vector2(1.5, 1.5)
 
 [node name="Player" parent="." instance=ExtResource("2_a56jg")]
-position = Vector2(81, -24)
+position = Vector2(81, -27)
+collision_mask = 8
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 
-[node name="HUD" type="Control" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(81, -27)
+zoom = Vector2(2.5, 2.5)
+
+[node name="Newspaper" parent="." instance=ExtResource("6_1165n")]
+position = Vector2(160, -7)
+
+[node name="HUD" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -81.0
-offset_top = 24.0
-offset_right = -41.0
-offset_bottom = 64.0
+offset_top = -3.0
+offset_right = 40.0
+offset_bottom = 37.0
 script = ExtResource("7_3cfhs")
 
-[node name="BoneCounter" type="Control" parent="Player/HUD"]
+[node name="BoneCounter" type="Control" parent="HUD"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="BoneTexture" type="TextureRect" parent="Player/HUD/BoneCounter"]
+[node name="BoneTexture" type="TextureRect" parent="HUD/BoneCounter"]
 layout_mode = 0
 offset_left = -164.0
 offset_top = -159.0
@@ -111,7 +118,7 @@ offset_bottom = -119.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("8_gdbg3")
 
-[node name="X" type="Label" parent="Player/HUD/BoneCounter"]
+[node name="X" type="Label" parent="HUD/BoneCounter"]
 layout_mode = 0
 offset_left = -124.0
 offset_top = -154.0
@@ -120,7 +127,7 @@ offset_bottom = -121.0
 text = "x"
 label_settings = SubResource("LabelSettings_mdrut")
 
-[node name="Bones" type="Label" parent="Player/HUD/BoneCounter"]
+[node name="Bones" type="Label" parent="HUD/BoneCounter"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -98.0
@@ -130,13 +137,13 @@ offset_bottom = -97.0
 text = "32"
 label_settings = SubResource("LabelSettings_ew5pt")
 
-[node name="TimeCounter" type="Control" parent="Player/HUD"]
+[node name="TimeCounter" type="Control" parent="HUD"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HourGlass" type="TextureRect" parent="Player/HUD/TimeCounter"]
+[node name="HourGlass" type="TextureRect" parent="HUD/TimeCounter"]
 layout_mode = 0
 offset_left = 225.0
 offset_top = -158.0
@@ -145,7 +152,7 @@ offset_bottom = -118.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("10_16xw2")
 
-[node name="Colon" type="Label" parent="Player/HUD/TimeCounter"]
+[node name="Colon" type="Label" parent="HUD/TimeCounter"]
 layout_mode = 0
 offset_left = 264.0
 offset_top = -159.0
@@ -154,10 +161,10 @@ offset_bottom = -126.0
 text = ":"
 label_settings = SubResource("LabelSettings_mdrut")
 
-[node name="LevelTimer" type="Timer" parent="Player/HUD/TimeCounter"]
+[node name="LevelTimer" type="Timer" parent="HUD/TimeCounter"]
 autostart = true
 
-[node name="Seconds" type="Label" parent="Player/HUD/TimeCounter"]
+[node name="Seconds" type="Label" parent="HUD/TimeCounter"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 280.0
@@ -167,16 +174,9 @@ offset_bottom = -97.0
 text = "32"
 label_settings = SubResource("LabelSettings_0qbx0")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(81, -24)
-zoom = Vector2(2.5, 2.5)
-
-[node name="Newspaper" parent="." instance=ExtResource("6_1165n")]
-position = Vector2(160, -7)
-
-[connection signal="bone_picked_up" from="BoneList/Bone1" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone2" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone3" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone4" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone5" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="timeout" from="Player/HUD/TimeCounter/LevelTimer" to="Player/HUD" method="_on_level_timer_timeout"]
+[connection signal="bone_picked_up" from="BoneList/Bone1" to="HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone2" to="HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone3" to="HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone4" to="HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone5" to="HUD" method="_on_bone_picked_up"]
+[connection signal="timeout" from="HUD/TimeCounter/LevelTimer" to="HUD" method="_on_level_timer_timeout"]
