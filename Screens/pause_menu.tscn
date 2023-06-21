@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfxl3mfenkuj2"]
+
+[ext_resource type="Theme" uid="uid://bdpfgawly0y5a" path="res://Assets/Themes/ui_theme_a.tres" id="1_ibom0"]
+[ext_resource type="Script" path="res://Screens/pause_menu.gd" id="1_uhjs6"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uhjs6")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 347.0
+offset_top = 183.0
+offset_right = -312.0
+offset_bottom = -175.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ibom0")
+text = "= PAUSE ="
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ibom0")
+text = "Resume"
+
+[node name="LevelSelectButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ibom0")
+text = "To Level Select"
+
+[node name="TitleButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ibom0")
+text = "To Title"

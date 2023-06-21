@@ -2,7 +2,7 @@ extends Node
 
 # changing levels
 var current_scene = null
-var level_count = 2 # we want to change to level 2 after level 1
+var level_count = 1 # we want to change to level 2 after level 1
 var path_level = "res://Levels/level_" + str(level_count) + ".tscn"
 
 # newspaper handling
