@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://yb3b4s5dlkt5"]
+
+[node name="MovingPlatform" type="AnimatableBody2D"]
