@@ -859,62 +859,62 @@ position = Vector2(0, 28)
 position = Vector2(0, 1)
 polygon = PackedVector2Array(-11, -12, -11, 16, 12, 16, 12, -12)
 
-[node name="MoleWalerList" type="Node2D" parent="."]
+[node name="MoleWalkerList" type="Node2D" parent="."]
 
-[node name="Path2D" type="Path2D" parent="MoleWalerList"]
+[node name="Path2D" type="Path2D" parent="MoleWalkerList"]
 position = Vector2(64, -1)
 curve = SubResource("Curve2D_gjpsp")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="MoleWalerList/Path2D"]
+[node name="PathFollow2D" type="PathFollow2D" parent="MoleWalkerList/Path2D"]
 position = Vector2(143, 90)
 rotates = false
 
-[node name="MoleWalker" type="Area2D" parent="MoleWalerList/Path2D/PathFollow2D"]
+[node name="MoleWalker" type="Area2D" parent="MoleWalkerList/Path2D/PathFollow2D"]
 script = ExtResource("14_emr1a")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MoleWalerList/Path2D/PathFollow2D/MoleWalker"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MoleWalkerList/Path2D/PathFollow2D/MoleWalker"]
 polygon = PackedVector2Array(-7, -8, -7, -7, -9, -7, -9, -6, -10, -6, -10, -5, -12, -5, -12, -4, -15, -4, -15, -3, -16, -3, -16, 8, 16, 8, 16, 1, 15, 1, 15, 0, 14, 0, 14, -3, 13, -3, 13, -4, 12, -4, 12, -5, 2, -5, 2, -6, 0, -6, 0, -7, -1, -7, -1, -8)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MoleWalerList/Path2D/PathFollow2D/MoleWalker"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MoleWalkerList/Path2D/PathFollow2D/MoleWalker"]
 sprite_frames = SubResource("SpriteFrames_pkopf")
 frame_progress = 0.724798
 
-[node name="Path2D2" type="Path2D" parent="MoleWalerList"]
+[node name="Path2D2" type="Path2D" parent="MoleWalkerList"]
 curve = SubResource("Curve2D_1m34f")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="MoleWalerList/Path2D2"]
+[node name="PathFollow2D" type="PathFollow2D" parent="MoleWalkerList/Path2D2"]
 position = Vector2(615, 89)
 rotates = false
 
-[node name="MoleWalker" type="Area2D" parent="MoleWalerList/Path2D2/PathFollow2D"]
+[node name="MoleWalker" type="Area2D" parent="MoleWalkerList/Path2D2/PathFollow2D"]
 script = ExtResource("14_s4ail")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MoleWalerList/Path2D2/PathFollow2D/MoleWalker"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MoleWalkerList/Path2D2/PathFollow2D/MoleWalker"]
 polygon = PackedVector2Array(-7, -8, -7, -7, -9, -7, -9, -6, -10, -6, -10, -5, -12, -5, -12, -4, -15, -4, -15, -3, -16, -3, -16, 8, 16, 8, 16, 1, 15, 1, 15, 0, 14, 0, 14, -3, 13, -3, 13, -4, 12, -4, 12, -5, 2, -5, 2, -6, 0, -6, 0, -7, -1, -7, -1, -8)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MoleWalerList/Path2D2/PathFollow2D/MoleWalker"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MoleWalkerList/Path2D2/PathFollow2D/MoleWalker"]
 sprite_frames = SubResource("SpriteFrames_pkopf")
 frame_progress = 0.724798
 
-[node name="Path2D3" type="Path2D" parent="MoleWalerList"]
+[node name="Path2D3" type="Path2D" parent="MoleWalkerList"]
 position = Vector2(530, -1)
 curve = SubResource("Curve2D_gjpsp")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="MoleWalerList/Path2D3"]
+[node name="PathFollow2D" type="PathFollow2D" parent="MoleWalkerList/Path2D3"]
 position = Vector2(143, 90)
 rotates = false
 
-[node name="MoleWalker" type="Area2D" parent="MoleWalerList/Path2D3/PathFollow2D"]
+[node name="MoleWalker" type="Area2D" parent="MoleWalkerList/Path2D3/PathFollow2D"]
 script = ExtResource("14_emr1a")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MoleWalerList/Path2D3/PathFollow2D/MoleWalker"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MoleWalkerList/Path2D3/PathFollow2D/MoleWalker"]
 polygon = PackedVector2Array(-7, -8, -7, -7, -9, -7, -9, -6, -10, -6, -10, -5, -12, -5, -12, -4, -15, -4, -15, -3, -16, -3, -16, 8, 16, 8, 16, 1, 15, 1, 15, 0, 14, 0, 14, -3, 13, -3, 13, -4, 12, -4, 12, -5, 2, -5, 2, -6, 0, -6, 0, -7, -1, -7, -1, -8)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MoleWalerList/Path2D3/PathFollow2D/MoleWalker"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MoleWalkerList/Path2D3/PathFollow2D/MoleWalker"]
 sprite_frames = SubResource("SpriteFrames_pkopf")
 frame_progress = 0.724798
 
-[node name="18266" type="Timer" parent="MoleWalerList/Path2D3/PathFollow2D"]
+[node name="18266" type="Timer" parent="MoleWalkerList/Path2D3/PathFollow2D"]
 wait_time = 0.2
 one_shot = true
 
@@ -1063,9 +1063,9 @@ position = Vector2(421, 89)
 [connection signal="body_entered" from="MoleJumperList/MoleJumper4/Area2D" to="MoleJumperList/MoleJumper4" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="MoleJumperList/MoleJumper5/JumpTimer" to="MoleJumperList/MoleJumper5" method="_on_jump_timer_timeout"]
 [connection signal="body_entered" from="MoleJumperList/MoleJumper5/Area2D" to="MoleJumperList/MoleJumper5" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="MoleWalerList/Path2D/PathFollow2D/MoleWalker" to="MoleWalerList/Path2D/PathFollow2D/MoleWalker" method="_on_body_entered"]
-[connection signal="body_entered" from="MoleWalerList/Path2D2/PathFollow2D/MoleWalker" to="MoleWalerList/Path2D2/PathFollow2D/MoleWalker" method="_on_body_entered"]
-[connection signal="body_entered" from="MoleWalerList/Path2D3/PathFollow2D/MoleWalker" to="MoleWalerList/Path2D3/PathFollow2D/MoleWalker" method="_on_body_entered"]
+[connection signal="body_entered" from="MoleWalkerList/Path2D/PathFollow2D/MoleWalker" to="MoleWalkerList/Path2D/PathFollow2D/MoleWalker" method="_on_body_entered"]
+[connection signal="body_entered" from="MoleWalkerList/Path2D2/PathFollow2D/MoleWalker" to="MoleWalkerList/Path2D2/PathFollow2D/MoleWalker" method="_on_body_entered"]
+[connection signal="body_entered" from="MoleWalkerList/Path2D3/PathFollow2D/MoleWalker" to="MoleWalkerList/Path2D3/PathFollow2D/MoleWalker" method="_on_body_entered"]
 [connection signal="bone_picked_up" from="BoneList/Bone1" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone2" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone3" to="Player/HUD" method="_on_bone_picked_up"]
