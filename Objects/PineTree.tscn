@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4gkj5325cv2n"]
+
+[ext_resource type="Texture2D" uid="uid://dpa3pwfbbn1mp" path="res://Assets/Environment/PineTree.png" id="1_5odhu"]
+
+[node name="PineTree" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5odhu")

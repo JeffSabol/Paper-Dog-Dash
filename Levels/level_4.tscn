@@ -931,11 +931,20 @@ position = Vector2(756, -55)
 [node name="Bone1" parent="BoneList" instance=ExtResource("4_l5c3m")]
 position = Vector2(-606, -112)
 
+[node name="Bone12" parent="BoneList" instance=ExtResource("4_l5c3m")]
+position = Vector2(-606, -145)
+
 [node name="Bone2" parent="BoneList" instance=ExtResource("4_l5c3m")]
 position = Vector2(-606, -80)
 
 [node name="Bone3" parent="BoneList" instance=ExtResource("4_l5c3m")]
 position = Vector2(-606, -48)
+
+[node name="Bone11" parent="BoneList" instance=ExtResource("4_l5c3m")]
+position = Vector2(-606, -15)
+
+[node name="Bone13" parent="BoneList" instance=ExtResource("4_l5c3m")]
+position = Vector2(-606, 16)
 
 [node name="Bone4" parent="BoneList" instance=ExtResource("4_l5c3m")]
 position = Vector2(-542, 144)
@@ -1067,8 +1076,11 @@ position = Vector2(421, 89)
 [connection signal="body_entered" from="MoleWalkerList/Path2D2/PathFollow2D/MoleWalker" to="MoleWalkerList/Path2D2/PathFollow2D/MoleWalker" method="_on_body_entered"]
 [connection signal="body_entered" from="MoleWalkerList/Path2D3/PathFollow2D/MoleWalker" to="MoleWalkerList/Path2D3/PathFollow2D/MoleWalker" method="_on_body_entered"]
 [connection signal="bone_picked_up" from="BoneList/Bone1" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone12" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone2" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone3" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone11" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone13" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone4" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone5" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone6" to="Player/HUD" method="_on_bone_picked_up"]
