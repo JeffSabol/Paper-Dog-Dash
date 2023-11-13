@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cir0fiprkupvv"]
+[gd_scene load_steps=8 format=3 uid="uid://cir0fiprkupvv"]
 
 [ext_resource type="Script" path="res://Menus/EndOfLevel.gd" id="1_bu11d"]
 [ext_resource type="Texture2D" uid="uid://b6w2jj7le874k" path="res://Assets/Menu/EndOfLevel/NewspaperScreen.png" id="1_tn713"]
 [ext_resource type="Texture2D" uid="uid://bv8o7tk4wgi5y" path="res://Assets/Menu/EndOfLevel/ContinueButton.png" id="2_c5mh8"]
 [ext_resource type="Script" path="res://Menus/ContinueButton.gd" id="3_i8jip"]
 [ext_resource type="FontFile" uid="uid://cuo28wcy83qw8" path="res://Assets/Font/dpcomic.ttf" id="5_c6fl4"]
+[ext_resource type="AudioStream" uid="uid://bkcy7lxurv7gn" path="res://Assets/Audio/End_Of_Level_Music.wav" id="6_yrf7x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8nj0v"]
 font = ExtResource("5_c6fl4")
@@ -53,5 +54,9 @@ offset_right = 1174.0
 offset_bottom = 419.0
 text = "Time: 0"
 label_settings = SubResource("LabelSettings_8nj0v")
+
+[node name="Success" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_yrf7x")
+autoplay = true
 
 [connection signal="pressed" from="ContinueButton" to="ContinueButton" method="_on_pressed"]

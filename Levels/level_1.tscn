@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://tr7r78cu1i56"]
+[gd_scene load_steps=19 format=3 uid="uid://tr7r78cu1i56"]
 
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_ateu6"]
 [ext_resource type="PackedScene" uid="uid://ble575txva0hm" path="res://Characters/player.tscn" id="2_a56jg"]
@@ -12,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://cuo28wcy83qw8" path="res://Assets/Font/dpcomic.ttf" id="9_og2fd"]
 [ext_resource type="Texture2D" uid="uid://bead53im1swcj" path="res://Assets/HUD/HourGlass.png" id="10_16xw2"]
 [ext_resource type="Texture2D" uid="uid://dpa3pwfbbn1mp" path="res://Assets/Environment/PineTree.png" id="12_w503l"]
+[ext_resource type="AudioStream" uid="uid://c5hbwug15bgrc" path="res://Assets/Audio/Gameplay Music/Level_Music.wav" id="13_7l2kp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oytpd"]
 texture = ExtResource("2_iew6x")
@@ -684,6 +685,11 @@ zoom = Vector2(2.5, 2.5)
 
 [node name="Newspaper" parent="." instance=ExtResource("6_1165n")]
 position = Vector2(160, -7)
+
+[node name="Level Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_7l2kp")
+autoplay = true
+max_distance = 20000.0
 
 [connection signal="bone_picked_up" from="BoneList/Bone1" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone2" to="Player/HUD" method="_on_bone_picked_up"]
