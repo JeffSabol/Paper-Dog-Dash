@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="Dog Days Delivery"
+config/name="Paper Dog"
+config/description="A platformer where a dog delivers newspaper to a house."
 run/main_scene="res://Levels/level_1.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
+config/icon="res://Assets/Unsorted/PaperDogEmblem.png"
 
 [autoload]
 
