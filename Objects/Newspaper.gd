@@ -6,3 +6,4 @@ func _on_body_entered(body):
 		if body is Player:
 			Global.has_newspaper = true
 			hide()
+			$Newspaper.play()

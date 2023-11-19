@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bh524wb3pvctb"]
+[gd_scene load_steps=5 format=3 uid="uid://bh524wb3pvctb"]
 
 [ext_resource type="Script" path="res://Objects/Bone.gd" id="1_66dbo"]
 [ext_resource type="Texture2D" uid="uid://cv8kemvndniu3" path="res://Assets/Environment/Bone.png" id="1_g58v4"]
+[ext_resource type="AudioStream" uid="uid://dshjtq3q00scd" path="res://Assets/Audio/Gameplay SFX/Pickup.wav" id="3_1m41q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_10loj"]
 size = Vector2(16, 16)
@@ -14,5 +15,9 @@ texture = ExtResource("1_g58v4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_10loj")
+
+[node name="Pickup" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1m41q")
+volume_db = -16.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

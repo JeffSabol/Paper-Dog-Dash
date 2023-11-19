@@ -181,6 +181,7 @@ func pee():
 
 # Perform jump action
 func perform_jump():
+	$Jump.play()
 	velocity.y = JUMP_VELOCITY
 	state = PlayerState.JUMPING
 
@@ -189,6 +190,7 @@ func hurt():
 	state = PlayerState.HURT
 	is_hurt = true
 	pee_timer.start(2.5)
+	$Hurt.play()
 
 # Timeout handling for pee timer
 func _on_pee_timer_timeout():
@@ -203,3 +205,4 @@ func _on_pee_timer_timeout():
 func update_collision_shape_for_standing():
 	collision_shape.shape = standing_collision_shape
 	collision_shape.position.y = STANDING_COLLISION_Y_POS
+	

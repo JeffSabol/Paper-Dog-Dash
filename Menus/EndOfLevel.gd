@@ -15,3 +15,7 @@ func update_bone_count_display():
 
 func update_time_elapsed_display():
 	time_display.text = "Time: " + str(Global.total_time)
+
+func _process(delta):
+	if Input.is_action_just_pressed("ui_accept"):
+		Global.goto_next_level()

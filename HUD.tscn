@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=3 uid="uid://cc8fx2uvaws46"]
+
+[ext_resource type="Script" path="res://Levels/HUD.gd" id="1_0a344"]
+[ext_resource type="Texture2D" uid="uid://cv8kemvndniu3" path="res://Assets/Environment/Bone.png" id="2_eosqq"]
+[ext_resource type="FontFile" uid="uid://cuo28wcy83qw8" path="res://Assets/Font/dpcomic.ttf" id="3_hhlkd"]
+[ext_resource type="Texture2D" uid="uid://bead53im1swcj" path="res://Assets/HUD/HourGlass.png" id="4_38xit"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mdrut"]
+font = ExtResource("3_hhlkd")
+font_size = 32
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ew5pt"]
+font = ExtResource("3_hhlkd")
+font_size = 39
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0qbx0"]
+font = ExtResource("3_hhlkd")
+font_size = 39
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -81.0
+offset_top = 24.0
+offset_right = -41.0
+offset_bottom = 64.0
+script = ExtResource("1_0a344")
+
+[node name="BoneCounter" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BoneTexture" type="TextureRect" parent="BoneCounter"]
+layout_mode = 0
+offset_left = -164.0
+offset_top = -159.0
+offset_right = -124.0
+offset_bottom = -119.0
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_eosqq")
+
+[node name="X" type="Label" parent="BoneCounter"]
+layout_mode = 0
+offset_left = -124.0
+offset_top = -154.0
+offset_right = -84.0
+offset_bottom = -121.0
+text = "x"
+label_settings = SubResource("LabelSettings_mdrut")
+
+[node name="Bones" type="Label" parent="BoneCounter"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -98.0
+offset_top = -159.0
+offset_right = -14.0
+offset_bottom = -97.0
+text = "32"
+label_settings = SubResource("LabelSettings_ew5pt")
+
+[node name="TimeCounter" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HourGlass" type="TextureRect" parent="TimeCounter"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = -158.0
+offset_right = 265.0
+offset_bottom = -118.0
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_38xit")
+
+[node name="Colon" type="Label" parent="TimeCounter"]
+layout_mode = 0
+offset_left = 264.0
+offset_top = -159.0
+offset_right = 304.0
+offset_bottom = -126.0
+text = ":"
+label_settings = SubResource("LabelSettings_mdrut")
+
+[node name="LevelTimer" type="Timer" parent="TimeCounter"]
+autostart = true
+
+[node name="Seconds" type="Label" parent="TimeCounter"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 280.0
+offset_top = -159.0
+offset_right = 364.0
+offset_bottom = -97.0
+text = "32"
+label_settings = SubResource("LabelSettings_0qbx0")
+
+[connection signal="timeout" from="TimeCounter/LevelTimer" to="." method="_on_level_timer_timeout"]

@@ -1,0 +1,99 @@
+[gd_scene load_steps=12 format=3 uid="uid://v6tdbqqiibu5"]
+
+[ext_resource type="Script" path="res://Levels/Mole.gd" id="1_foghr"]
+[ext_resource type="Texture2D" uid="uid://dt3t17u6kpbfo" path="res://Assets/Enemies/MoleDigAnimation.png" id="2_osprw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6nd1"]
+atlas = ExtResource("2_osprw")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qfe7"]
+atlas = ExtResource("2_osprw")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xd0t0"]
+atlas = ExtResource("2_osprw")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0red8"]
+atlas = ExtResource("2_osprw")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eivdh"]
+atlas = ExtResource("2_osprw")
+region = Rect2(128, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svtrx"]
+atlas = ExtResource("2_osprw")
+region = Rect2(160, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe53w"]
+atlas = ExtResource("2_osprw")
+region = Rect2(192, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ppsow"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6nd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qfe7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xd0t0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0red8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eivdh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svtrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe53w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e68p0"]
+size = Vector2(32, 3)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(-927, -35)
+script = ExtResource("1_foghr")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(722, 10)
+polygon = PackedVector2Array(-10, -6, -10, -5, -12, -5, -12, -4, -15, -4, -15, -3, -16, -3, -16, 8, 16, 8, 16, 1, 15, 1, 15, 0, 14, 0, 14, -3, 13, -3, 13, -4, 12, -4, 12, -5, 2, -5, 2, -6)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(724, 11)
+rotation = 1.5708
+scale = Vector2(2, 1)
+target_position = Vector2(8.01086e-05, 22)
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+position = Vector2(717, 10)
+rotation = -1.5708
+scale = Vector2(2, 1)
+target_position = Vector2(8.01086e-05, 22)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(722, 10)
+sprite_frames = SubResource("SpriteFrames_ppsow")
+
+[node name="StompDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
+position = Vector2(722, 3.5)
+shape = SubResource("RectangleShape2D_e68p0")
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+volume_db = -14.0
+
+[connection signal="body_entered" from="StompDetector" to="." method="_on_stomp_detector_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://kjx0ehwc3qy"]
+[gd_scene load_steps=43 format=3 uid="uid://kjx0ehwc3qy"]
 
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_yvnn7"]
 [ext_resource type="Texture2D" uid="uid://dpa3pwfbbn1mp" path="res://Assets/Environment/PineTree.png" id="2_6ixmg"]
@@ -11,10 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://cv8kemvndniu3" path="res://Assets/Environment/Bone.png" id="8_dly5k"]
 [ext_resource type="FontFile" uid="uid://cuo28wcy83qw8" path="res://Assets/Font/dpcomic.ttf" id="9_c6140"]
 [ext_resource type="Texture2D" uid="uid://bead53im1swcj" path="res://Assets/HUD/HourGlass.png" id="10_4bhr7"]
+[ext_resource type="PackedScene" uid="uid://v6tdbqqiibu5" path="res://MoleRoamer.tscn" id="10_5tc3q"]
 [ext_resource type="PackedScene" uid="uid://cyn0a1hyfvvwa" path="res://Objects/Newspaper.tscn" id="12_eq4dh"]
-[ext_resource type="Texture2D" uid="uid://dt3t17u6kpbfo" path="res://Assets/Enemies/MoleDigAnimation.png" id="13_sly41"]
-[ext_resource type="Script" path="res://Levels/MoleWalker.gd" id="14_emr1a"]
-[ext_resource type="Script" path="res://Levels/MoleWalker2.gd" id="14_s4ail"]
 [ext_resource type="Script" path="res://Levels/MoleJumper.gd" id="15_wym40"]
 [ext_resource type="Texture2D" uid="uid://bp6xr1oy8q24i" path="res://Assets/Enemies/DirtParticles.png" id="16_dhy6k"]
 [ext_resource type="Texture2D" uid="uid://cdijy83fgj1fg" path="res://Assets/Enemies/MoleJumping.png" id="17_disfu"]
@@ -624,75 +622,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jwhlm"]
 size = Vector2(10, 11)
 
-[sub_resource type="Curve2D" id="Curve2D_gjpsp"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 143, 90, 0, 0, 0, 0, 358, 90, 0, 0, 0, 0, 143, 90)
-}
-point_count = 3
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e6nd1"]
-atlas = ExtResource("13_sly41")
-region = Rect2(0, 0, 32, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8qfe7"]
-atlas = ExtResource("13_sly41")
-region = Rect2(32, 0, 32, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xd0t0"]
-atlas = ExtResource("13_sly41")
-region = Rect2(64, 0, 32, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0red8"]
-atlas = ExtResource("13_sly41")
-region = Rect2(96, 0, 32, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eivdh"]
-atlas = ExtResource("13_sly41")
-region = Rect2(128, 0, 32, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_svtrx"]
-atlas = ExtResource("13_sly41")
-region = Rect2(160, 0, 32, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qe53w"]
-atlas = ExtResource("13_sly41")
-region = Rect2(192, 0, 32, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_pkopf"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e6nd1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8qfe7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xd0t0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0red8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eivdh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_svtrx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qe53w")
-}],
-"loop": true,
-"name": &"default",
-"speed": 15.0
-}]
-
-[sub_resource type="Curve2D" id="Curve2D_1m34f"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 615, 89, 0, 0, 0, 0, 447, 89, 0, 0, 0, 0, 630, 89)
-}
-point_count = 3
-
 [sub_resource type="LabelSettings" id="LabelSettings_8ub1x"]
 font = ExtResource("9_c6140")
 font_size = 32
@@ -866,64 +795,14 @@ position = Vector2(0, 28)
 position = Vector2(0, 1)
 polygon = PackedVector2Array(-11, -12, -11, 16, 12, 16, 12, -12)
 
-[node name="MoleWalkerList" type="Node2D" parent="."]
+[node name="CharacterBody2D" parent="." instance=ExtResource("10_5tc3q")]
+position = Vector2(-249, 73)
 
-[node name="Path2D" type="Path2D" parent="MoleWalkerList"]
-position = Vector2(64, -1)
-curve = SubResource("Curve2D_gjpsp")
+[node name="CharacterBody2D2" parent="." instance=ExtResource("10_5tc3q")]
+position = Vector2(102, 69)
 
-[node name="PathFollow2D" type="PathFollow2D" parent="MoleWalkerList/Path2D"]
-position = Vector2(143, 90)
-rotates = false
-
-[node name="MoleWalker" type="Area2D" parent="MoleWalkerList/Path2D/PathFollow2D"]
-script = ExtResource("14_emr1a")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MoleWalkerList/Path2D/PathFollow2D/MoleWalker"]
-polygon = PackedVector2Array(-7, -8, -7, -7, -9, -7, -9, -6, -10, -6, -10, -5, -12, -5, -12, -4, -15, -4, -15, -3, -16, -3, -16, 8, 16, 8, 16, 1, 15, 1, 15, 0, 14, 0, 14, -3, 13, -3, 13, -4, 12, -4, 12, -5, 2, -5, 2, -6, 0, -6, 0, -7, -1, -7, -1, -8)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MoleWalkerList/Path2D/PathFollow2D/MoleWalker"]
-sprite_frames = SubResource("SpriteFrames_pkopf")
-frame_progress = 0.724798
-
-[node name="Path2D2" type="Path2D" parent="MoleWalkerList"]
-curve = SubResource("Curve2D_1m34f")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="MoleWalkerList/Path2D2"]
-position = Vector2(615, 89)
-rotates = false
-
-[node name="MoleWalker" type="Area2D" parent="MoleWalkerList/Path2D2/PathFollow2D"]
-script = ExtResource("14_s4ail")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MoleWalkerList/Path2D2/PathFollow2D/MoleWalker"]
-polygon = PackedVector2Array(-7, -8, -7, -7, -9, -7, -9, -6, -10, -6, -10, -5, -12, -5, -12, -4, -15, -4, -15, -3, -16, -3, -16, 8, 16, 8, 16, 1, 15, 1, 15, 0, 14, 0, 14, -3, 13, -3, 13, -4, 12, -4, 12, -5, 2, -5, 2, -6, 0, -6, 0, -7, -1, -7, -1, -8)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MoleWalkerList/Path2D2/PathFollow2D/MoleWalker"]
-sprite_frames = SubResource("SpriteFrames_pkopf")
-frame_progress = 0.724798
-
-[node name="Path2D3" type="Path2D" parent="MoleWalkerList"]
-position = Vector2(530, -1)
-curve = SubResource("Curve2D_gjpsp")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="MoleWalkerList/Path2D3"]
-position = Vector2(143, 90)
-rotates = false
-
-[node name="MoleWalker" type="Area2D" parent="MoleWalkerList/Path2D3/PathFollow2D"]
-script = ExtResource("14_emr1a")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MoleWalkerList/Path2D3/PathFollow2D/MoleWalker"]
-polygon = PackedVector2Array(-7, -8, -7, -7, -9, -7, -9, -6, -10, -6, -10, -5, -12, -5, -12, -4, -15, -4, -15, -3, -16, -3, -16, 8, 16, 8, 16, 1, 15, 1, 15, 0, 14, 0, 14, -3, 13, -3, 13, -4, 12, -4, 12, -5, 2, -5, 2, -6, 0, -6, 0, -7, -1, -7, -1, -8)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MoleWalkerList/Path2D3/PathFollow2D/MoleWalker"]
-sprite_frames = SubResource("SpriteFrames_pkopf")
-frame_progress = 0.724798
-
-[node name="18266" type="Timer" parent="MoleWalkerList/Path2D3/PathFollow2D"]
-wait_time = 0.2
-one_shot = true
+[node name="CharacterBody2D3" parent="." instance=ExtResource("10_5tc3q")]
+position = Vector2(-560, 70)
 
 [node name="FireHydrantList" type="Node2D" parent="."]
 visible = false
@@ -1084,9 +963,6 @@ max_distance = 20000.0
 [connection signal="body_entered" from="MoleJumperList/MoleJumper4/Area2D" to="MoleJumperList/MoleJumper4" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="MoleJumperList/MoleJumper5/JumpTimer" to="MoleJumperList/MoleJumper5" method="_on_jump_timer_timeout"]
 [connection signal="body_entered" from="MoleJumperList/MoleJumper5/Area2D" to="MoleJumperList/MoleJumper5" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="MoleWalkerList/Path2D/PathFollow2D/MoleWalker" to="MoleWalkerList/Path2D/PathFollow2D/MoleWalker" method="_on_body_entered"]
-[connection signal="body_entered" from="MoleWalkerList/Path2D2/PathFollow2D/MoleWalker" to="MoleWalkerList/Path2D2/PathFollow2D/MoleWalker" method="_on_body_entered"]
-[connection signal="body_entered" from="MoleWalkerList/Path2D3/PathFollow2D/MoleWalker" to="MoleWalkerList/Path2D3/PathFollow2D/MoleWalker" method="_on_body_entered"]
 [connection signal="bone_picked_up" from="BoneList/Bone1" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone12" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone2" to="Player/HUD" method="_on_bone_picked_up"]
