@@ -14,6 +14,9 @@ const CRAWL_SPEED = 90.0
 const JUMP_VELOCITY = -340.0
 const STANDING_COLLISION_Y_POS = 11
 const CROUCHING_COLLISION_Y_POS = 17
+const ACCELERATION = 10.0
+const BOOSTED_SPEED = 250.0  # Increased speed when Shift is held
+
 
 # Enums and variables
 enum PlayerState {STANDING, WALKING, CRAWL, JUMPING, FALLING, PEEING, HURT} 
@@ -36,10 +39,13 @@ func _physics_process(delta):
 	update_jump_buffer(delta)
 	handle_jump_input()
 	handle_gravity_and_state(delta)
-	handle_input_and_movement()
+	handle_input_and_movement(delta)
 
 # Jump input handling
 func handle_jump_input():
+	if is_peeing or is_hurt:
+		return
+		
 	if Input.is_action_just_pressed("ui_accept") and not is_peeing and not is_hurt:
 		if is_on_floor():
 			perform_jump()
@@ -67,10 +73,12 @@ func handle_gravity_and_state(delta):
 		update_ground_state()
 
 # Input and movement handling
-func handle_input_and_movement():
+func handle_input_and_movement(delta):
 	var direction = get_input_direction()
-	move_character(direction)
+	move_character(direction, delta)
 	handle_crouch_logic()
+
+
 
 # Apply gravity to the player
 func apply_gravity(delta):
@@ -94,19 +102,21 @@ func update_ground_state():
 
 # Get input direction
 func get_input_direction() -> int:
+	if is_peeing or is_hurt:  # Ignore movement input if peeing
+		return 0
 	if state != PlayerState.PEEING and state != PlayerState.HURT:
 		return Input.get_axis("ui_left", "ui_right")
 	return 0
 
-# Move the character based on input
-func move_character(direction: int):
-	if direction != 0:
-		velocity.x = direction * (SPEED if state != PlayerState.CRAWL else CRAWL_SPEED)
-		player_sprite.flip_h = velocity.x < 0
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-	move_and_slide()
+func move_character(direction: int, delta: float):
+	var target_speed = SPEED
+	if Input.is_action_pressed("ui_shift"):
+		target_speed = BOOSTED_SPEED
+
+	var target_velocity_x = direction * (target_speed if state != PlayerState.CRAWL else CRAWL_SPEED)
+	velocity.x = lerp(velocity.x, target_velocity_x, ACCELERATION * delta)
 	update_animations()
+	move_and_slide()
 
 # Handle the crouch logic
 func handle_crouch_logic():
@@ -127,6 +137,13 @@ func above_head_is_empty() -> bool:
 
 # Update animations based on player state
 func update_animations():
+	if is_peeing:
+		player_sprite.play("pee")
+
+	# Update state based on velocity
+	if abs(velocity.x) < 10 and not is_peeing and not is_hurt:
+		state = PlayerState.STANDING
+
 	match state:
 		PlayerState.STANDING:
 			player_sprite.play("idle")
@@ -149,6 +166,9 @@ func update_animations():
 
 	if is_crouching and player_sprite.animation != "crawl" and !is_hurt:
 		player_sprite.play("crawl")
+		
+	# Flip sprite based on movement direction
+	player_sprite.flip_h = velocity.x < 0
 
 # Crouch functionality
 func crouch():
@@ -177,6 +197,7 @@ func pee():
 		update_collision_shape_for_standing()
 	is_peeing = true
 	state = PlayerState.PEEING
+	player_sprite.play("pee")
 	pee_timer.start(3)
 
 # Perform jump action
@@ -200,7 +221,7 @@ func _on_pee_timer_timeout():
 		is_crouching = false
 		update_collision_shape_for_standing()
 	state = PlayerState.STANDING
-
+	
 # Update collision shape for standing
 func update_collision_shape_for_standing():
 	collision_shape.shape = standing_collision_shape

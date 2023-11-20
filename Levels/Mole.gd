@@ -55,6 +55,7 @@ func _physics_process(delta):
 
 func enter_kill_state():
 	var random_sound_index = randi() % death_sounds.size()
+	$AnimatedSprite2D.animation = "death"
 	$Death.stream  = death_sounds[random_sound_index]
 	$Death.play()
 	

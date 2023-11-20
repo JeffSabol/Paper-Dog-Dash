@@ -1,7 +1,36 @@
-[gd_scene load_steps=12 format=3 uid="uid://v6tdbqqiibu5"]
+[gd_scene load_steps=20 format=3 uid="uid://v6tdbqqiibu5"]
 
 [ext_resource type="Script" path="res://Levels/Mole.gd" id="1_foghr"]
+[ext_resource type="Texture2D" uid="uid://b0i2lab1h6nmx" path="res://Assets/Enemies/MoleDeath.png" id="2_neawm"]
 [ext_resource type="Texture2D" uid="uid://dt3t17u6kpbfo" path="res://Assets/Enemies/MoleDigAnimation.png" id="2_osprw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcfy3"]
+atlas = ExtResource("2_neawm")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3o6e1"]
+atlas = ExtResource("2_neawm")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lusnh"]
+atlas = ExtResource("2_neawm")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mudd3"]
+atlas = ExtResource("2_neawm")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3tnw"]
+atlas = ExtResource("2_neawm")
+region = Rect2(128, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orlms"]
+atlas = ExtResource("2_neawm")
+region = Rect2(160, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1oeoj"]
+atlas = ExtResource("2_neawm")
+region = Rect2(192, 0, 32, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6nd1"]
 atlas = ExtResource("2_osprw")
@@ -35,6 +64,32 @@ region = Rect2(192, 0, 32, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_dcfy3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3o6e1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lusnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mudd3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3tnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orlms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oeoj")
+}],
+"loop": true,
+"name": &"death",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_e6nd1")
 }, {
 "duration": 1.0,
@@ -57,7 +112,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 15.0
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e68p0"]
