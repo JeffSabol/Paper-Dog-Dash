@@ -13,7 +13,7 @@ config_version=5
 config/name="Paper Dog"
 config/description="A platformer where a dog delivers newspaper to a house."
 run/main_scene="res://Levels/level_1.tscn"
-config/features=PackedStringArray("4.1", "Mobile")
+config/features=PackedStringArray("4.2", "Mobile")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 config/icon="res://Assets/Unsorted/PaperDogEmblem.png"
 

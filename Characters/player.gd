@@ -34,12 +34,18 @@ var jump_buffer_duration = 0.2
 var jump_buffer_timer = 0.0
 var jump_input_received = false
 
+# Coyote Jump
+var coyote_time_duration = 0.10
+var coyote_time_timer = 0.0
+var can_jump_during_coyote_time = false
+
 # Physics processing
 func _physics_process(delta):
 	update_jump_buffer(delta)
 	handle_jump_input()
 	handle_gravity_and_state(delta)
 	handle_input_and_movement(delta)
+	update_coyote_time(delta)
 
 # Jump input handling
 func handle_jump_input():
@@ -47,8 +53,10 @@ func handle_jump_input():
 		return
 		
 	if Input.is_action_just_pressed("ui_accept") and not is_peeing and not is_hurt:
-		if is_on_floor():
+		if is_on_floor() or can_jump_during_coyote_time:
 			perform_jump()
+			coyote_time_timer = 0
+			can_jump_during_coyote_time = false
 		else:
 			jump_input_received = true
 			jump_buffer_timer = jump_buffer_duration
@@ -90,6 +98,16 @@ func update_airborne_state():
 		state = PlayerState.JUMPING
 	elif velocity.y > 0.1 and not is_peeing and not is_hurt:
 		state = PlayerState.FALLING
+
+# Coyote jump time tracking
+func update_coyote_time(delta):
+	if is_on_floor():
+		coyote_time_timer = coyote_time_duration
+		can_jump_during_coyote_time = true
+	elif coyote_time_timer > 0:
+		coyote_time_timer -= delta
+	else:
+		can_jump_during_coyote_time = false
 
 # Update the player's state while on the ground
 func update_ground_state():
@@ -142,7 +160,12 @@ func update_animations():
 
 	# Update state based on velocity
 	if abs(velocity.x) < 10 and not is_peeing and not is_hurt:
-		state = PlayerState.STANDING
+		if velocity.y < 0: # negative velocity means you are going upgit 
+			state = PlayerState.JUMPING
+		elif velocity.y > 0:
+			state=PlayerState.FALLING
+		else:
+			state = PlayerState.STANDING
 
 	match state:
 		PlayerState.STANDING:

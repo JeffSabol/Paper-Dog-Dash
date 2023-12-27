@@ -18,7 +18,11 @@ func updateTimer():
 	$TimeCounter/Seconds.text = str(time_left)
 	
 	if time_left <= 0:
-		Global.goto_scene("res://Levels/level_1.tscn")
+		print(Global.level_count)
+		Global.level_count=1
+		Global.path_level="res://Levels/level_" + str(Global.level_count) + ".tscn"
+		print(Global.level_count)
+		Global._deferred_goto_next_level()
 		pass
 	
 
