@@ -591,3 +591,9 @@ position = Vector2(160, -7)
 stream = ExtResource("13_7l2kp")
 autoplay = true
 max_distance = 20000.0
+
+[connection signal="bone_picked_up" from="BoneList/Bone1" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone2" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone3" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone4" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone5" to="Player/HUD" method="_on_bone_picked_up"]
