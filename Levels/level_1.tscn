@@ -74,12 +74,14 @@ texture = ExtResource("2_iew6x")
 0:1/0 = 0
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
 2:1/0 = 0
 2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
 3:1/0 = 0
 3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:1/0/physics_layer_0/angular_velocity = 0.0
@@ -137,6 +139,7 @@ texture = ExtResource("2_iew6x")
 1:2/0 = 0
 1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:2/0 = 0
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
@@ -507,48 +510,48 @@ layer_0/tile_data = PackedInt32Array(0, 393216, 0, 1, 458752, 0, 2, 458752, 0, 3
 
 [node name="PineTrees" type="Node2D" parent="."]
 
-[node name="PineTree1w" type="Sprite2D" parent="PineTrees"]
+[node name="PineTree1" type="Sprite2D" parent="PineTrees"]
 position = Vector2(-401, -126)
 scale = Vector2(1.00949, 1)
 texture = ExtResource("12_w503l")
 
-[node name="PineTree2w" type="Sprite2D" parent="PineTrees"]
+[node name="PineTree2" type="Sprite2D" parent="PineTrees"]
 position = Vector2(121, -30)
 scale = Vector2(1.00949, 1)
 texture = ExtResource("12_w503l")
 
 [node name="PineTree3" type="Sprite2D" parent="PineTrees"]
-position = Vector2(656, -15)
-scale = Vector2(1.00949, 1)
-texture = ExtResource("12_w503l")
-
-[node name="PineTree4w" type="Sprite2D" parent="PineTrees"]
-position = Vector2(1295, -110)
-scale = Vector2(1.00949, 1)
-texture = ExtResource("12_w503l")
-
-[node name="PineTree5w" type="Sprite2D" parent="PineTrees"]
-position = Vector2(1389, -110)
+position = Vector2(656, -14)
 scale = Vector2(1.00949, 1)
 texture = ExtResource("12_w503l")
 
 [node name="PineTree4" type="Sprite2D" parent="PineTrees"]
-position = Vector2(3785, 98)
+position = Vector2(1295, -110)
 scale = Vector2(1.00949, 1)
 texture = ExtResource("12_w503l")
 
 [node name="PineTree5" type="Sprite2D" parent="PineTrees"]
-position = Vector2(1616.15, -174)
+position = Vector2(1389, -110)
 scale = Vector2(1.00949, 1)
 texture = ExtResource("12_w503l")
 
 [node name="PineTree6" type="Sprite2D" parent="PineTrees"]
-position = Vector2(1655.15, -174)
+position = Vector2(1616.15, -174)
 scale = Vector2(1.00949, 1)
 texture = ExtResource("12_w503l")
 
 [node name="PineTree7" type="Sprite2D" parent="PineTrees"]
+position = Vector2(1655.15, -174)
+scale = Vector2(1.00949, 1)
+texture = ExtResource("12_w503l")
+
+[node name="PineTree8" type="Sprite2D" parent="PineTrees"]
 position = Vector2(1694.15, -174)
+scale = Vector2(1.00949, 1)
+texture = ExtResource("12_w503l")
+
+[node name="PineTree9" type="Sprite2D" parent="PineTrees"]
+position = Vector2(3785, 98)
 scale = Vector2(1.00949, 1)
 texture = ExtResource("12_w503l")
 
@@ -583,22 +586,25 @@ position = Vector2(936, -39)
 [node name="Bone5" parent="BoneList" instance=ExtResource("7_8yygl")]
 position = Vector2(1089, -55)
 
-[node name="Bone0" parent="BoneList" instance=ExtResource("7_8yygl")]
-position = Vector2(2937, 281)
-
 [node name="Bone6" parent="BoneList" instance=ExtResource("7_8yygl")]
-position = Vector2(3081, 281)
+position = Vector2(3032, 169)
 
 [node name="Bone7" parent="BoneList" instance=ExtResource("7_8yygl")]
-position = Vector2(3216, 233)
+position = Vector2(2937, 281)
 
 [node name="Bone8" parent="BoneList" instance=ExtResource("7_8yygl")]
-position = Vector2(3383, 185)
+position = Vector2(3081, 281)
 
 [node name="Bone9" parent="BoneList" instance=ExtResource("7_8yygl")]
-position = Vector2(3608, 185)
+position = Vector2(3216, 233)
 
 [node name="Bone10" parent="BoneList" instance=ExtResource("7_8yygl")]
+position = Vector2(3383, 185)
+
+[node name="Bone11" parent="BoneList" instance=ExtResource("7_8yygl")]
+position = Vector2(3608, 185)
+
+[node name="Bone12" parent="BoneList" instance=ExtResource("7_8yygl")]
 position = Vector2(3656, 137)
 
 [node name="House" parent="." instance=ExtResource("5_kgb76")]
@@ -630,3 +636,10 @@ max_distance = 20000.0
 [connection signal="bone_picked_up" from="BoneList/Bone3" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone4" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone5" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone6" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone7" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone8" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone9" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone10" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone11" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone12" to="Player/HUD" method="_on_bone_picked_up"]

@@ -41,4 +41,4 @@ func _on_jump_timer_timeout():
 func _on_area_2d_body_entered(body):
 	if body is Player:
 		body.hurt()
-		
+		Global.total_time -= 5
