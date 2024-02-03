@@ -46,7 +46,6 @@ func _physics_process(delta):
 	handle_gravity_and_state(delta)
 	handle_input_and_movement(delta)
 	update_coyote_time(delta)
-	
 
 # Jump input handling
 func handle_jump_input():
@@ -123,13 +122,8 @@ func update_ground_state():
 func get_input_direction() -> int:
 	if is_peeing or is_hurt:  # Ignore movement input if peeing
 		return 0
-	# Joystick
-	var joy_vector = Vector2(
-		Input.get_joy_axis(0, 0),  # Horizontal Axis, Device 0, Axis 0
-		Input.get_joy_axis(0, 1)   # Vertical Axis, Device 0, Axis 1
-	)
 	if state != PlayerState.PEEING and state != PlayerState.HURT:
-		return Input.get_axis("ui_left", "ui_right")	
+		return Input.get_axis("ui_left", "ui_right")
 	return 0
 
 func move_character(direction: int, delta: float):
