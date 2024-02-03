@@ -52,7 +52,7 @@ func handle_jump_input():
 	if is_peeing or is_hurt:
 		return
 		
-	if Input.is_action_just_pressed("ui_accept") and not is_peeing and not is_hurt:
+	if Input.is_action_just_pressed("ui_accept") or Input.is_joy_button_pressed(0, JOY_BUTTON_B) and not is_peeing and not is_hurt:
 		if is_on_floor() or can_jump_during_coyote_time:
 			perform_jump()
 			coyote_time_timer = 0
@@ -128,7 +128,7 @@ func get_input_direction() -> int:
 
 func move_character(direction: int, delta: float):
 	var target_speed = SPEED
-	if Input.is_action_pressed("ui_shift"):
+	if Input.is_action_pressed("ui_shift") or Input.is_joy_button_pressed(0, JOY_BUTTON_A) and not is_crouching:
 		target_speed = BOOSTED_SPEED
 
 	var target_velocity_x = direction * (target_speed if state != PlayerState.CRAWL else CRAWL_SPEED)

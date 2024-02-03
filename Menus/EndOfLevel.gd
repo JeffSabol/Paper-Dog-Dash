@@ -17,5 +17,5 @@ func update_time_elapsed_display():
 	time_display.text = "Time: " + str(Global.total_time)
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") or Input.is_joy_button_pressed(0,JOY_BUTTON_A) or Input.is_joy_button_pressed(0,JOY_BUTTON_B) or Input.is_joy_button_pressed(0,JOY_BUTTON_X) or Input.is_joy_button_pressed(0,JOY_BUTTON_Y):
 		Global.goto_next_level()

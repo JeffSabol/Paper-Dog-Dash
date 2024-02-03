@@ -737,7 +737,7 @@ position = Vector2(-4307, -118)
 zoom = Vector2(2.5, 2.5)
 
 [node name="Newspaper" parent="." instance=ExtResource("6_cilcn")]
-position = Vector2(189, -303)
+position = Vector2(189, -278)
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_xbtxg")
