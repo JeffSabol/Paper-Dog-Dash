@@ -510,43 +510,7 @@ font_size = 39
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
-[node name="level_3" type="Node2D"]
-
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -389.0
-offset_top = -822.0
-offset_right = 2168.0
-offset_bottom = 370.0
-texture = ExtResource("1_7j8ed")
-stretch_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-offset_left = -2831.0
-offset_top = -826.0
-offset_right = -274.0
-offset_bottom = 366.0
-texture = ExtResource("1_7j8ed")
-stretch_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect4" type="TextureRect" parent="."]
-offset_left = -5388.0
-offset_top = -826.0
-offset_right = -2831.0
-offset_bottom = 366.0
-texture = ExtResource("1_7j8ed")
-stretch_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect3" type="TextureRect" parent="."]
-offset_left = 2168.0
-offset_top = -822.0
-offset_right = 4725.0
-offset_bottom = 370.0
-texture = ExtResource("1_7j8ed")
-stretch_mode = 1
-metadata/_edit_use_anchors_ = true
+[node name="level_2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-2, 1)
@@ -739,10 +703,11 @@ zoom = Vector2(2.5, 2.5)
 [node name="Newspaper" parent="." instance=ExtResource("6_cilcn")]
 position = Vector2(189, -278)
 
-[node name="Level Music" type="AudioStreamPlayer2D" parent="."]
+[node name="Level Music2" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-4031, -418)
 stream = ExtResource("12_xbtxg")
 autoplay = true
-max_distance = 20000.0
+max_distance = 30000.0
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("14_l1ya3")]
 
@@ -772,6 +737,47 @@ position = Vector2(-4486, -139)
 
 [node name="CharacterBody2D9" parent="." instance=ExtResource("14_l1ya3")]
 position = Vector2(-3362, -187)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = -389.0
+offset_top = -822.0
+offset_right = 2168.0
+offset_bottom = 370.0
+texture = ExtResource("1_7j8ed")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = -2831.0
+offset_top = -826.0
+offset_right = -274.0
+offset_bottom = 366.0
+texture = ExtResource("1_7j8ed")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect4" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = -5388.0
+offset_top = -826.0
+offset_right = -2831.0
+offset_bottom = 366.0
+texture = ExtResource("1_7j8ed")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect3" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 2168.0
+offset_top = -822.0
+offset_right = 4725.0
+offset_bottom = 370.0
+texture = ExtResource("1_7j8ed")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="bone_picked_up" from="BoneList/Bone1" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone11" to="Player/HUD" method="_on_bone_picked_up"]

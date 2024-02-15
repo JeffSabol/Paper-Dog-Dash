@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://kjx0ehwc3qy"]
+[gd_scene load_steps=44 format=3 uid="uid://kjx0ehwc3qy"]
 
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_5vcrj"]
 [ext_resource type="Texture2D" uid="uid://b1gijyai74025" path="res://Assets/PixelFrog/Terrain/Terrain (16x16).png" id="2_b6xox"]
@@ -17,6 +17,7 @@
 [ext_resource type="FontFile" uid="uid://cuo28wcy83qw8" path="res://Assets/Font/dpcomic.ttf" id="11_2sh7h"]
 [ext_resource type="PackedScene" uid="uid://v6tdbqqiibu5" path="res://MoleRoamer.tscn" id="14_duoo8"]
 [ext_resource type="AudioStream" uid="uid://c5hbwug15bgrc" path="res://Assets/Audio/Gameplay Music/Level_Music.wav" id="14_uu226"]
+[ext_resource type="Script" path="res://Levels/ParallaxLayer.gd" id="17_rdppl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oytpd"]
 texture = ExtResource("2_b6xox")
@@ -646,34 +647,7 @@ font_size = 39
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
-[node name="level_4" type="Node2D"]
-
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -522.0
-offset_top = -834.0
-offset_right = 2035.0
-offset_bottom = 358.0
-texture = ExtResource("1_5vcrj")
-stretch_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-offset_left = 2035.0
-offset_top = -834.0
-offset_right = 4592.0
-offset_bottom = 358.0
-texture = ExtResource("1_5vcrj")
-stretch_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect3" type="TextureRect" parent="."]
-offset_left = 4592.0
-offset_top = -834.0
-offset_right = 7149.0
-offset_bottom = 358.0
-texture = ExtResource("1_5vcrj")
-stretch_mode = 1
-metadata/_edit_use_anchors_ = true
+[node name="level_3" type="Node2D"]
 
 [node name="PineTree1" type="Sprite2D" parent="."]
 position = Vector2(-330, -334)
@@ -1028,6 +1002,39 @@ position = Vector2(421, 89)
 stream = ExtResource("14_uu226")
 autoplay = true
 max_distance = 20000.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+script = ExtResource("17_rdppl")
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = -522.0
+offset_top = -834.0
+offset_right = 2035.0
+offset_bottom = 358.0
+texture = ExtResource("1_5vcrj")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 2035.0
+offset_top = -834.0
+offset_right = 4592.0
+offset_bottom = 358.0
+texture = ExtResource("1_5vcrj")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect3" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 4592.0
+offset_top = -834.0
+offset_right = 7149.0
+offset_bottom = 358.0
+texture = ExtResource("1_5vcrj")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="MoleJumperList/MoleJumper/JumpTimer" to="MoleJumperList/MoleJumper" method="_on_jump_timer_timeout"]
 [connection signal="body_entered" from="MoleJumperList/MoleJumper/Area2D" to="MoleJumperList/MoleJumper" method="_on_area_2d_body_entered"]
