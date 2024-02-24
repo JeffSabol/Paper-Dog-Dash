@@ -13,7 +13,7 @@
 [ext_resource type="FontFile" uid="uid://cuo28wcy83qw8" path="res://Assets/Font/dpcomic.ttf" id="9_rbjqo"]
 [ext_resource type="Texture2D" uid="uid://bead53im1swcj" path="res://Assets/HUD/HourGlass.png" id="10_8xnt2"]
 [ext_resource type="AudioStream" uid="uid://c5hbwug15bgrc" path="res://Assets/Audio/Gameplay Music/Level_Music.wav" id="12_xbtxg"]
-[ext_resource type="PackedScene" uid="uid://v6tdbqqiibu5" path="res://MoleRoamer.tscn" id="14_l1ya3"]
+[ext_resource type="PackedScene" uid="uid://v6tdbqqiibu5" path="res://Characters/Enemies/MoleRoamer.tscn" id="14_l1ya3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oytpd"]
 texture = ExtResource("2_5ve0v")
@@ -510,27 +510,9 @@ font_size = 39
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
-[node name="level_3" type="Node2D"]
+[node name="level_2" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -389.0
-offset_top = -822.0
-offset_right = 2168.0
-offset_bottom = 370.0
-texture = ExtResource("1_7j8ed")
-stretch_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-offset_left = -2831.0
-offset_top = -826.0
-offset_right = -274.0
-offset_bottom = 366.0
-texture = ExtResource("1_7j8ed")
-stretch_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect4" type="TextureRect" parent="."]
+[node name="Backdrop" type="TextureRect" parent="."]
 offset_left = -5388.0
 offset_top = -826.0
 offset_right = -2831.0
@@ -539,7 +521,25 @@ texture = ExtResource("1_7j8ed")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect3" type="TextureRect" parent="."]
+[node name="Backdrop2" type="TextureRect" parent="."]
+offset_left = -2831.0
+offset_top = -826.0
+offset_right = -274.0
+offset_bottom = 366.0
+texture = ExtResource("1_7j8ed")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Backdrop3" type="TextureRect" parent="."]
+offset_left = -389.0
+offset_top = -822.0
+offset_right = 2168.0
+offset_bottom = 370.0
+texture = ExtResource("1_7j8ed")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Backdrop4" type="TextureRect" parent="."]
 offset_left = 2168.0
 offset_top = -822.0
 offset_right = 4725.0
