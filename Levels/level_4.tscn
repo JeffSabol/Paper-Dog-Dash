@@ -789,6 +789,15 @@ texture = ExtResource("1_e6ntn")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Backdrop4" type="TextureRect" parent="."]
+offset_left = 3367.0
+offset_top = 287.0
+offset_right = 5924.0
+offset_bottom = 1479.0
+texture = ExtResource("1_e6ntn")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Trees" type="Node2D" parent="."]
 
 [node name="PineTree1" type="Sprite2D" parent="Trees"]
