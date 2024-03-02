@@ -1,3 +1,4 @@
+# Send the player to the End of Level scene
 extends Area2D
 
 @onready var sprite = $Sprite2D
