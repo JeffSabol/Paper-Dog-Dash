@@ -86,8 +86,6 @@ func handle_input_and_movement(delta):
 	move_character(direction, delta)
 	handle_crouch_logic()
 
-
-
 # Apply gravity to the player
 func apply_gravity(delta):
 	velocity.y += gravity * delta
