@@ -863,7 +863,7 @@ position = Vector2(4590, 311)
 position = Vector2(4718, 311)
 
 [node name="Newspaper" parent="." instance=ExtResource("16_kjt7u")]
-position = Vector2(-178, 90)
+position = Vector2(3758, 250)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-2, 1)
