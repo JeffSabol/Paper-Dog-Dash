@@ -650,13 +650,14 @@ position = Vector2(-466, -42)
 [node name="Bone14" parent="BoneList" instance=ExtResource("7_tqrdu")]
 position = Vector2(-222, 96)
 
-[node name="Bone7" parent="BoneList" instance=ExtResource("7_tqrdu")]
-position = Vector2(-206, 96)
-
 [node name="Bone13" parent="BoneList" instance=ExtResource("7_tqrdu")]
 position = Vector2(-190, 96)
 
+[node name="Bone20" parent="BoneList" instance=ExtResource("7_tqrdu")]
+position = Vector2(-78, -16)
+
 [node name="Bone8" parent="BoneList" instance=ExtResource("7_tqrdu")]
+position = Vector2(-366, 16)
 
 [node name="Bone9" parent="BoneList" instance=ExtResource("7_tqrdu")]
 position = Vector2(210, -32)
@@ -669,7 +670,7 @@ position = Vector2(3375, -242)
 scale = Vector2(1.5, 1.5)
 
 [node name="Player" parent="." instance=ExtResource("4_qfih0")]
-position = Vector2(-4307, -118)
+position = Vector2(-4395, -120)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -754,11 +755,11 @@ text = "32"
 label_settings = SubResource("LabelSettings_sgt6l")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-4307, -118)
+position = Vector2(-4395, -120)
 zoom = Vector2(2.5, 2.5)
 
 [node name="Newspaper" parent="." instance=ExtResource("6_cilcn")]
-position = Vector2(189, -278)
+position = Vector2(550, 42)
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_xbtxg")
@@ -808,8 +809,8 @@ position = Vector2(-3362, -187)
 [connection signal="bone_picked_up" from="BoneList/Bone4" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone5" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone14" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone7" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone13" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone20" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone8" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone9" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone10" to="Player/HUD" method="_on_bone_picked_up"]
