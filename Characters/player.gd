@@ -1,3 +1,5 @@
+# Jeff Sabol
+# player.gd : Uses scripting to breathe life into the player node.
 extends CharacterBody2D
 class_name Player
 

@@ -39,11 +39,17 @@ func _physics_process(delta):
 		if collider and collider.name == "Player":
 			collider.hurt()  # Apply damage to the player if collided
 			Global.total_time -= 5
-			enter_kill_state()  # Added to make the game more fair
+			if(Global.current_difficulty == Global.DifficultyLevel.HARD):
+				Global.total_time = 0
+			if(Global.current_difficulty == Global.DifficultyLevel.EASY):
+				enter_kill_state()  # Added to make the game more fair
 		if collider2 and collider2.name == "Player":
 			collider2.hurt()  # Apply damage to the player if collided
 			Global.total_time -= 5
-			enter_kill_state()  # Added to make the game more fair
+			if(Global.current_difficulty == Global.DifficultyLevel.HARD):
+				Global.total_time = 0
+			if(Global.current_difficulty == Global.DifficultyLevel.EASY):
+				enter_kill_state()  # Added to make the game more fair
 			
 	# Move and slide with the current velocity
 	move_and_slide()
