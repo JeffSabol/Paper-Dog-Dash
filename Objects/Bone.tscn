@@ -18,6 +18,6 @@ shape = SubResource("RectangleShape2D_10loj")
 
 [node name="Pickup" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_1m41q")
-volume_db = -16.0
+volume_db = -22.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
