@@ -533,48 +533,48 @@ layer_0/tile_data = PackedInt32Array(0, 393217, 0, 1, 458753, 0, 2, 458753, 0, 3
 [node name="PineTrees" type="Node2D" parent="."]
 
 [node name="PineTree1" type="Sprite2D" parent="PineTrees"]
-position = Vector2(-401, -126)
-scale = Vector2(1.00949, 1)
+position = Vector2(-401, -158)
+scale = Vector2(2, 2)
 texture = ExtResource("12_w503l")
 
 [node name="PineTree2" type="Sprite2D" parent="PineTrees"]
-position = Vector2(121, -30)
-scale = Vector2(1.00949, 1)
+position = Vector2(121, -62)
+scale = Vector2(2, 2)
 texture = ExtResource("12_w503l")
 
 [node name="PineTree3" type="Sprite2D" parent="PineTrees"]
-position = Vector2(656, -14)
-scale = Vector2(1.00949, 1)
+position = Vector2(656, -46)
+scale = Vector2(2, 2)
 texture = ExtResource("12_w503l")
 
 [node name="PineTree4" type="Sprite2D" parent="PineTrees"]
-position = Vector2(1295, -110)
-scale = Vector2(1.00949, 1)
+position = Vector2(1295, -142)
+scale = Vector2(2, 2)
 texture = ExtResource("12_w503l")
 
 [node name="PineTree5" type="Sprite2D" parent="PineTrees"]
-position = Vector2(1389, -110)
-scale = Vector2(1.00949, 1)
+position = Vector2(1389, -142)
+scale = Vector2(2, 2)
 texture = ExtResource("12_w503l")
 
 [node name="PineTree6" type="Sprite2D" parent="PineTrees"]
-position = Vector2(1616.15, -174)
-scale = Vector2(1.00949, 1)
+position = Vector2(1584.15, -206)
+scale = Vector2(2, 2)
 texture = ExtResource("12_w503l")
 
 [node name="PineTree7" type="Sprite2D" parent="PineTrees"]
-position = Vector2(1655.15, -174)
-scale = Vector2(1.00949, 1)
+position = Vector2(1655.15, -206)
+scale = Vector2(2, 2)
 texture = ExtResource("12_w503l")
 
 [node name="PineTree8" type="Sprite2D" parent="PineTrees"]
-position = Vector2(1694.15, -174)
-scale = Vector2(1.00949, 1)
+position = Vector2(1726.15, -206)
+scale = Vector2(2, 2)
 texture = ExtResource("12_w503l")
 
 [node name="PineTree9" type="Sprite2D" parent="PineTrees"]
-position = Vector2(3791, 98)
-scale = Vector2(1.00949, 1)
+position = Vector2(3791, 66)
+scale = Vector2(2, 2)
 texture = ExtResource("12_w503l")
 
 [node name="FireHydrantList" type="Node2D" parent="."]

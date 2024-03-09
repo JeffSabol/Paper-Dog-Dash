@@ -557,38 +557,38 @@ layer_0/tile_data = PackedInt32Array(0, 458752, 0, 720896, 458752, 2, 65536, 458
 [node name="Trees" type="Node2D" parent="."]
 
 [node name="PineTree1" type="Sprite2D" parent="Trees"]
-position = Vector2(1410, -222)
-scale = Vector2(1.00949, 1)
+position = Vector2(1379, -254)
+scale = Vector2(2, 2)
 texture = ExtResource("2_keq7s")
 
 [node name="PineTree2" type="Sprite2D" parent="Trees"]
-position = Vector2(1451, -222)
-scale = Vector2(1.00949, 1)
+position = Vector2(1451, -254)
+scale = Vector2(2, 2)
 texture = ExtResource("2_keq7s")
 
 [node name="PineTree3" type="Sprite2D" parent="Trees"]
-position = Vector2(1490, -222)
-scale = Vector2(1.00949, 1)
+position = Vector2(1522, -254)
+scale = Vector2(2, 2)
 texture = ExtResource("2_keq7s")
 
 [node name="PineTree4" type="Sprite2D" parent="Trees"]
-position = Vector2(2213.15, -302)
-scale = Vector2(1.00949, 1)
+position = Vector2(2213.15, -334)
+scale = Vector2(2, 2)
 texture = ExtResource("2_keq7s")
 
 [node name="PineTree5" type="Sprite2D" parent="Trees"]
-position = Vector2(2262.15, -302)
-scale = Vector2(1.00949, 1)
+position = Vector2(2262.15, -334)
+scale = Vector2(2, 2)
 texture = ExtResource("2_keq7s")
 
 [node name="PineTree6" type="Sprite2D" parent="Trees"]
-position = Vector2(-2987, -127)
-scale = Vector2(1.00949, 1)
+position = Vector2(-2987, -159)
+scale = Vector2(2, 2)
 texture = ExtResource("2_keq7s")
 
 [node name="PineTree7" type="Sprite2D" parent="Trees"]
-position = Vector2(-2859, -127)
-scale = Vector2(1.00949, 1)
+position = Vector2(-2859, -159)
+scale = Vector2(2, 2)
 texture = ExtResource("2_keq7s")
 
 [node name="FireHydrantList" type="Node2D" parent="."]

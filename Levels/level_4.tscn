@@ -801,53 +801,53 @@ metadata/_edit_use_anchors_ = true
 [node name="Trees" type="Node2D" parent="."]
 
 [node name="PineTree1" type="Sprite2D" parent="Trees"]
-position = Vector2(1597, -77)
-scale = Vector2(1.00949, 1)
+position = Vector2(1597, -108)
+scale = Vector2(2, 2)
 texture = ExtResource("2_f4q5y")
 
 [node name="PineTree2" type="Sprite2D" parent="Trees"]
-position = Vector2(1661, -78)
-scale = Vector2(1.00949, 1)
+position = Vector2(1661, -109)
+scale = Vector2(2, 2)
 texture = ExtResource("2_f4q5y")
 
 [node name="PineTree3" type="Sprite2D" parent="Trees"]
-position = Vector2(2694, 18)
-scale = Vector2(1.00949, 1)
+position = Vector2(2694, -13)
+scale = Vector2(2, 2)
 texture = ExtResource("2_f4q5y")
 
 [node name="PineTree4" type="Sprite2D" parent="Trees"]
-position = Vector2(2758, 18)
-scale = Vector2(1.00949, 1)
+position = Vector2(2758, -13)
+scale = Vector2(2, 2)
 texture = ExtResource("2_f4q5y")
 
 [node name="PineTree5" type="Sprite2D" parent="Trees"]
-position = Vector2(2982.15, 18)
-scale = Vector2(1.00949, 1)
+position = Vector2(2982.15, -13)
+scale = Vector2(2, 2)
 texture = ExtResource("2_f4q5y")
 
 [node name="PineTree6" type="Sprite2D" parent="Trees"]
-position = Vector2(3046.15, 18)
-scale = Vector2(1.00949, 1)
+position = Vector2(3046.15, -13)
+scale = Vector2(2, 2)
 texture = ExtResource("2_f4q5y")
 
 [node name="PineTree8" type="Sprite2D" parent="Trees"]
-position = Vector2(-357.848, 65)
-scale = Vector2(1.00949, 1)
+position = Vector2(-357.848, 34)
+scale = Vector2(2, 2)
 texture = ExtResource("2_f4q5y")
 
 [node name="PineTree9" type="Sprite2D" parent="Trees"]
-position = Vector2(-293.848, 65)
-scale = Vector2(1.00949, 1)
+position = Vector2(-293.848, 34)
+scale = Vector2(2, 2)
 texture = ExtResource("2_f4q5y")
 
 [node name="PineTree10" type="Sprite2D" parent="Trees"]
-position = Vector2(-69.6982, 65)
-scale = Vector2(1.00949, 1)
+position = Vector2(-69.6982, 34)
+scale = Vector2(2, 2)
 texture = ExtResource("2_f4q5y")
 
 [node name="PineTree11" type="Sprite2D" parent="Trees"]
-position = Vector2(-5.69824, 65)
-scale = Vector2(1.00949, 1)
+position = Vector2(-5.69824, 34)
+scale = Vector2(2, 2)
 texture = ExtResource("2_f4q5y")
 
 [node name="FireHydrantList2" type="Node2D" parent="."]

@@ -1163,48 +1163,48 @@ position = Vector2(3074, 54)
 [node name="Trees" type="Node2D" parent="."]
 
 [node name="PineTree1" type="Sprite2D" parent="Trees"]
-position = Vector2(2485, -14)
-scale = Vector2(1.00949, 1)
+position = Vector2(2485, -45)
+scale = Vector2(2, 2)
 texture = ExtResource("2_monow")
 
 [node name="PineTree2" type="Sprite2D" parent="Trees"]
-position = Vector2(2537, -14)
-scale = Vector2(1.00949, 1)
+position = Vector2(2537, -45)
+scale = Vector2(2, 2)
 texture = ExtResource("2_monow")
 
 [node name="PineTree3" type="Sprite2D" parent="Trees"]
-position = Vector2(3244.15, 18)
-scale = Vector2(1.00949, 1)
+position = Vector2(3244.15, -13)
+scale = Vector2(2, 2)
 texture = ExtResource("2_monow")
 
 [node name="PineTree4" type="Sprite2D" parent="Trees"]
-position = Vector2(3278.15, 18)
-scale = Vector2(1.00949, 1)
+position = Vector2(3278.15, -13)
+scale = Vector2(2, 2)
 texture = ExtResource("2_monow")
 
 [node name="PineTree5" type="Sprite2D" parent="Trees"]
-position = Vector2(3198, 18)
-scale = Vector2(1.00949, 1)
+position = Vector2(3198, -13)
+scale = Vector2(2, 2)
 texture = ExtResource("2_monow")
 
 [node name="PineTree6" type="Sprite2D" parent="Trees"]
-position = Vector2(3324, 18)
-scale = Vector2(1.00949, 1)
+position = Vector2(3324, -13)
+scale = Vector2(2, 2)
 texture = ExtResource("2_monow")
 
 [node name="PineTree9" type="Sprite2D" parent="Trees"]
-position = Vector2(-285, 65)
-scale = Vector2(1.00949, 1)
+position = Vector2(-285, 34)
+scale = Vector2(2, 2)
 texture = ExtResource("2_monow")
 
 [node name="PineTree10" type="Sprite2D" parent="Trees"]
-position = Vector2(-78, 66)
-scale = Vector2(1.00949, 1)
+position = Vector2(-78, 35)
+scale = Vector2(2, 2)
 texture = ExtResource("2_monow")
 
 [node name="PineTree11" type="Sprite2D" parent="Trees"]
-position = Vector2(-169, 66)
-scale = Vector2(1.00949, 1)
+position = Vector2(-169, 35)
+scale = Vector2(2, 2)
 texture = ExtResource("2_monow")
 
 [node name="FireHydrantList2" type="Node2D" parent="."]
