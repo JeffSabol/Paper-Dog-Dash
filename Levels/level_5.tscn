@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://d05vpq88xgqg3"]
+[gd_scene load_steps=62 format=3 uid="uid://ibux22cp30od"]
 
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_aqfth"]
 [ext_resource type="Script" path="res://Levels/MoleJumper.gd" id="2_elvx2"]

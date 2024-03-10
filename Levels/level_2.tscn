@@ -577,7 +577,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_keq7s")
 
 [node name="PineTree5" type="Sprite2D" parent="Trees"]
-position = Vector2(2262.15, -334)
+position = Vector2(3053, -270)
 scale = Vector2(2, 2)
 texture = ExtResource("2_keq7s")
 
@@ -666,7 +666,7 @@ position = Vector2(210, -32)
 position = Vector2(400, -128)
 
 [node name="House" parent="." instance=ExtResource("5_buqb3")]
-position = Vector2(3375, -242)
+position = Vector2(3740, -195)
 scale = Vector2(1.5, 1.5)
 
 [node name="Player" parent="." instance=ExtResource("4_qfih0")]
