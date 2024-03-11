@@ -111,6 +111,9 @@ func update_coyote_time(delta):
 
 # Update the player's state while on the ground
 func update_ground_state():
+	if is_on_floor():
+		if is_crouching and not Input.is_action_pressed("ui_down") and above_head_is_empty():
+			uncrouch()
 	if velocity.x == 0 and not is_crouching and not is_peeing and not is_hurt:
 		state = PlayerState.STANDING
 	elif velocity.x != 0 and is_crouching and not is_peeing and not is_hurt:
@@ -141,7 +144,7 @@ func handle_crouch_logic():
 	if Input.is_action_just_pressed("ui_down"):
 		crouch()
 	elif Input.is_action_just_released("ui_down"):
-		if above_head_is_empty():
+		if above_head_is_empty() and is_on_floor():
 			uncrouch()
 		elif not stuck_under_object:
 			stuck_under_object = true
@@ -208,10 +211,11 @@ func crouch():
 func uncrouch():
 	if state == PlayerState.PEEING or state == PlayerState.HURT or not is_crouching:
 		return
-	is_crouching = false
-	state = PlayerState.STANDING  # Return to standing state when uncrouching
-	collision_shape.shape = standing_collision_shape
-	collision_shape.position.y = STANDING_COLLISION_Y_POS
+	if is_on_floor():
+		is_crouching = false
+		state = PlayerState.STANDING  # Return to standing state when uncrouching
+		collision_shape.shape = standing_collision_shape
+		collision_shape.position.y = STANDING_COLLISION_Y_POS
 
 # Pee functionality
 func pee():
