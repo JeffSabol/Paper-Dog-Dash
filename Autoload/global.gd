@@ -27,7 +27,13 @@ var total_time: int = 170
 # Difficulty handling
 var current_difficulty: int = DifficultyLevel.EASY
 
+# Pausing
+var is_paused: bool = false
+var pause_menu: Control = null
+
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS # We don't want to pause our autoloader
+	
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
 
@@ -90,3 +96,34 @@ func set_difficulty(new_difficulty: int) -> void:
 
 func get_difficulty() -> int:
 	return current_difficulty
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		toggle_pause()
+
+func toggle_pause() -> void:
+	# Show/hide pause menu
+	is_paused = !is_paused
+	
+	
+	if is_paused:
+		if not pause_menu:
+			pause_menu = load("res://Menus/pause_menu.tscn").instantiate()
+			
+			var hud = current_scene.get_node("Player/HUD")
+			
+			if hud:
+				# Set the pause menu's position to the center of the HUD
+				hud.add_child(pause_menu)
+				#pause_menu.set_position(hud.rect_size / 2 - pause_menu.rect_size / 2)
+			else:
+				print("HUD not found")
+			
+	else:
+		# Remove the pause menu
+		if pause_menu and pause_menu.get_parent() == current_scene.get_node("Player/HUD"):
+			current_scene.remove_child(pause_menu)
+			pause_menu.queue_free()
+			pause_menu = null
+
+	get_tree().paused = is_paused

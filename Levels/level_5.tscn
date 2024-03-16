@@ -759,7 +759,7 @@ font_size = 39
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
-[node name="level_4" type="Node2D"]
+[node name="level_5" type="Node2D"]
 position = Vector2(-8, 0)
 
 [node name="Backdrop" type="TextureRect" parent="."]
