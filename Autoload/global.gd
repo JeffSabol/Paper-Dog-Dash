@@ -115,10 +115,8 @@ func toggle_pause() -> void:
 			if hud:
 				# Set the pause menu's position to the center of the HUD
 				hud.add_child(pause_menu)
-				#pause_menu.set_position(hud.rect_size / 2 - pause_menu.rect_size / 2)
 			else:
 				print("HUD not found")
-			
 	else:
 		# Remove the pause menu
 		if pause_menu and pause_menu.get_parent() == current_scene.get_node("Player/HUD"):

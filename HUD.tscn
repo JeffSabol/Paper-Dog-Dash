@@ -35,8 +35,10 @@ script = ExtResource("1_0a344")
 [node name="BoneCounter" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -61.0
+offset_top = 34.0
+offset_right = -21.0
+offset_bottom = 74.0
 
 [node name="BoneTexture" type="TextureRect" parent="BoneCounter"]
 layout_mode = 0
@@ -69,8 +71,10 @@ label_settings = SubResource("LabelSettings_ew5pt")
 [node name="TimeCounter" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -60.0
+offset_top = 34.0
+offset_right = -20.0
+offset_bottom = 74.0
 
 [node name="HourGlass" type="TextureRect" parent="TimeCounter"]
 layout_mode = 0

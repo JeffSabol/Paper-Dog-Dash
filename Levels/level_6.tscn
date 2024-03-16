@@ -1355,7 +1355,7 @@ position = Vector2(7057, 429)
 scale = Vector2(1.5, 1.5)
 
 [node name="Player" parent="." instance=ExtResource("15_uv2dd")]
-position = Vector2(-5487, -1308)
+position = Vector2(-5544, -1224)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -1439,7 +1439,7 @@ text = "32"
 label_settings = SubResource("LabelSettings_sgt6l")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-5487, -1308)
+position = Vector2(-5544, -1224)
 zoom = Vector2(2.5, 2.5)
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
