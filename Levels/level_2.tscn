@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b8fnpvfr24obf"]
+[gd_scene load_steps=14 format=3 uid="uid://b8fnpvfr24obf"]
 
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_7j8ed"]
 [ext_resource type="Texture2D" uid="uid://b1gijyai74025" path="res://Assets/PixelFrog/Terrain/Terrain (16x16).png" id="2_5ve0v"]
@@ -7,11 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://ble575txva0hm" path="res://Characters/player.tscn" id="4_qfih0"]
 [ext_resource type="PackedScene" uid="uid://dtsc0g5olhra3" path="res://Objects/House.tscn" id="5_buqb3"]
 [ext_resource type="PackedScene" uid="uid://cyn0a1hyfvvwa" path="res://Objects/Newspaper.tscn" id="6_cilcn"]
-[ext_resource type="Script" path="res://Levels/HUD.gd" id="7_8gut6"]
 [ext_resource type="PackedScene" uid="uid://bh524wb3pvctb" path="res://Objects/Bone.tscn" id="7_tqrdu"]
-[ext_resource type="Texture2D" uid="uid://cv8kemvndniu3" path="res://Assets/Environment/Bone.png" id="8_t1s3i"]
-[ext_resource type="FontFile" uid="uid://cuo28wcy83qw8" path="res://Assets/Font/dpcomic.ttf" id="9_rbjqo"]
-[ext_resource type="Texture2D" uid="uid://bead53im1swcj" path="res://Assets/HUD/HourGlass.png" id="10_8xnt2"]
+[ext_resource type="PackedScene" uid="uid://cc8fx2uvaws46" path="res://HUD.tscn" id="8_ynca7"]
 [ext_resource type="AudioStream" uid="uid://c5hbwug15bgrc" path="res://Assets/Audio/Gameplay Music/Level_Music.wav" id="12_xbtxg"]
 [ext_resource type="PackedScene" uid="uid://v6tdbqqiibu5" path="res://Characters/Enemies/MoleRoamer.tscn" id="14_l1ya3"]
 
@@ -486,30 +483,6 @@ texture = ExtResource("2_5ve0v")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_oytpd")
 
-[sub_resource type="LabelSettings" id="LabelSettings_8ub1x"]
-font = ExtResource("9_rbjqo")
-font_size = 32
-outline_size = 6
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_idpoj"]
-font = ExtResource("9_rbjqo")
-font_size = 39
-outline_size = 8
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_shc6y"]
-font = ExtResource("9_rbjqo")
-font_size = 32
-outline_size = 6
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_sgt6l"]
-font = ExtResource("9_rbjqo")
-font_size = 39
-outline_size = 8
-outline_color = Color(0, 0, 0, 1)
-
 [node name="level_2" type="Node2D"]
 
 [node name="Backdrop" type="TextureRect" parent="."]
@@ -675,84 +648,11 @@ position = Vector2(-4395, -120)
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 
-[node name="HUD" type="Control" parent="Player"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -81.0
-offset_top = 24.0
-offset_right = -41.0
-offset_bottom = 64.0
-script = ExtResource("7_8gut6")
-
-[node name="BoneCounter" type="Control" parent="Player/HUD"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="BoneTexture" type="TextureRect" parent="Player/HUD/BoneCounter"]
-layout_mode = 0
-offset_left = -164.0
-offset_top = -159.0
-offset_right = -124.0
-offset_bottom = -119.0
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("8_t1s3i")
-
-[node name="X" type="Label" parent="Player/HUD/BoneCounter"]
-layout_mode = 0
-offset_left = -124.0
-offset_top = -154.0
-offset_right = -84.0
-offset_bottom = -121.0
-text = "x"
-label_settings = SubResource("LabelSettings_8ub1x")
-
-[node name="Bones" type="Label" parent="Player/HUD/BoneCounter"]
-texture_filter = 1
-layout_mode = 0
-offset_left = -98.0
-offset_top = -159.0
-offset_right = -14.0
-offset_bottom = -97.0
-text = "32"
-label_settings = SubResource("LabelSettings_idpoj")
-
-[node name="TimeCounter" type="Control" parent="Player/HUD"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HourGlass" type="TextureRect" parent="Player/HUD/TimeCounter"]
-layout_mode = 0
-offset_left = 225.0
-offset_top = -158.0
-offset_right = 265.0
-offset_bottom = -118.0
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("10_8xnt2")
-
-[node name="LevelTimer" type="Timer" parent="Player/HUD/TimeCounter"]
-wait_time = 0.639
-autostart = true
-
-[node name="Colon" type="Label" parent="Player/HUD/TimeCounter"]
-layout_mode = 0
-offset_left = 264.0
-offset_top = -159.0
-offset_right = 304.0
-offset_bottom = -126.0
-text = ":"
-label_settings = SubResource("LabelSettings_shc6y")
-
-[node name="Seconds" type="Label" parent="Player/HUD/TimeCounter"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 280.0
-offset_top = -159.0
-offset_right = 364.0
-offset_bottom = -97.0
-text = "32"
-label_settings = SubResource("LabelSettings_sgt6l")
+[node name="HUD" parent="Player" instance=ExtResource("8_ynca7")]
+offset_left = -23.0
+offset_top = -8.0
+offset_right = 17.0
+offset_bottom = 32.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-4395, -120)
@@ -794,24 +694,3 @@ position = Vector2(-4486, -139)
 
 [node name="CharacterBody2D9" parent="." instance=ExtResource("14_l1ya3")]
 position = Vector2(-3362, -187)
-
-[connection signal="bone_picked_up" from="BoneList/Bone1" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone2" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone3" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone4" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone5" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone6" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone7" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone8" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone9" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone10" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone11" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone12" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone13" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone14" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone15" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/BoneDecoration1" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/BoneDecoration2" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone16" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone17" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="timeout" from="Player/HUD/TimeCounter/LevelTimer" to="Player/HUD" method="_on_level_timer_timeout"]
