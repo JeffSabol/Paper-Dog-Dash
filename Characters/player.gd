@@ -126,6 +126,9 @@ func get_input_direction() -> int:
 	if is_peeing or is_hurt:  # Ignore movement input if peeing
 		return 0
 	if state != PlayerState.PEEING and state != PlayerState.HURT:
+		var joystick_direction = Input.get_joy_axis(0, JOY_AXIS_LEFT_X)
+		if abs(joystick_direction) > 0.2:
+			return sign(joystick_direction)
 		return Input.get_axis("ui_left", "ui_right")
 	return 0
 
