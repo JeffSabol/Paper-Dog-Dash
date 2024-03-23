@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://80fwlu0vjruv"]
+[gd_scene load_steps=13 format=3 uid="uid://80fwlu0vjruv"]
 
 [ext_resource type="Texture2D" uid="uid://bq4xfk7gexmlm" path="res://Assets/Menu/PawPrint.png" id="1_psaom"]
 [ext_resource type="Script" path="res://Menus/pause_menu.gd" id="1_xn8io"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cyavmse50khoh" path="res://Assets/Menu/PAWS/SETTINGS_HOVER.png" id="6_mmxa0"]
 [ext_resource type="Script" path="res://Menus/ResumeButton.gd" id="6_qo60y"]
 [ext_resource type="Texture2D" uid="uid://c3oilk82grf65" path="res://Assets/Menu/PAWS/EXIT_HOVER.png" id="8_rwmm8"]
+[ext_resource type="Script" path="res://Menus/ExitButton.gd" id="11_cy00v"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tb7jj"]
 font = ExtResource("2_xtdef")
@@ -79,3 +80,6 @@ tooltip_text = "Resume playing the game"
 texture_normal = ExtResource("4_dqbj5")
 texture_hover = ExtResource("8_rwmm8")
 texture_focused = ExtResource("8_rwmm8")
+script = ExtResource("11_cy00v")
+
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="VBoxContainer/ExitButton" method="_on_pressed"]

@@ -14,7 +14,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var player_sprite = $AnimatedSprite2D
 @onready var walk_timer = $WalkTimer
 @onready var turn_timer = $TurnTimer
-		
+
+func _ready():
+	player_sprite.speed_scale = 0.5
+	player_sprite.play("idle")
+
 func _physics_process(delta):
 	# Apply gravity
 	velocity.y += gravity * delta
@@ -22,7 +26,6 @@ func _physics_process(delta):
 	
 func _on_walk_timer_timeout():
 	pass # Replace with function body.
-
 
 func _on_turn_timer_timeout():
 	pass # Replace with function body.
