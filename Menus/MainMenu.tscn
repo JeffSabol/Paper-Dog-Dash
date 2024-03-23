@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bvn5gy6ac6uio"]
+[gd_scene load_steps=15 format=3 uid="uid://bvn5gy6ac6uio"]
 
 [ext_resource type="Texture2D" uid="uid://b1gijyai74025" path="res://Assets/PixelFrog/Terrain/Terrain (16x16).png" id="1_5ycr6"]
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_x1hmu"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://djdmigpffgs86" path="res://Assets/Buttons/PlayNew.png" id="6_firx6"]
 [ext_resource type="Texture2D" uid="uid://ctj82u7m7bab3" path="res://Assets/Buttons/SettingsNew.png" id="7_5wqer"]
 [ext_resource type="Script" path="res://Characters/menu_puppet.gd" id="7_66gn3"]
+[ext_resource type="Texture2D" uid="uid://b27i3gcv85kiq" path="res://Assets/Buttons/SettingsNewHover.png" id="8_ieiyd"]
 [ext_resource type="Texture2D" uid="uid://cvr6m08cxk47t" path="res://Assets/Buttons/ExitNew.png" id="8_trsci"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oy7is"]
@@ -518,6 +519,7 @@ texture_normal = ExtResource("6_firx6")
 [node name="SettingsButton" type="TextureButton" parent="Control/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("7_5wqer")
+texture_hover = ExtResource("8_ieiyd")
 
 [node name="ExitButton" type="TextureButton" parent="Control/HBoxContainer"]
 layout_mode = 2
