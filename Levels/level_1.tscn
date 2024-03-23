@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://tr7r78cu1i56"]
+[gd_scene load_steps=14 format=3 uid="uid://tr7r78cu1i56"]
 
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_ateu6"]
 [ext_resource type="PackedScene" uid="uid://ble575txva0hm" path="res://Characters/player.tscn" id="2_a56jg"]
@@ -8,13 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://cyn0a1hyfvvwa" path="res://Objects/Newspaper.tscn" id="6_1165n"]
 [ext_resource type="PackedScene" uid="uid://bh524wb3pvctb" path="res://Objects/Bone.tscn" id="7_8yygl"]
 [ext_resource type="PackedScene" uid="uid://cc8fx2uvaws46" path="res://HUD.tscn" id="8_sloql"]
-[ext_resource type="Script" path="res://Levels/HUD.gd" id="11_2v5i5"]
 [ext_resource type="PackedScene" uid="uid://v6tdbqqiibu5" path="res://Characters/Enemies/MoleRoamer.tscn" id="11_ju57m"]
-[ext_resource type="Texture2D" uid="uid://cv8kemvndniu3" path="res://Assets/Environment/Bone.png" id="12_bnvrf"]
 [ext_resource type="Texture2D" uid="uid://dpa3pwfbbn1mp" path="res://Assets/Environment/PineTree.png" id="12_w503l"]
 [ext_resource type="AudioStream" uid="uid://c5hbwug15bgrc" path="res://Assets/Audio/Gameplay Music/Level_Music.wav" id="13_7l2kp"]
-[ext_resource type="FontFile" uid="uid://cuo28wcy83qw8" path="res://Assets/Font/dpcomic.ttf" id="13_xub8u"]
-[ext_resource type="Texture2D" uid="uid://bead53im1swcj" path="res://Assets/HUD/HourGlass.png" id="14_wn8n8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_akk0o"]
 texture = ExtResource("2_iew6x")
@@ -485,30 +481,6 @@ texture = ExtResource("2_iew6x")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_akk0o")
 
-[sub_resource type="LabelSettings" id="LabelSettings_ab1ku"]
-font = ExtResource("13_xub8u")
-font_size = 32
-outline_size = 6
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_bfgg8"]
-font = ExtResource("13_xub8u")
-font_size = 39
-outline_size = 8
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_jvruf"]
-font = ExtResource("13_xub8u")
-font_size = 32
-outline_size = 6
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_qcbsg"]
-font = ExtResource("13_xub8u")
-font_size = 39
-outline_size = 8
-outline_color = Color(0, 0, 0, 1)
-
 [node name="Level1" type="Node2D"]
 metadata/_edit_vertical_guides_ = []
 
@@ -749,91 +721,6 @@ max_distance = 20000.0
 position = Vector2(-6787, 261)
 scale = Vector2(8, 8)
 
-[node name="Player2" parent="." instance=ExtResource("2_a56jg")]
-position = Vector2(-4395, -120)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player2"]
-remote_path = NodePath("../../Camera2D")
-
-[node name="HUD" type="Control" parent="Player2"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -81.0
-offset_top = 24.0
-offset_right = -41.0
-offset_bottom = 64.0
-script = ExtResource("11_2v5i5")
-
-[node name="BoneCounter" type="Control" parent="Player2/HUD"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="BoneTexture" type="TextureRect" parent="Player2/HUD/BoneCounter"]
-layout_mode = 0
-offset_left = -164.0
-offset_top = -159.0
-offset_right = -124.0
-offset_bottom = -119.0
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("12_bnvrf")
-
-[node name="X" type="Label" parent="Player2/HUD/BoneCounter"]
-layout_mode = 0
-offset_left = -124.0
-offset_top = -154.0
-offset_right = -84.0
-offset_bottom = -121.0
-text = "x"
-label_settings = SubResource("LabelSettings_ab1ku")
-
-[node name="Bones" type="Label" parent="Player2/HUD/BoneCounter"]
-texture_filter = 1
-layout_mode = 0
-offset_left = -98.0
-offset_top = -159.0
-offset_right = -14.0
-offset_bottom = -97.0
-text = "32"
-label_settings = SubResource("LabelSettings_bfgg8")
-
-[node name="TimeCounter" type="Control" parent="Player2/HUD"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HourGlass" type="TextureRect" parent="Player2/HUD/TimeCounter"]
-layout_mode = 0
-offset_left = 225.0
-offset_top = -158.0
-offset_right = 265.0
-offset_bottom = -118.0
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("14_wn8n8")
-
-[node name="LevelTimer" type="Timer" parent="Player2/HUD/TimeCounter"]
-wait_time = 0.639
-autostart = true
-
-[node name="Colon" type="Label" parent="Player2/HUD/TimeCounter"]
-layout_mode = 0
-offset_left = 264.0
-offset_top = -159.0
-offset_right = 304.0
-offset_bottom = -126.0
-text = ":"
-label_settings = SubResource("LabelSettings_jvruf")
-
-[node name="Seconds" type="Label" parent="Player2/HUD/TimeCounter"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 280.0
-offset_top = -159.0
-offset_right = 364.0
-offset_bottom = -97.0
-text = "32"
-label_settings = SubResource("LabelSettings_qcbsg")
-
 [connection signal="bone_picked_up" from="BoneList/Bone1" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone2" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone3" to="Player/HUD" method="_on_bone_picked_up"]
@@ -864,4 +751,3 @@ label_settings = SubResource("LabelSettings_qcbsg")
 [connection signal="bone_picked_up" from="BoneList/Bone15" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone11" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone12" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="timeout" from="Player2/HUD/TimeCounter/LevelTimer" to="Player2/HUD" method="_on_level_timer_timeout"]
