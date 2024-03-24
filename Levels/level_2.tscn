@@ -654,17 +654,17 @@ offset_top = -8.0
 offset_right = 17.0
 offset_bottom = 32.0
 
+[node name="Level Music" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("12_xbtxg")
+autoplay = true
+max_distance = 20000.0
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-4395, -120)
 zoom = Vector2(2.5, 2.5)
 
 [node name="Newspaper" parent="." instance=ExtResource("6_cilcn")]
 position = Vector2(550, 42)
-
-[node name="Level Music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_xbtxg")
-autoplay = true
-max_distance = 20000.0
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("14_l1ya3")]
 

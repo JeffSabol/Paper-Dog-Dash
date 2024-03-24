@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bvn5gy6ac6uio"]
+[gd_scene load_steps=21 format=3 uid="uid://bvn5gy6ac6uio"]
 
 [ext_resource type="Texture2D" uid="uid://b1gijyai74025" path="res://Assets/PixelFrog/Terrain/Terrain (16x16).png" id="1_5ycr6"]
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_x1hmu"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://detutx0c45isf" path="res://Assets/Buttons/ExitNewHover.png" id="11_36r43"]
 [ext_resource type="Texture2D" uid="uid://bqd2xr1t0d5ao" path="res://Assets/Buttons/SettingsNewPressed.png" id="11_qtryw"]
 [ext_resource type="Texture2D" uid="uid://2wuya68es3vf" path="res://Assets/Buttons/ExitNewPressed.png" id="14_2b1pr"]
+[ext_resource type="AudioStream" uid="uid://drnnjjv7r2wfg" path="res://Assets/Audio/menu/Menu Music/Menu_Music.wav" id="17_2kf0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oy7is"]
 resource_name = "1"
@@ -552,6 +553,10 @@ texture_normal = ExtResource("8_trsci")
 texture_pressed = ExtResource("14_2b1pr")
 texture_hover = ExtResource("11_36r43")
 texture_focused = ExtResource("11_36r43")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_2kf0m")
+autoplay = true
 
 [connection signal="timeout" from="Player/WalkTimer" to="Player" method="_on_walk_timer_timeout"]
 [connection signal="timeout" from="Player/TurnTimer" to="Player" method="_on_turn_timer_timeout"]
