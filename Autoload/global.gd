@@ -107,6 +107,7 @@ func toggle_pause() -> void:
 	
 	if current_scene.name.begins_with("level_"):
 		var hud = current_scene.get_node("Player/HUD")
+			
 		if is_paused:
 			if not pause_menu:
 				pause_menu = load("res://Menus/pause_menu.tscn").instantiate()

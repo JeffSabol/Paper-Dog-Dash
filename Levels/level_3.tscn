@@ -832,11 +832,11 @@ polygon = PackedVector2Array(-11, -12, -11, 16, 12, 16, 12, -12)
 [node name="BoneList" type="Node2D" parent="."]
 position = Vector2(756, -55)
 
-[node name="Bone1" parent="BoneList" instance=ExtResource("8_l6qck")]
-position = Vector2(-606, -112)
-
 [node name="Bone12" parent="BoneList" instance=ExtResource("8_l6qck")]
 position = Vector2(-606, -145)
+
+[node name="Bone19" parent="BoneList" instance=ExtResource("8_l6qck")]
+position = Vector2(-606, -112)
 
 [node name="Bone2" parent="BoneList" instance=ExtResource("8_l6qck")]
 position = Vector2(-606, -80)
@@ -936,3 +936,28 @@ max_distance = 20000.0
 [connection signal="body_entered" from="MoleJumperList/MoleJumper4/Area2D" to="MoleJumperList/MoleJumper4" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="MoleJumperList/MoleJumper5/JumpTimer" to="MoleJumperList/MoleJumper5" method="_on_jump_timer_timeout"]
 [connection signal="body_entered" from="MoleJumperList/MoleJumper5/Area2D" to="MoleJumperList/MoleJumper5" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="BoneList/Bone12" to="Player/HUD" method="_on_bone_12_body_entered"]
+[connection signal="bone_picked_up" from="BoneList/Bone12" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone12" to="Player/HUD" method="_on_bone_12_bone_picked_up"]
+[connection signal="body_entered" from="BoneList/Bone19" to="Player/HUD" method="_on_bone_12_body_entered"]
+[connection signal="bone_picked_up" from="BoneList/Bone19" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone2" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone3" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone11" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone13" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone4" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone5" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone6" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone7" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone8" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone9" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone10" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone14" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone18" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone15" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone16" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone17" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone21" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone22" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone23" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone24" to="Player/HUD" method="_on_bone_picked_up"]

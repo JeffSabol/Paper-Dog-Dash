@@ -12,4 +12,11 @@ func _process(delta):
 
 
 func _on_pressed():
+	# Unpause the game
+	get_tree().paused = false
+	
+	var camera = get_tree().root.get_viewport().get_camera_2d()
+	#if camera:
+		#camera.zoom = Vector2(1, 1)
+		
 	Global.goto_scene("res://Menus/MainMenu.tscn")

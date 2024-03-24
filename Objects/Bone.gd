@@ -8,5 +8,5 @@ func _on_body_entered(body):
 			self.visible = false
 			Global.total_bones += 1
 			bone_picked_up.emit()
-			await get_tree().create_timer(0.1).timeout	
+			await get_tree().create_timer(0.1).timeout
 			queue_free()
