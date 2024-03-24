@@ -105,24 +105,21 @@ func toggle_pause() -> void:
 	# Show/hide pause menu
 	is_paused = !is_paused
 	
-	var hud = current_scene.get_node("Player/HUD")
-	
-	if is_paused:
-		if not pause_menu:
-			pause_menu = load("res://Menus/pause_menu.tscn").instantiate()
-			
-			
-			if hud:
-				# Set the pause menu's position to the center of the HUD
-				hud.add_child(pause_menu)
-			else:
-				print("HUD not found")
-	else:
-		# Remove the pause menu
-		if pause_menu and pause_menu.get_parent() == current_scene.get_node("Player/HUD"):
-			current_scene.remove_child(pause_menu)
-			pause_menu.queue_free()
-			pause_menu = null
-
-	if hud:
-		get_tree().paused = is_paused
+	if current_scene.name.begins_with("level_"):
+		var hud = current_scene.get_node("Player/HUD")
+		if is_paused:
+			if not pause_menu:
+				pause_menu = load("res://Menus/pause_menu.tscn").instantiate()
+				if hud:
+					# Set the pause menu's position to the center of the HUD
+					hud.add_child(pause_menu)
+		else:
+			# Remove the pause menu
+			if pause_menu:
+				var pause_menu_parent = pause_menu.get_parent()
+				if pause_menu_parent:
+					pause_menu_parent.remove_child(pause_menu)
+					pause_menu.queue_free()
+					pause_menu = null
+		if hud:
+			get_tree().paused = is_paused

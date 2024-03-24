@@ -54,7 +54,7 @@ func handle_jump_input():
 	if is_peeing or is_hurt:
 		return
 		
-	if Input.is_action_just_pressed("ui_accept") or Input.is_joy_button_pressed(0, JOY_BUTTON_B) or Input.is_joy_button_pressed(0, JOY_BUTTON_RIGHT_SHOULDER) and not is_peeing and not is_hurt:
+	if Input.is_action_just_pressed("ui_up") or Input.is_joy_button_pressed(0, JOY_BUTTON_B) or Input.is_joy_button_pressed(0, JOY_BUTTON_RIGHT_SHOULDER) and not is_peeing and not is_hurt:
 		if is_on_floor() or can_jump_during_coyote_time:
 			perform_jump()
 			coyote_time_timer = 0

@@ -481,7 +481,7 @@ texture = ExtResource("2_iew6x")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_akk0o")
 
-[node name="Level1" type="Node2D"]
+[node name="level_1" type="Node2D"]
 metadata/_edit_vertical_guides_ = []
 
 [node name="Backdrop" type="TextureRect" parent="."]

@@ -69,14 +69,14 @@ script = ExtResource("6_qo60y")
 
 [node name="SettingsButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-tooltip_text = "Resume playing the game"
+tooltip_text = "Adjust the game's settings"
 texture_normal = ExtResource("3_6b7dd")
 texture_hover = ExtResource("6_mmxa0")
 texture_focused = ExtResource("6_mmxa0")
 
 [node name="ExitButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-tooltip_text = "Resume playing the game"
+tooltip_text = "Exit to the main menu"
 texture_normal = ExtResource("4_dqbj5")
 texture_hover = ExtResource("8_rwmm8")
 texture_focused = ExtResource("8_rwmm8")
