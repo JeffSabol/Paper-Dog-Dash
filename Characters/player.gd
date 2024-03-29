@@ -11,13 +11,14 @@ class_name Player
 @onready var pee_timer = $PeeTimer
 
 # Constants
-const SPEED = 180.0
+const SPEED = 180.0 # The normal speed of the player
 const CRAWL_SPEED = 90.0
 const JUMP_VELOCITY = -340.0
 const STANDING_COLLISION_Y_POS = 11
 const CROUCHING_COLLISION_Y_POS = 17
-const ACCELERATION = 10.0
+const ACCELERATION = 6.0 # The acceleration rate for smooth movement
 const BOOSTED_SPEED = 250.0  # Increased speed when Shift is held
+const CROUCHING_FALL_GRAVITY_MULTIPLIER = 1.5  # Added constant for crouching fall gravity multiplier
 
 
 # Enums and variables
@@ -32,9 +33,19 @@ var crouching_collision_shape = preload("res://Characters/CollisionBoxes/playerC
 
 # Gravity and jump buffer
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var fall_gravity_multiplier = 1.75
 var jump_buffer_duration = 0.2
 var jump_buffer_timer = 0.0
 var jump_input_received = false
+
+# Timed jump stuff
+var jump_force = 300.0
+var max_jump_time = 0.70
+var current_jump_time = 0.0
+
+# Jump input handling
+# Stops the user from holding down jump on the controller to spam
+var controller_jump_pressed = false
 
 # Coyote Jump
 var coyote_time_duration = 0.10
@@ -48,13 +59,21 @@ func _physics_process(delta):
 	handle_gravity_and_state(delta)
 	handle_input_and_movement(delta)
 	update_coyote_time(delta)
+	
+	if state == PlayerState.JUMPING and (Input.is_action_pressed("ui_up") or Input.is_joy_button_pressed(0, JOY_BUTTON_B)) and current_jump_time < max_jump_time:
+		velocity.y -= jump_force * delta
+		current_jump_time += delta
 
 # Jump input handling
 func handle_jump_input():
 	if is_peeing or is_hurt:
 		return
 		
-	if Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("Jump") or Input.is_joy_button_pressed(0, JOY_BUTTON_B) or Input.is_joy_button_pressed(0, JOY_BUTTON_RIGHT_SHOULDER) and not is_peeing and not is_hurt:
+	var jump_button_just_pressed = Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("Jump")
+	var controller_jump_just_pressed = Input.is_joy_button_pressed(0, JOY_BUTTON_B) and not controller_jump_pressed
+	
+	
+	if (jump_button_just_pressed or controller_jump_just_pressed) and not is_peeing and not is_hurt:
 		if is_on_floor() or can_jump_during_coyote_time:
 			perform_jump()
 			coyote_time_timer = 0
@@ -62,10 +81,15 @@ func handle_jump_input():
 		else:
 			jump_input_received = true
 			jump_buffer_timer = jump_buffer_duration
+			
+		controller_jump_pressed = true
 	elif jump_input_received and is_on_floor():
 		perform_jump()
 		jump_input_received = false
 		jump_buffer_timer = 0
+		
+		if not Input.is_action_pressed("ui_up") and not Input.is_joy_button_pressed(0, JOY_BUTTON_B):
+			jump_input_received = false
 
 # Jump buffer handling
 func update_jump_buffer(delta):
@@ -90,7 +114,13 @@ func handle_input_and_movement(delta):
 
 # Apply gravity to the player
 func apply_gravity(delta):
-	velocity.y += gravity * delta
+	if velocity.y > 0:  # Character is falling
+		if is_crouching:
+			velocity.y += gravity * fall_gravity_multiplier * CROUCHING_FALL_GRAVITY_MULTIPLIER * delta
+		else:
+			velocity.y += gravity * fall_gravity_multiplier * delta
+	else:
+		velocity.y += gravity * delta
 
 # Update the player's state while airborne
 func update_airborne_state():
@@ -233,8 +263,9 @@ func pee():
 # Perform jump action
 func perform_jump():
 	$Jump.play()
-	velocity.y = JUMP_VELOCITY
+	velocity.y = -jump_force
 	state = PlayerState.JUMPING
+	current_jump_time = 0.0
 
 # Hurt functionality
 func hurt():
