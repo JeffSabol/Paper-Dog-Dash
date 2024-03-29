@@ -26,3 +26,8 @@ func _process(delta):
 func _on_play_button_pressed():
 	Global.goto_scene("res://Levels/level_1.tscn")
 	
+
+
+func _on_exit_button_pressed():
+	# EXIT game
+	get_tree().quit()
