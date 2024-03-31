@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bvn5gy6ac6uio"]
+[gd_scene load_steps=43 format=3 uid="uid://bvn5gy6ac6uio"]
 
 [ext_resource type="Texture2D" uid="uid://b1gijyai74025" path="res://Assets/PixelFrog/Terrain/Terrain (16x16).png" id="1_5ycr6"]
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_x1hmu"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://xh582iaeeb4b" path="res://Assets/Buttons/PlayNewHover.png" id="7_3yx0j"]
 [ext_resource type="Texture2D" uid="uid://ctj82u7m7bab3" path="res://Assets/Buttons/SettingsNew.png" id="7_5wqer"]
 [ext_resource type="Script" path="res://Characters/menu_puppet.gd" id="7_66gn3"]
+[ext_resource type="Texture2D" uid="uid://dse0n2s8xtnfj" path="res://Assets/Menu/PaperDogLogo.png" id="7_f7yxc"]
 [ext_resource type="Texture2D" uid="uid://djtvn6rvrnap4" path="res://Assets/Buttons/PlayNewPressed.png" id="8_gm57f"]
 [ext_resource type="Texture2D" uid="uid://b27i3gcv85kiq" path="res://Assets/Buttons/SettingsNewHover.png" id="8_ieiyd"]
 [ext_resource type="Texture2D" uid="uid://cvr6m08cxk47t" path="res://Assets/Buttons/ExitNew.png" id="8_trsci"]
@@ -642,7 +643,17 @@ offset_right = 97.0
 offset_bottom = 40.0
 script = ExtResource("6_nhs3t")
 
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -385.0
+offset_top = -400.0
+offset_right = -193.0
+offset_bottom = -336.0
+scale = Vector2(4, 4)
+texture = ExtResource("7_f7yxc")
+
 [node name="Label" type="Label" parent="Control"]
+visible = false
 layout_mode = 0
 offset_left = -364.0
 offset_top = -314.0

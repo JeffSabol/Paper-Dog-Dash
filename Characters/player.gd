@@ -40,7 +40,7 @@ var jump_input_received = false
 
 # Timed jump stuff
 var jump_force = 300.0
-var max_jump_time = 0.70
+var max_jump_time = 1.0
 var current_jump_time = 0.0
 
 # Jump input handling
