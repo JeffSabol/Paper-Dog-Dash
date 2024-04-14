@@ -6,6 +6,9 @@ extends Control
 # Flag to track if input has been detected
 var input_detected = false
 
+# Settings menu
+var settings_menu = null
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -27,6 +30,9 @@ func _on_play_button_pressed():
 	Global.goto_scene("res://Levels/level_1.tscn")
 	
 
+func _on_settings_button_pressed():
+	settings_menu = load("res://Menus/SettingsMenu.tscn").instantiate()
+	add_child(settings_menu)
 
 func _on_exit_button_pressed():
 	# EXIT game

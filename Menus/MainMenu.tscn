@@ -712,4 +712,6 @@ animation = &"fly"
 [connection signal="timeout" from="Player/WalkTimer" to="Player" method="_on_walk_timer_timeout"]
 [connection signal="timeout" from="Player/TurnTimer" to="Player" method="_on_turn_timer_timeout"]
 [connection signal="pressed" from="Control/HBoxContainer/PlayButton" to="Control" method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/SettingsButton" to="Walker" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/SettingsButton" to="Control" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/ExitButton" to="Control" method="_on_exit_button_pressed"]

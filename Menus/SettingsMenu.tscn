@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0866glt2yjl2"]
+
+[ext_resource type="Script" path="res://Menus/SettingsMenu.gd" id="1_rsira"]
+[ext_resource type="Texture2D" uid="uid://wsjr6ik3f2ww" path="res://Assets/Menu/Settings/Main.png" id="2_fj0h1"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rsira")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -432.0
+offset_top = -372.0
+offset_right = 144.0
+offset_bottom = 60.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_fj0h1")
