@@ -114,13 +114,11 @@ func toggle_pause() -> void:
 				if hud:
 					# Set the pause menu's position to the center of the HUD
 					hud.add_child(pause_menu)
+			pause_menu.show()
 		else:
 			# Remove the pause menu
 			if pause_menu:
-				var pause_menu_parent = pause_menu.get_parent()
-				if pause_menu_parent:
-					pause_menu_parent.remove_child(pause_menu)
-					pause_menu.queue_free()
-					pause_menu = null
+				pause_menu.hide()
+			
 		if hud:
 			get_tree().paused = is_paused
