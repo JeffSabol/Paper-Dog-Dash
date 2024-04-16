@@ -1,8 +1,7 @@
-[gd_scene load_steps=43 format=3 uid="uid://bvn5gy6ac6uio"]
+[gd_scene load_steps=41 format=3 uid="uid://bvn5gy6ac6uio"]
 
 [ext_resource type="Texture2D" uid="uid://b1gijyai74025" path="res://Assets/PixelFrog/Terrain/Terrain (16x16).png" id="1_5ycr6"]
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_x1hmu"]
-[ext_resource type="FontFile" uid="uid://cuo28wcy83qw8" path="res://Assets/Font/dpcomic.ttf" id="2_m5tw1"]
 [ext_resource type="PackedScene" uid="uid://v6tdbqqiibu5" path="res://Characters/Enemies/MoleRoamer.tscn" id="5_s40rv"]
 [ext_resource type="PackedScene" uid="uid://ble575txva0hm" path="res://Characters/player.tscn" id="6_f2mum"]
 [ext_resource type="Texture2D" uid="uid://djdmigpffgs86" path="res://Assets/Buttons/PlayNew.png" id="6_firx6"]
@@ -469,12 +468,6 @@ texture = ExtResource("1_5ycr6")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_oy7is")
 
-[sub_resource type="LabelSettings" id="LabelSettings_bjv8w"]
-font = ExtResource("2_m5tw1")
-font_size = 128
-outline_size = 16
-outline_color = Color(0, 0, 0, 1)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_h1nyl"]
 atlas = ExtResource("19_l7gds")
 region = Rect2(0, 160, 160, 160)
@@ -651,17 +644,6 @@ offset_right = -193.0
 offset_bottom = -336.0
 scale = Vector2(4, 4)
 texture = ExtResource("7_f7yxc")
-
-[node name="Label" type="Label" parent="Control"]
-visible = false
-layout_mode = 0
-offset_left = -364.0
-offset_top = -314.0
-offset_right = 362.0
-offset_bottom = -82.0
-text = "PAPER DOG"
-label_settings = SubResource("LabelSettings_bjv8w")
-horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control"]
 layout_mode = 0
