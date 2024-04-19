@@ -31,11 +31,37 @@ var current_difficulty: int = DifficultyLevel.EASY
 var is_paused: bool = false
 var pause_menu: Control = null
 
+# Create new ConfigFile object.
+var config = ConfigFile.new()
+var default_settings = {
+	"display": {
+		"fullscreen": false,
+	}
+}
+
 func _ready() -> void:
+	load_settings()
+	
 	process_mode = Node.PROCESS_MODE_ALWAYS # We don't want to pause our autoloader
 	
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
+	
+func load_settings():
+	var err = config.load("res://settings.cfg")
+	if err != OK:
+		# If the settings file doesn't exist or fails to load, use the default settings
+		config = ConfigFile.new()
+		for section in default_settings.keys():
+			for key in default_settings[section]:
+				config.set_value(section, key, default_settings[section][key])
+	else:
+		apply_settings()
+
+func apply_settings():
+	var fullscreen = config.get_value("display", "fullscreen", default_settings["display"]["fullscreen"])
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if fullscreen else DisplayServer.WINDOW_MODE_WINDOWED)
+	
 
 func goto_scene(path: String) -> void:
 	# Deleting the current scene at this point is
