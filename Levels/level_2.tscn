@@ -626,12 +626,6 @@ position = Vector2(-222, 96)
 [node name="Bone15" parent="BoneList" instance=ExtResource("7_tqrdu")]
 position = Vector2(-190, 96)
 
-[node name="BoneDecoration1" parent="BoneList" instance=ExtResource("7_tqrdu")]
-position = Vector2(-366, 16)
-
-[node name="BoneDecoration2" parent="BoneList" instance=ExtResource("7_tqrdu")]
-position = Vector2(-78, -16)
-
 [node name="Bone16" parent="BoneList" instance=ExtResource("7_tqrdu")]
 position = Vector2(210, -32)
 

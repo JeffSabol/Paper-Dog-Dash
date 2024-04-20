@@ -36,9 +36,9 @@ texture_normal = ExtResource("3_6l7ge")
 
 [node name="ResetButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 227.0
+offset_left = 226.0
 offset_top = -308.0
-offset_right = 267.0
+offset_right = 266.0
 offset_bottom = -268.0
 scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("4_kefqm")
