@@ -43,3 +43,6 @@ func updateTimer():
 
 func _on_level_timer_timeout():
 	updateTimer()
+	
+func show_newspaper_text():
+	$Newspaper.show()
