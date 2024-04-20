@@ -109,10 +109,11 @@ text = "32"
 label_settings = SubResource("LabelSettings_0qbx0")
 
 [node name="Newspaper" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
-offset_left = 8.0
+offset_left = 7.0
 offset_top = -128.0
-offset_right = 48.0
+offset_right = 47.0
 offset_bottom = -88.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("5_5hjin")

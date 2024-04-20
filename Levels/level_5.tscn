@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://ibux22cp30od"]
+[gd_scene load_steps=56 format=3 uid="uid://ibux22cp30od"]
 
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_aqfth"]
 [ext_resource type="Script" path="res://Levels/MoleJumper.gd" id="2_elvx2"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cyn0a1hyfvvwa" path="res://Objects/Newspaper.tscn" id="4_kwjgc"]
 [ext_resource type="Texture2D" uid="uid://cdijy83fgj1fg" path="res://Assets/Enemies/MoleJumping.png" id="4_sbo3n"]
 [ext_resource type="Texture2D" uid="uid://b1gijyai74025" path="res://Assets/PixelFrog/Terrain/Terrain (16x16).png" id="5_bogug"]
+[ext_resource type="Texture2D" uid="uid://bn4ti5hmaxhd2" path="res://Assets/Environment/MoleMound.png" id="5_wsthi"]
 [ext_resource type="PackedScene" uid="uid://v6tdbqqiibu5" path="res://Characters/Enemies/MoleRoamer.tscn" id="9_vlenl"]
 [ext_resource type="Script" path="res://Levels/Mole.gd" id="10_q37gx"]
 [ext_resource type="Texture2D" uid="uid://b0i2lab1h6nmx" path="res://Assets/Enemies/MoleDeath.png" id="11_2qgve"]
@@ -956,6 +957,32 @@ position = Vector2(0, 28)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MoleJumpers/MoleJumper7/Area2D"]
 position = Vector2(0, 1)
 polygon = PackedVector2Array(-11, -12, -11, 16, 12, 16, 12, -12)
+
+[node name="MoleMounds" type="Node2D" parent="."]
+
+[node name="Mound" type="Sprite2D" parent="MoleMounds"]
+position = Vector2(-1523, -167)
+texture = ExtResource("5_wsthi")
+
+[node name="Mound2" type="Sprite2D" parent="MoleMounds"]
+position = Vector2(-1395, -39)
+texture = ExtResource("5_wsthi")
+
+[node name="Mound3" type="Sprite2D" parent="MoleMounds"]
+position = Vector2(3060, 73)
+texture = ExtResource("5_wsthi")
+
+[node name="Mound4" type="Sprite2D" parent="MoleMounds"]
+position = Vector2(3142, 57)
+texture = ExtResource("5_wsthi")
+
+[node name="Mound5" type="Sprite2D" parent="MoleMounds"]
+position = Vector2(3380, 57)
+texture = ExtResource("5_wsthi")
+
+[node name="Mound6" type="Sprite2D" parent="MoleMounds"]
+position = Vector2(3462, 73)
+texture = ExtResource("5_wsthi")
 
 [node name="Walkers" type="Node2D" parent="."]
 
