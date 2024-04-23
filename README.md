@@ -1,5 +1,8 @@
 # Paper-Dog-Dash
-## Unfinished! Needs to apply sounds and a menu.Moving to a new project
+## This is a hobby project that I work on for fun in my free time. I am open to suggestions and constructive criticism.
+
+Play here: https://b0rked.itch.io/paper-dog or https://www.newgrounds.com/portal/view/921331
+
 Now made in Godot 4. Our team originally submitted this game for the game jam "gamedevjs2023", but we wanted to move from JavaScript to Godot.
 
 ![image](https://github.com/JeffSabol/Paper-Dog-Dash/assets/34982031/7a3e6c18-7a65-437d-a251-b0885478721d)
