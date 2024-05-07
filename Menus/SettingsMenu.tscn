@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0866glt2yjl2"]
+[gd_scene load_steps=8 format=3 uid="uid://d0866glt2yjl2"]
 
 [ext_resource type="Script" path="res://Menus/SettingsMenu.gd" id="1_rsira"]
 [ext_resource type="Texture2D" uid="uid://wsjr6ik3f2ww" path="res://Assets/Menu/Settings/Main.png" id="2_fj0h1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b16j0gwfgawpm" path="res://Assets/Menu/Settings/Check.png" id="4_6vygf"]
 [ext_resource type="Texture2D" uid="uid://1onsm3rxsfy5" path="res://Assets/Menu/Settings/Reset.png" id="4_kefqm"]
 [ext_resource type="Texture2D" uid="uid://dgnsfce00mye0" path="res://Assets/Menu/Settings/Fullscreen.png" id="5_y43ed"]
+[ext_resource type="Texture2D" uid="uid://dfkdm0kso13hj" path="res://Assets/Menu/Settings/Easy.png" id="7_8388v"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -66,8 +67,13 @@ layout_mode = 2
 layout_mode = 2
 texture_normal = ExtResource("5_y43ed")
 
+[node name="DifficultyButton" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_8388v")
+
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/FullScreenButton" to="." method="_on_full_screen_button_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/FullScreenButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/DifficultyButton" to="." method="_on_difficulty_button_pressed"]

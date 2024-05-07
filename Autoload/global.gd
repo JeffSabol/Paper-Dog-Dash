@@ -36,6 +36,9 @@ var config = ConfigFile.new()
 var default_settings = {
 	"display": {
 		"fullscreen": false,
+	},
+	"game": {
+		"difficulty": DifficultyLevel.EASY,
 	}
 }
 
@@ -61,7 +64,9 @@ func load_settings():
 func apply_settings():
 	var fullscreen = config.get_value("display", "fullscreen", default_settings["display"]["fullscreen"])
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if fullscreen else DisplayServer.WINDOW_MODE_WINDOWED)
-	
+	# Apply difficulty
+	current_difficulty = config.get_value("game", "difficulty", default_settings["game"]["difficulty"])
+	set_difficulty(current_difficulty)
 
 func goto_scene(path: String) -> void:
 	# Deleting the current scene at this point is
@@ -108,6 +113,10 @@ func _deferred_goto_next_level() -> void:
 	level_count += 1
 	level_path = "res://Levels/level_" + str(level_count) + ".tscn"
 	has_newspaper = false
+
+func save_difficulty():
+	config.set_value("game", "difficulty", current_difficulty)
+	config.save("res://settings.cfg")
 
 func set_difficulty(new_difficulty: int) -> void:
 	current_difficulty = new_difficulty
