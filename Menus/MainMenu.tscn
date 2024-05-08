@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bvn5gy6ac6uio"]
+[gd_scene load_steps=42 format=3 uid="uid://bvn5gy6ac6uio"]
 
 [ext_resource type="Texture2D" uid="uid://b1gijyai74025" path="res://Assets/PixelFrog/Terrain/Terrain (16x16).png" id="1_5ycr6"]
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_x1hmu"]
@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://drnnjjv7r2wfg" path="res://Assets/Audio/menu/Menu Music/Menu_Music.wav" id="17_2kf0m"]
 [ext_resource type="Script" path="res://Menus/ExitButton.gd" id="17_iq0xo"]
 [ext_resource type="Script" path="res://Levels/Bird.gd" id="18_3ttsq"]
+[ext_resource type="AudioStream" uid="uid://dna4jh67p0p13" path="res://Assets/Audio/menu/Menu SFX/Menu_SFX_Play.wav" id="18_6ljou"]
 [ext_resource type="Texture2D" uid="uid://o8l5v014wuay" path="res://Assets/Enemies/Bird/BirdSpriteBig.png" id="19_l7gds"]
 [ext_resource type="Texture2D" uid="uid://2biensu5qcq5" path="res://Assets/Enemies/Bird/BirdFly.png" id="20_owb2x"]
 
@@ -678,6 +679,7 @@ texture_focused = ExtResource("11_36r43")
 script = ExtResource("17_iq0xo")
 
 [node name="ButtonSound" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("18_6ljou")
 
 [node name="MainMenuTune" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_2kf0m")

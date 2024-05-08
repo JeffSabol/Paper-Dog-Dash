@@ -19,12 +19,16 @@ func _ready():
 			$ScrollContainer/VBoxContainer/DifficultyButton.texture_normal = hard_button_normal
 
 func _on_exit_button_pressed():
+	$ButtonSound.play()
+	
 	# Revert to the previously saved settings
 	Global.load_settings()
 	Global.apply_settings()
 	hide()
 
 func _on_reset_button_pressed():
+	$ButtonSound.play()
+	
 	# Reset all settings to their default values
 	Global.config = ConfigFile.new()
 	for section in Global.default_settings.keys():
@@ -40,15 +44,20 @@ func _on_reset_button_pressed():
 
 func _on_save_button_pressed():
 	Global.config.save("res://settings.cfg")
+	$ButtonSound.play()
 	hide()
 
 func _on_full_screen_button_pressed():
+	$ButtonSound.play()
+	
 	# Toggle fullscreen mode and update the settings
 	var fullscreen = not Global.config.get_value("display", "fullscreen", Global.default_settings["display"]["fullscreen"])
 	Global.config.set_value("display", "fullscreen", fullscreen)
 	Global.apply_settings()
 
 func _on_difficulty_button_pressed():
+	$ButtonSound.play()
+	
 	Global.current_difficulty = (Global.current_difficulty + 1) % 3 # enum DifficultyLevel { EASY, MEDIUM, HARD }
 	
 	match Global.current_difficulty:

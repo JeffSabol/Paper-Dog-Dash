@@ -12,6 +12,10 @@ func _process(delta):
 
 
 func _on_pressed():
+	$"../../ButtonSound".play()
+	# Add a slight delay so that the entire audio plays
+	await get_tree().create_timer($"../../ButtonSound".stream.get_length()).timeout
+	
 	# Unpause the game
 	get_tree().paused = false
 	

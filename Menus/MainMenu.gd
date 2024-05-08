@@ -27,15 +27,22 @@ func _process(delta):
 
 
 func _on_play_button_pressed():
+	$ButtonSound.play()
+	# Add a slight delay so that the entire audio plays
+	await get_tree().create_timer($ButtonSound.stream.get_length()).timeout
 	Global.goto_scene("res://Levels/level_1.tscn")
 	
 
 func _on_settings_button_pressed():
+	$ButtonSound.play()
 	settings_menu = load("res://Menus/SettingsMenu.tscn").instantiate()
 	add_child(settings_menu)
 
 func _on_exit_button_pressed():
 	# EXIT game
+	$ButtonSound.play()
+	# Add a slight delay so that the entire audio plays
+	await get_tree().create_timer($ButtonSound.stream.get_length()).timeout
 	get_tree().quit()
 
 func _on_main_menu_tune_finished():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://80fwlu0vjruv"]
+[gd_scene load_steps=13 format=3 uid="uid://80fwlu0vjruv"]
 
 [ext_resource type="Texture2D" uid="uid://bq4xfk7gexmlm" path="res://Assets/Menu/PawPrint.png" id="1_psaom"]
 [ext_resource type="Script" path="res://Menus/pause_menu.gd" id="1_xn8io"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Menus/ResumeButton.gd" id="6_qo60y"]
 [ext_resource type="Texture2D" uid="uid://c3oilk82grf65" path="res://Assets/Menu/PAWS/EXIT_HOVER.png" id="8_rwmm8"]
 [ext_resource type="Script" path="res://Menus/ExitButton.gd" id="11_cy00v"]
+[ext_resource type="AudioStream" uid="uid://dna4jh67p0p13" path="res://Assets/Audio/menu/Menu SFX/Menu_SFX_Play.wav" id="12_dne4f"]
 
 [node name="Control" type="Control"]
 process_mode = 2
@@ -73,5 +74,8 @@ texture_normal = ExtResource("4_dqbj5")
 texture_hover = ExtResource("8_rwmm8")
 texture_focused = ExtResource("8_rwmm8")
 script = ExtResource("11_cy00v")
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_dne4f")
 
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="VBoxContainer/ExitButton" method="_on_pressed"]
