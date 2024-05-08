@@ -37,3 +37,6 @@ func _on_settings_button_pressed():
 func _on_exit_button_pressed():
 	# EXIT game
 	get_tree().quit()
+
+func _on_main_menu_tune_finished():
+	$"../MainMenuTune".play()

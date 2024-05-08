@@ -677,7 +677,9 @@ texture_hover = ExtResource("11_36r43")
 texture_focused = ExtResource("11_36r43")
 script = ExtResource("17_iq0xo")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="ButtonSound" type="AudioStreamPlayer" parent="Control"]
+
+[node name="MainMenuTune" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_2kf0m")
 autoplay = true
 
@@ -697,3 +699,4 @@ animation = &"fly"
 [connection signal="pressed" from="Control/HBoxContainer/SettingsButton" to="Walker" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/SettingsButton" to="Control" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/ExitButton" to="Control" method="_on_exit_button_pressed"]
+[connection signal="finished" from="MainMenuTune" to="Control" method="_on_main_menu_tune_finished"]
