@@ -41,7 +41,11 @@ func _on_reset_button_pressed():
 	Global.current_difficulty = Global.DifficultyLevel.EASY
 	Global.config.set_value("game", "difficulty", Global.current_difficulty)
 	Global.config.save("res://settings.cfg")
-
+	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		hide()
+		
 func _on_save_button_pressed():
 	Global.config.save("res://settings.cfg")
 	$ButtonSound.play()
