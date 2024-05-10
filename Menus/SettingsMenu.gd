@@ -25,6 +25,9 @@ func _on_exit_button_pressed():
 	Global.load_settings()
 	Global.apply_settings()
 	hide()
+	
+	# Restore focus to the main menu buttons
+	get_parent().restore_focus()
 
 func _on_reset_button_pressed():
 	$ButtonSound.play()
@@ -50,6 +53,9 @@ func _on_save_button_pressed():
 	Global.config.save("res://settings.cfg")
 	$ButtonSound.play()
 	hide()
+	
+	# Restore focus to the main menu buttons
+	get_parent().restore_focus()
 
 func _on_full_screen_button_pressed():
 	$ButtonSound.play()

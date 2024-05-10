@@ -1,3 +1,5 @@
+# Jeff Sabol
+# MainMenu.gd : The scripting bhind navigating the main menu's control node. AKA the buttons and stuff.
 extends Control
 
 # Buttons
@@ -47,3 +49,6 @@ func _on_exit_button_pressed():
 
 func _on_main_menu_tune_finished():
 	$"../MainMenuTune".play()
+
+func restore_focus():
+	$HBoxContainer/PlayButton.grab_focus()
