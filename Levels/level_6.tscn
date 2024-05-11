@@ -1284,46 +1284,58 @@ position = Vector2(-2622, -183)
 position = Vector2(-2622, -167)
 
 [node name="Bone1_G3" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(-2814, -375)
+position = Vector2(-2830, -375)
 
 [node name="Bone2_G3" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(-2798, -391)
+position = Vector2(-2814, -391)
 
 [node name="Bone3_G3" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(-2782, -407)
-
-[node name="Bone4_G3" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(-2766, -407)
-
-[node name="Bone5_G3" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(-2750, -407)
-
-[node name="Bone6_G3" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(-2734, -391)
-
-[node name="Bone7_G3" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(-2718, -375)
-
-[node name="Bone1_G6" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(-2974, -375)
-
-[node name="Bone2_G6" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(-2958, -391)
+position = Vector2(-2830, -407)
 
 [node name="Bone3_G6" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(-2942, -407)
+position = Vector2(-2846, -407)
 
-[node name="Bone4_G6" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(-2926, -407)
+[node name="Bone3_G9" parent="BoneList" instance=ExtResource("13_1ukjw")]
+position = Vector2(-2862, -407)
 
-[node name="Bone5_G6" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(-2910, -407)
+[node name="Bone3_G10" parent="BoneList" instance=ExtResource("13_1ukjw")]
+position = Vector2(-2862, -391)
+
+[node name="Bone3_G11" parent="BoneList" instance=ExtResource("13_1ukjw")]
+position = Vector2(-2862, -375)
+
+[node name="Bone3_G12" parent="BoneList" instance=ExtResource("13_1ukjw")]
+position = Vector2(-2878, -407)
+
+[node name="Bone3_G13" parent="BoneList" instance=ExtResource("13_1ukjw")]
+position = Vector2(-2878, -391)
+
+[node name="Bone3_G14" parent="BoneList" instance=ExtResource("13_1ukjw")]
+position = Vector2(-2878, -375)
+
+[node name="Bone3_G7" parent="BoneList" instance=ExtResource("13_1ukjw")]
+position = Vector2(-2846, -375)
+
+[node name="Bone3_G8" parent="BoneList" instance=ExtResource("13_1ukjw")]
+position = Vector2(-2846, -391)
+
+[node name="Bone4_G3" parent="BoneList" instance=ExtResource("13_1ukjw")]
+position = Vector2(-2830, -391)
+
+[node name="Bone5_G3" parent="BoneList" instance=ExtResource("13_1ukjw")]
+position = Vector2(-2814, -407)
+
+[node name="Bone6_G3" parent="BoneList" instance=ExtResource("13_1ukjw")]
+position = Vector2(-2798, -375)
 
 [node name="Bone6_G6" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(-2894, -391)
+position = Vector2(-2798, -407)
 
-[node name="Bone7_G6" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(-2878, -375)
+[node name="Bone6_G7" parent="BoneList" instance=ExtResource("13_1ukjw")]
+position = Vector2(-2798, -391)
+
+[node name="Bone7_G3" parent="BoneList" instance=ExtResource("13_1ukjw")]
+position = Vector2(-2814, -375)
 
 [node name="Bone1_G4" parent="BoneList" instance=ExtResource("13_1ukjw")]
 position = Vector2(-286, 121)
@@ -1437,17 +1449,21 @@ max_distance = 20000.0
 [connection signal="bone_picked_up" from="BoneList/Bone1_G3" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone2_G3" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone3_G3" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone3_G6" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone3_G9" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone3_G10" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone3_G11" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone3_G12" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone3_G13" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone3_G14" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone3_G7" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone3_G8" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone4_G3" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone5_G3" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone6_G3" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone7_G3" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone1_G6" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone2_G6" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone3_G6" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone4_G6" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone5_G6" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone6_G6" to="Player/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/Bone7_G6" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone6_G7" to="Player/HUD" method="_on_bone_picked_up"]
+[connection signal="bone_picked_up" from="BoneList/Bone7_G3" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone1_G4" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone2_G4" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone3_G4" to="Player/HUD" method="_on_bone_picked_up"]
