@@ -984,6 +984,10 @@ texture = ExtResource("5_wsthi")
 position = Vector2(3462, 73)
 texture = ExtResource("5_wsthi")
 
+[node name="Mound7" type="Sprite2D" parent="MoleMounds"]
+position = Vector2(143, 9)
+texture = ExtResource("5_wsthi")
+
 [node name="Walkers" type="Node2D" parent="."]
 
 [node name="CharacterBody2D4" parent="Walkers" instance=ExtResource("9_vlenl")]
