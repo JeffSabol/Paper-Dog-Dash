@@ -39,8 +39,8 @@ var jump_buffer_timer = 0.0
 var jump_input_received = false
 
 # Timed jump stuff
-var jump_force = 300.0
-var max_jump_time = 1.0
+var jump_force = 250.0
+var max_jump_time = 0.225
 var current_jump_time = 0.0
 
 # Jump input handling
@@ -59,9 +59,9 @@ func _physics_process(delta):
 	handle_gravity_and_state(delta)
 	handle_input_and_movement(delta)
 	update_coyote_time(delta)
-	
+		
 	if state == PlayerState.JUMPING and (Input.is_action_pressed("ui_up") or Input.is_joy_button_pressed(0, JOY_BUTTON_B)) and current_jump_time < max_jump_time:
-		velocity.y -= jump_force * delta
+		velocity.y = -jump_force
 		current_jump_time += delta
 
 # Jump input handling
