@@ -38,6 +38,7 @@ func _physics_process(delta):
 		var collider2 = ray_cast2.get_collider()
 		if collider and collider.name == "Player":
 			collider.hurt()  # Apply damage to the player if collided
+		# TODO move this all into a simple Global.subtract_time() TODO
 			Global.total_time -= 5
 			if(Global.current_difficulty == Global.DifficultyLevel.HARD):
 				Global.total_time = 0
@@ -50,7 +51,8 @@ func _physics_process(delta):
 				Global.total_time = 0
 			if(Global.current_difficulty == Global.DifficultyLevel.EASY):
 				enter_kill_state()  # Added to make the game more fair
-			
+		# TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
+		
 	# Move and slide with the current velocity
 	move_and_slide()
 
@@ -61,14 +63,14 @@ func _physics_process(delta):
 		ray_cast.scale.x *= -1  # Flip the RayCast direction
 		$AnimatedSprite2D.scale.x *= -1  # Flip the sprite direction
 
-func enter_kill_state():
+func enter_kill_state(): # TODO refactor to be enter_death_state()
 	var random_sound_index = randi() % death_sounds.size()
 	$AnimatedSprite2D.animation = "death"
 	$Death.stream  = death_sounds[random_sound_index]
 	$Death.play()
 	
 	# Change the collision layer and mask
-	await get_tree().create_timer(0.1).timeout	
+	await get_tree().create_timer(0.1).timeout
 	collision_layer = 0  # Set to a layer that doesn't interact with platforms
 	collision_mask = 0  # Set to a mask that doesn't interact with platforms
 
