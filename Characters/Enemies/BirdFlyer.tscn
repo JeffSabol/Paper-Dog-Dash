@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://dp8ds1b5kq6wy"]
+[gd_scene load_steps=27 format=3 uid="uid://x05u00opb3jo"]
 
 [ext_resource type="Script" path="res://Characters/Enemies/BirdFlyer.gd" id="1_8ukko"]
 [ext_resource type="Texture2D" uid="uid://1byk8j5j6ai4" path="res://Assets/Enemies/Bird/BirdPeck.png" id="1_x8m30"]
 [ext_resource type="Texture2D" uid="uid://2biensu5qcq5" path="res://Assets/Enemies/Bird/BirdFly.png" id="2_wslul"]
+[ext_resource type="Texture2D" uid="uid://bo7pw7cy8rsqm" path="res://Assets/Enemies/Bird/BirdDead.png" id="3_4m87a"]
 [ext_resource type="Texture2D" uid="uid://cwtshd4aaucnr" path="res://Assets/Enemies/Bird/BirdIdle.png" id="3_xrr2o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_je20e"]
@@ -28,6 +29,10 @@ region = Rect2(64, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjxjv"]
 atlas = ExtResource("1_x8m30")
 region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ry1tn"]
+atlas = ExtResource("3_4m87a")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3xga"]
 atlas = ExtResource("2_wslul")
@@ -108,6 +113,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ry1tn")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_v3xga")
 }, {
 "duration": 1.0,
@@ -171,9 +184,12 @@ polygon = PackedVector2Array(8, -1, 8, -2, 7, -2, 7, -3, 4, -3, 4, -2, 1, -2, 1,
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7vyiu")
-animation = &"fly"
+animation = &"dead"
 
 [node name="Body" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-5, 0, 5, 0, 5, 0, 5, -1, -5, -1)
+polygon = PackedVector2Array(-6, 1, 5, 1, 5, 0, 5, -1, -6, -1)
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

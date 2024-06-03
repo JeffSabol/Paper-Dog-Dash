@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://f4yj8d7dg5pw"
+path="res://.godot/imported/BirdDeath4.wav-077741bb8f7b31c70069f3e77a72d36e.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Gameplay SFX/BirdDeath4.wav"
+dest_files=["res://.godot/imported/BirdDeath4.wav-077741bb8f7b31c70069f3e77a72d36e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

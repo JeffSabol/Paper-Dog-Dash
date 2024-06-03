@@ -9,6 +9,13 @@ var bird_body: CollisionPolygon2D # Underneath all the fluff
 var is_dead: bool = false
 # Birds shall defy gravity until killed, then fall to the ground.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var attack_zone_enabled = true # Added so that the bird can't attack more than once.
+var death_sounds = [
+	preload("res://Assets/Audio/Gameplay SFX/BirdDeath1.wav"),
+	preload("res://Assets/Audio/Gameplay SFX/BirdDeath2.wav"),
+	preload("res://Assets/Audio/Gameplay SFX/BirdDeath3.wav"),
+	preload("res://Assets/Audio/Gameplay SFX/BirdDeath4.wav"),
+]
 
 func _ready():
 	$AnimatedSprite2D.play()
@@ -59,7 +66,8 @@ func mirror_polygon():
 	attack_zone.polygon = mirrored_polygon
 
 func _on_body_entered(body):
-	if body is Player:
+	if body is Player && attack_zone_enabled:
+		attack_zone_enabled = false
 		body.hurt()
 		Global.total_time -= 5
 		if Global.current_difficulty == Global.DifficultyLevel.HARD:
@@ -68,7 +76,10 @@ func _on_body_entered(body):
 
 func die():
 	is_dead = true # Adds gravity
-	await get_tree().create_timer(3.0).timeout
+	$AnimatedSprite2D.play("dead")
+	# Play a death sound
+	var random_sound_index = randi() % death_sounds.size()
+	$Death.stream  = death_sounds[random_sound_index]
+	$Death.play()
+	await get_tree().create_timer(2.5).timeout
 	queue_free()  # Remove the enemy from the scene
-	# TODO play death animation.
-	# TODO turn off attack zone
