@@ -30,11 +30,9 @@ func _physics_process(delta):
 
 	# Match bird to direction.
 	if velocity.x > 0:
-		print(velocity)
 		update_direction(1)
 		$AnimatedSprite2D.play("fly")
 	elif velocity.x < 0:
-		print(velocity)
 		update_direction(-1)
 		$AnimatedSprite2D.play("fly")
 	elif velocity.x == 0:
@@ -45,9 +43,9 @@ func _physics_process(delta):
 
 func update_direction(direction):
 	moving_direction = direction
-	$Body.scale.x = direction
-	$Area2D/AttackZone.scale.x = direction
-	$AnimatedSprite2D.scale.x = direction
+	$Body.scale.x = -direction
+	$Area2D/AttackZone.scale.x = -direction
+	$AnimatedSprite2D.scale.x = -direction
 
 	# Mirror attack_zone CollisionPolygon2D horizontally if needed
 	if direction == 1:
@@ -70,7 +68,6 @@ func _on_body_entered(body):
 
 func die():
 	is_dead = true # Adds gravity
-	print("is_dead")
 	await get_tree().create_timer(3.0).timeout
 	queue_free()  # Remove the enemy from the scene
 	# TODO play death animation.
