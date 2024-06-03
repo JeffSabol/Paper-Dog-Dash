@@ -180,14 +180,14 @@ script = ExtResource("1_8ukko")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="AttackZone" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(8, -1, 8, -2, 7, -2, 7, -3, 4, -3, 4, -2, 1, -2, 1, -3, -1, -3, -1, -4, -5, -4, -5, -3, -6, -3, -6, -2, -7, -2, -7, -1, -8, -1, -8, 0, -7, 0, -7, 1, -5, 1, -5, 2, -4, 2, -4, 3, 5, 3, 5, 1, 6, 1, 6, 0, 7, 0, 7, -1)
+polygon = PackedVector2Array(8, -1, 8, -2, 7, -2, 7, -3, 4, -3, 4, -2, 1, -2, 1, -3, -1, -3, -1, -4, -5, -4, -5, -3, -6, -3, -6, -2, -7, -2, -7, -1, -8, -1, -8, 0, -7, 0, -7, 1, -5, 1, -5, 2, -4, 2, -4, 3, 7, 3, 7, 1, 7, 0, 8, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7vyiu")
 animation = &"dead"
 
 [node name="Body" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-6, 1, 5, 1, 5, 0, 5, -1, -6, -1)
+polygon = PackedVector2Array(-6, 1, 4, 1, 4, 0, 4, -1, -6, -1)
 
 [node name="Death" type="AudioStreamPlayer" parent="."]
 volume_db = -12.0
