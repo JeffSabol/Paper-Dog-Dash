@@ -5,7 +5,7 @@ var moving_direction = -1  # Determines the initial moving direction, 1 for righ
 var attack_zone: CollisionPolygon2D # Sharp beak hurts
 var attack_zone_polygon
 var mirrored_points = []
-var bird_body: CollisionPolygon2D # Underneath all the fluff
+var bird_body: CollisionPolygon2D # Physics
 var is_dead: bool = false
 # Birds shall defy gravity until killed, then fall to the ground.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -43,9 +43,7 @@ func _physics_process(delta):
 		update_direction(-1)
 		$AnimatedSprite2D.play("fly")
 	elif velocity.x == 0:
-		print(velocity)
 		$AnimatedSprite2D.pause()
-		#$AnimatedSprite2D.play("peck") # This would requre changing the body
 		moving_direction *= -1
 
 func update_direction(direction):
@@ -69,7 +67,7 @@ func _on_body_entered(body):
 	if body is Player && attack_zone_enabled:
 		attack_zone_enabled = false
 		body.hurt()
-		Global.total_time -= 5
+		Global.total_time -= 10
 		if Global.current_difficulty == Global.DifficultyLevel.HARD:
 			Global.total_time = 0
 		die()
