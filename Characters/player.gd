@@ -14,8 +14,8 @@ class_name Player
 const SPEED = 180.0 # The normal speed of the player
 const CRAWL_SPEED = 90.0
 const JUMP_VELOCITY = -340.0
-const STANDING_COLLISION_Y_POS = 11
-const CROUCHING_COLLISION_Y_POS = 17
+const STANDING_COLLISION_Y_POS = 11 # Offset for standing collision shape
+const CROUCHING_COLLISION_Y_POS = 17 # Offset for crouching collision shape
 const ACCELERATION = 6.0 # The acceleration rate for smooth movement
 const BOOSTED_SPEED = 250.0  # Increased speed when Shift is held
 const CROUCHING_FALL_GRAVITY_MULTIPLIER = 1.5  # Added constant for crouching fall gravity multiplier

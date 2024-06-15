@@ -1,7 +1,8 @@
-[gd_scene load_steps=55 format=3 uid="uid://btxxufwl6n6br"]
+[gd_scene load_steps=56 format=3 uid="uid://btxxufwl6n6br"]
 
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_e6ntn"]
 [ext_resource type="Texture2D" uid="uid://dpa3pwfbbn1mp" path="res://Assets/Environment/PineTree.png" id="2_f4q5y"]
+[ext_resource type="Texture2D" uid="uid://bn4ti5hmaxhd2" path="res://Assets/Environment/MoleMound.png" id="2_qg3ie"]
 [ext_resource type="Texture2D" uid="uid://b1gijyai74025" path="res://Assets/PixelFrog/Terrain/Terrain (16x16).png" id="3_o6e6x"]
 [ext_resource type="Script" path="res://Levels/MoleJumper.gd" id="4_jq247"]
 [ext_resource type="Texture2D" uid="uid://bp6xr1oy8q24i" path="res://Assets/Enemies/DirtParticles.png" id="5_hb5f4"]
@@ -478,6 +479,22 @@ texture = ExtResource("3_o6e6x")
 20:10/0 = 0
 20:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 20:10/0/physics_layer_0/angular_velocity = 0.0
+21:8/0 = 0
+21:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+21:8/0/physics_layer_0/angular_velocity = 0.0
+21:9/0 = 0
+21:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+21:9/0/physics_layer_0/angular_velocity = 0.0
+21:10/0 = 0
+21:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+21:10/0/physics_layer_0/angular_velocity = 0.0
+17:10/0 = 0
+17:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+17:10/0/physics_layer_0/angular_velocity = 0.0
+18:7/size_in_atlas = Vector2i(3, 1)
+18:7/0 = 0
+18:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+18:7/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_hbk7l"]
 physics_layer_0/collision_layer = 1
@@ -920,6 +937,20 @@ position = Vector2(0, 28)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MoleJumperList/MoleJumper3/Area2D"]
 position = Vector2(0, 1)
 polygon = PackedVector2Array(-11, -12, -11, 16, 12, 16, 12, -12)
+
+[node name="MoleMounds" type="Node2D" parent="."]
+
+[node name="Mound" type="Sprite2D" parent="MoleMounds"]
+position = Vector2(-698, 89)
+texture = ExtResource("2_qg3ie")
+
+[node name="Mound2" type="Sprite2D" parent="MoleMounds"]
+position = Vector2(263, 89)
+texture = ExtResource("2_qg3ie")
+
+[node name="Mound3" type="Sprite2D" parent="MoleMounds"]
+position = Vector2(677, 89)
+texture = ExtResource("2_qg3ie")
 
 [node name="CharacterBody2D4" parent="." instance=ExtResource("7_4kghd")]
 position = Vector2(1861, 63)
