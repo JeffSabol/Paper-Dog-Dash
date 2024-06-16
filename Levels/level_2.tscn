@@ -646,33 +646,35 @@ zoom = Vector2(2.5, 2.5)
 [node name="Newspaper" parent="." instance=ExtResource("6_cilcn")]
 position = Vector2(550, 42)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("14_l1ya3")]
+[node name="Walkers" type="Node2D" parent="."]
 
-[node name="CharacterBody2D4" parent="." instance=ExtResource("14_l1ya3")]
+[node name="CharacterBody2D" parent="Walkers" instance=ExtResource("14_l1ya3")]
+
+[node name="CharacterBody2D4" parent="Walkers" instance=ExtResource("14_l1ya3")]
 position = Vector2(-2739, -68)
 
-[node name="CharacterBody2D5" parent="." instance=ExtResource("14_l1ya3")]
+[node name="CharacterBody2D5" parent="Walkers" instance=ExtResource("14_l1ya3")]
 position = Vector2(-2549, -67)
 
-[node name="CharacterBody2D3" parent="." instance=ExtResource("14_l1ya3")]
+[node name="CharacterBody2D3" parent="Walkers" instance=ExtResource("14_l1ya3")]
 position = Vector2(-1500, -40)
 
-[node name="CharacterBody2D2" parent="." instance=ExtResource("14_l1ya3")]
+[node name="CharacterBody2D2" parent="Walkers" instance=ExtResource("14_l1ya3")]
 position = Vector2(-6, -17)
 
-[node name="CharacterBody2D6" parent="." instance=ExtResource("14_l1ya3")]
+[node name="CharacterBody2D6" parent="Walkers" instance=ExtResource("14_l1ya3")]
 position = Vector2(1370, -272)
 
-[node name="CharacterBody2D10" parent="." instance=ExtResource("14_l1ya3")]
+[node name="CharacterBody2D10" parent="Walkers" instance=ExtResource("14_l1ya3")]
 position = Vector2(2484, -210)
 
-[node name="CharacterBody2D7" parent="." instance=ExtResource("14_l1ya3")]
+[node name="CharacterBody2D7" parent="Walkers" instance=ExtResource("14_l1ya3")]
 position = Vector2(1996, -227)
 
-[node name="CharacterBody2D8" parent="." instance=ExtResource("14_l1ya3")]
+[node name="CharacterBody2D8" parent="Walkers" instance=ExtResource("14_l1ya3")]
 position = Vector2(-4486, -139)
 
-[node name="CharacterBody2D9" parent="." instance=ExtResource("14_l1ya3")]
+[node name="CharacterBody2D9" parent="Walkers" instance=ExtResource("14_l1ya3")]
 position = Vector2(-3362, -187)
 
 [node name="Player" parent="." instance=ExtResource("4_qfih0")]
