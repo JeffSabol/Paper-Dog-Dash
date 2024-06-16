@@ -1130,6 +1130,15 @@ position = Vector2(2954, 265)
 position = Vector2(5638, 157)
 scale = Vector2(1.5, 1.5)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1308, 71)
+zoom = Vector2(2.5, 2.5)
+
+[node name="Level Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_c3biw")
+autoplay = true
+max_distance = 20000.0
+
 [node name="Player" parent="." instance=ExtResource("11_i2iv7")]
 position = Vector2(-1308, 71)
 
@@ -1141,15 +1150,6 @@ offset_left = -23.0
 offset_top = -8.0
 offset_right = 17.0
 offset_bottom = 32.0
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-1308, 71)
-zoom = Vector2(2.5, 2.5)
-
-[node name="Level Music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("17_c3biw")
-autoplay = true
-max_distance = 20000.0
 
 [connection signal="timeout" from="MoleJumperList/MoleJumper/JumpTimer" to="MoleJumperList/MoleJumper" method="_on_jump_timer_timeout"]
 [connection signal="body_entered" from="MoleJumperList/MoleJumper/Area2D" to="MoleJumperList/MoleJumper" method="_on_area_2d_body_entered"]

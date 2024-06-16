@@ -639,23 +639,6 @@ position = Vector2(400, -128)
 position = Vector2(3740, -195)
 scale = Vector2(1.5, 1.5)
 
-[node name="Player" parent="." instance=ExtResource("4_qfih0")]
-position = Vector2(-4395, -120)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
-remote_path = NodePath("../../Camera2D")
-
-[node name="HUD" parent="Player" instance=ExtResource("8_ynca7")]
-offset_left = -23.0
-offset_top = -8.0
-offset_right = 17.0
-offset_bottom = 32.0
-
-[node name="Level Music" type="AudioStreamPlayer2D" parent="Player"]
-stream = ExtResource("12_xbtxg")
-autoplay = true
-max_distance = 20000.0
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-4395, -120)
 zoom = Vector2(2.5, 2.5)
@@ -691,6 +674,23 @@ position = Vector2(-4486, -139)
 
 [node name="CharacterBody2D9" parent="." instance=ExtResource("14_l1ya3")]
 position = Vector2(-3362, -187)
+
+[node name="Player" parent="." instance=ExtResource("4_qfih0")]
+position = Vector2(-4395, -120)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="HUD" parent="Player" instance=ExtResource("8_ynca7")]
+offset_left = -23.0
+offset_top = -8.0
+offset_right = 17.0
+offset_bottom = 32.0
+
+[node name="Level Music" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("12_xbtxg")
+autoplay = true
+max_distance = 20000.0
 
 [connection signal="bone_picked_up" from="BoneList/Bone1" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone2" to="Player/HUD" method="_on_bone_picked_up"]

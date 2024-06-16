@@ -1395,6 +1395,15 @@ position = Vector2(2546, 89)
 position = Vector2(7057, 429)
 scale = Vector2(1.5, 1.5)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-5454, -1239)
+zoom = Vector2(2.5, 2.5)
+
+[node name="Level Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_44ysl")
+autoplay = true
+max_distance = 20000.0
+
 [node name="Player" parent="." instance=ExtResource("15_uv2dd")]
 position = Vector2(-5454, -1239)
 
@@ -1406,15 +1415,6 @@ offset_left = -23.0
 offset_top = -8.0
 offset_right = 17.0
 offset_bottom = 32.0
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-5454, -1239)
-zoom = Vector2(2.5, 2.5)
-
-[node name="Level Music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("20_44ysl")
-autoplay = true
-max_distance = 20000.0
 
 [connection signal="timeout" from="Walker Spawner/Timer" to="Walker Spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="Walker Spawner2/Timer" to="Walker Spawner2" method="_on_timer_timeout"]

@@ -987,6 +987,14 @@ position = Vector2(3506, 240)
 position = Vector2(4984, -2)
 scale = Vector2(1.5, 1.5)
 
+[node name="Newspaper" parent="." instance=ExtResource("7_gj2pd")]
+position = Vector2(421, 89)
+
+[node name="Level Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_uu226")
+autoplay = true
+max_distance = 20000.0
+
 [node name="Player" parent="." instance=ExtResource("4_whwk6")]
 position = Vector2(-2762, -377)
 
@@ -1001,14 +1009,6 @@ offset_left = -23.0
 offset_top = -8.0
 offset_right = 17.0
 offset_bottom = 32.0
-
-[node name="Newspaper" parent="." instance=ExtResource("7_gj2pd")]
-position = Vector2(421, 89)
-
-[node name="Level Music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("14_uu226")
-autoplay = true
-max_distance = 20000.0
 
 [connection signal="timeout" from="MoleJumperList/MoleJumper/JumpTimer" to="MoleJumperList/MoleJumper" method="_on_jump_timer_timeout"]
 [connection signal="body_entered" from="MoleJumperList/MoleJumper/Area2D" to="MoleJumperList/MoleJumper" method="_on_area_2d_body_entered"]
