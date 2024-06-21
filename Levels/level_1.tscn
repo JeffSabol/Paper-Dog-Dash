@@ -694,7 +694,7 @@ position = Vector2(4273, 93)
 scale = Vector2(1.5, 1.5)
 
 [node name="Player" parent="." instance=ExtResource("2_a56jg")]
-position = Vector2(-146, -55)
+position = Vector2(4157, 100)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -706,11 +706,11 @@ offset_right = 17.0
 offset_bottom = 32.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-146, -55)
+position = Vector2(4157, 100)
 zoom = Vector2(2.5, 2.5)
 
 [node name="Newspaper" parent="." instance=ExtResource("6_1165n")]
-position = Vector2(160, -6)
+position = Vector2(4188, 115)
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_7l2kp")
