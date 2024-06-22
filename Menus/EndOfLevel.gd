@@ -9,7 +9,7 @@ func _ready():
 	update_bone_count_display()
 	update_time_elapsed_display()
 	print(Time.get_datetime_dict_from_system(false))
-	get_datetime()
+	print(get_datetime())
 	
 	# level count will be level 2 because we already beat it
 	match (Global.level_count):
@@ -45,11 +45,22 @@ func get_datetime():
 	var month: int = datetime["month"]
 	var day: int = datetime["day"]
 	var hour: int = datetime["hour"]
-	dooms_day_algorithm(year, month, day)
+	return get_time_expression(hour) + " " + dooms_day_algorithm(year, month, day) + ", "  + str(month) + " " + str(day) + ", " + str(year)
+
+# Returns a time of day expression. Such as afternoon or evening.
+func get_time_expression(hour: int):
 	# Morning = 6am to noon
 	# Afternoon = noon - 6pm
 	# Evening = 6pm - 9pm
 	# Night = 9pm - 6am
+	if hour >= 6 and hour <12:
+		return "Morning"
+	elif hour >= 12 and hour < 18:
+		return "Afternoon"
+	elif hour >= 18 and hour < 21:
+		return "Evening"
+	else:
+		return "Night"
 
 func dooms_day_algorithm(year: int, month: int, day: int):
 	# John Conaway Doom's Day Algorithm
@@ -92,7 +103,6 @@ func dooms_day_algorithm(year: int, month: int, day: int):
 		day_of_week += 7  # Make the result non-negative
 
 	# Return the result as a day name
-	print(day_name(day_of_week))
 	return day_name(day_of_week)
 
 func calculate_leap_years(currentYear: int) -> int:
