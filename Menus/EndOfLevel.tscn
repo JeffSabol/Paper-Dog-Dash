@@ -74,12 +74,12 @@ text = "LEVEL 1 - NEW ROUTE"
 [node name="DateTime" type="Label" parent="."]
 layout_mode = 0
 offset_left = 406.0
-offset_top = 116.0
-offset_right = 916.0
+offset_top = 111.0
+offset_right = 926.0
 offset_bottom = 149.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_31hj4")
 theme_override_font_sizes/font_size = 32
-text = "Saturday     Morning      June  15  2024"
+text = "Saturday     Morning,      June  15  2024"
 
 [connection signal="pressed" from="ContinueButton" to="ContinueButton" method="_on_pressed"]

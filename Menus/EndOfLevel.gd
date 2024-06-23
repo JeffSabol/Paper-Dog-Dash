@@ -8,25 +8,27 @@ func _ready():
 	time_display = get_node("TimeDisplay")
 	update_bone_count_display()
 	update_time_elapsed_display()
-	print(Time.get_datetime_dict_from_system(false))
-	print(get_datetime())
+	$DateTime.text = get_datetime()
 	
 	# level count will be level 2 because we already beat it
 	match (Global.level_count):
 		2:
-			$LevelDesc.text = "Level 1 - New Route"
+			$LevelDesc.text = "Level 1 - New  Route"
 		3:
-			$LevelDesc.text = "Level 2 - "
+			$LevelDesc.text = "Level 2 - Mole  Pathway"
 		4:
-			$LevelDesc.text = "Level 3 - "
+			$LevelDesc.text = "Level 3 - Squaking  Hills"
 		5:
-			$LevelDesc.text = "Level 4 - "
+			$LevelDesc.text = "Level 4 - Route  4"
 		6:
-			$LevelDesc.text = "Level 5 - "
+			$LevelDesc.text = "Level 5 - The  Cavern"
 		7:
-			$LevelDesc.text = "Level 6 - "
+			$LevelDesc.text = "Level 6 - The  Mole  Hideout"
 		_:
 			$LevelDesc.text = "Level ??? - Unknown"
+	# Level name ideas:
+	# Soaring Heights, Jumping Grounds, 
+
 
 func update_bone_count_display():
 	bone_count_display.text = "Bones Collected: " + str(Global.total_bones)
@@ -45,7 +47,7 @@ func get_datetime():
 	var month: int = datetime["month"]
 	var day: int = datetime["day"]
 	var hour: int = datetime["hour"]
-	return get_time_expression(hour) + " " + dooms_day_algorithm(year, month, day) + ", "  + str(month) + " " + str(day) + ", " + str(year)
+	return dooms_day_algorithm(year, month, day) + "    " + get_time_expression(hour) + ",  "  + get_month_name(month) + "  " + str(day) + ",  " + str(year)
 
 # Returns a time of day expression. Such as afternoon or evening.
 func get_time_expression(hour: int):
@@ -61,6 +63,10 @@ func get_time_expression(hour: int):
 		return "Evening"
 	else:
 		return "Night"
+
+func get_month_name(month: int):
+	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+	return months[month - 1]
 
 func dooms_day_algorithm(year: int, month: int, day: int):
 	# John Conaway Doom's Day Algorithm
