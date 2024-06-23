@@ -63,9 +63,9 @@ autoplay = true
 [node name="LevelDesc" type="Label" parent="."]
 layout_mode = 0
 offset_left = 18.0
-offset_top = 113.0
+offset_top = 112.0
 offset_right = 298.0
-offset_bottom = 151.0
+offset_bottom = 150.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_31hj4")
 theme_override_font_sizes/font_size = 32

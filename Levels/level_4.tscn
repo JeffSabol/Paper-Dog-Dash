@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://btxxufwl6n6br"]
+[gd_scene load_steps=57 format=3 uid="uid://btxxufwl6n6br"]
 
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_e6ntn"]
 [ext_resource type="Texture2D" uid="uid://dpa3pwfbbn1mp" path="res://Assets/Environment/PineTree.png" id="2_f4q5y"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cyn0a1hyfvvwa" path="res://Objects/Newspaper.tscn" id="16_kjt7u"]
 [ext_resource type="PackedScene" uid="uid://cc8fx2uvaws46" path="res://HUD.tscn" id="16_vnn8w"]
 [ext_resource type="AudioStream" uid="uid://c5hbwug15bgrc" path="res://Assets/Audio/Gameplay Music/Level_Music.wav" id="17_c3biw"]
+[ext_resource type="PackedScene" uid="uid://x05u00opb3jo" path="res://Characters/Enemies/BirdFlyer.tscn" id="19_xicbt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41d6j"]
 texture = ExtResource("3_o6e6x")
@@ -1150,6 +1151,13 @@ offset_left = -23.0
 offset_top = -8.0
 offset_right = 17.0
 offset_bottom = 32.0
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(-1308, 71)
+zoom = Vector2(2.5, 2.5)
+
+[node name="BirdFlyer" parent="." instance=ExtResource("19_xicbt")]
+position = Vector2(656, 63)
 
 [connection signal="timeout" from="MoleJumperList/MoleJumper/JumpTimer" to="MoleJumperList/MoleJumper" method="_on_jump_timer_timeout"]
 [connection signal="body_entered" from="MoleJumperList/MoleJumper/Area2D" to="MoleJumperList/MoleJumper" method="_on_area_2d_body_entered"]

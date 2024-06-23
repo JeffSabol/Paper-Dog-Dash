@@ -562,11 +562,6 @@ position = Vector2(1584.15, -206)
 scale = Vector2(2, 2)
 texture = ExtResource("12_w503l")
 
-[node name="PineTree7" type="Sprite2D" parent="PineTrees"]
-position = Vector2(1655.15, -206)
-scale = Vector2(2, 2)
-texture = ExtResource("12_w503l")
-
 [node name="PineTree8" type="Sprite2D" parent="PineTrees"]
 position = Vector2(1726.15, -206)
 scale = Vector2(2, 2)
@@ -694,7 +689,7 @@ position = Vector2(4273, 93)
 scale = Vector2(1.5, 1.5)
 
 [node name="Player" parent="." instance=ExtResource("2_a56jg")]
-position = Vector2(4157, 100)
+position = Vector2(-105, -56)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -704,18 +699,13 @@ offset_left = -23.0
 offset_top = -8.0
 offset_right = 17.0
 offset_bottom = 32.0
+metadata/_edit_use_anchors_ = true
 
 [node name="RemoteTransform2D2" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 
-[node name="HUD2" parent="Player" instance=ExtResource("8_sloql")]
-offset_left = -23.0
-offset_top = -8.0
-offset_right = 17.0
-offset_bottom = 32.0
-
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(4157, 100)
+position = Vector2(-105, -56)
 zoom = Vector2(2.5, 2.5)
 
 [node name="Newspaper" parent="." instance=ExtResource("6_1165n")]
@@ -729,9 +719,6 @@ max_distance = 20000.0
 [node name="BigMoleAahh" parent="." instance=ExtResource("11_ju57m")]
 position = Vector2(-6787, 261)
 scale = Vector2(8, 8)
-
-[node name="Player2" parent="." instance=ExtResource("2_a56jg")]
-position = Vector2(-146, -55)
 
 [connection signal="bone_picked_up" from="BoneList/Bone1" to="Player/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone2" to="Player/HUD" method="_on_bone_picked_up"]
