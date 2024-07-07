@@ -12,7 +12,7 @@ class_name Player
 
 # Constants
 const SPEED = 180.0 # The normal speed of the player
-const CRAWL_SPEED = 90.0
+const CRAWL_SPEED = 55.0
 const JUMP_VELOCITY = -340.0
 const STANDING_COLLISION_Y_POS = 11 # Offset for standing collision shape
 const CROUCHING_COLLISION_Y_POS = 17 # Offset for crouching collision shape
@@ -164,13 +164,20 @@ func get_input_direction() -> int:
 
 func move_character(direction: int, delta: float):
 	var target_speed = SPEED
-	if Input.is_action_pressed("ui_shift") or Input.is_joy_button_pressed(0, JOY_BUTTON_A) or Input.is_joy_button_pressed(0, JOY_BUTTON_LEFT_SHOULDER) and not is_crouching:
+	if (Input.is_action_pressed("ui_shift") or Input.is_joy_button_pressed(0, JOY_BUTTON_A) or Input.is_joy_button_pressed(0, JOY_BUTTON_LEFT_SHOULDER)) and not is_crouching:
 		target_speed = BOOSTED_SPEED
 
 	var target_velocity_x = direction * (target_speed if state != PlayerState.CRAWL else CRAWL_SPEED)
-	velocity.x = lerp(velocity.x, target_velocity_x, ACCELERATION * delta)
+	var lerp_factor = ACCELERATION * delta
+
+	# Smoother speed transition from run to crawl
+	if state == PlayerState.CRAWL and abs(velocity.x) > CRAWL_SPEED:
+		lerp_factor *= 0.65
+
+	velocity.x = lerp(velocity.x, target_velocity_x, lerp_factor)
 	update_animations()
 	move_and_slide()
+
 
 # Handle the crouch logic
 func handle_crouch_logic():
