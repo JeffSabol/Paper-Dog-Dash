@@ -62,9 +62,9 @@ autoplay = true
 
 [node name="LevelDesc" type="Label" parent="."]
 layout_mode = 0
-offset_left = 18.0
+offset_left = 43.0
 offset_top = 112.0
-offset_right = 298.0
+offset_right = 323.0
 offset_bottom = 150.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_31hj4")
@@ -73,13 +73,15 @@ text = "LEVEL 1 - NEW ROUTE"
 
 [node name="DateTime" type="Label" parent="."]
 layout_mode = 0
-offset_left = 406.0
+offset_left = 723.0
 offset_top = 111.0
-offset_right = 926.0
+offset_right = 1243.0
 offset_bottom = 149.0
+scale = Vector2(0.992669, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_31hj4")
 theme_override_font_sizes/font_size = 32
 text = "Saturday     Morning,      June  15  2024"
+horizontal_alignment = 2
 
 [connection signal="pressed" from="ContinueButton" to="ContinueButton" method="_on_pressed"]
