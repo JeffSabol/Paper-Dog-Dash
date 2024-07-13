@@ -34,11 +34,8 @@ func updateTimer():
 				Global.total_lives = 3
 			if (Global.current_difficulty == Global.DifficultyLevel.HARD):
 				Global.total_lives = 1
-			
-			# Go back to the first level
-			Global.level_count=1
-			Global.level_path="res://Levels/level_" + str(Global.level_count) + ".tscn"
-			Global._deferred_goto_next_level()
+				
+			Global._deferred_goto_scene("res://Menus/GameOver.tscn")
 			pass
 
 # Currently set to one second

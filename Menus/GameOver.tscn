@@ -1,0 +1,130 @@
+[gd_scene load_steps=13 format=3 uid="uid://c3ryvxbpyoyes"]
+
+[ext_resource type="Script" path="res://Menus/GameOver.gd" id="1_p85rw"]
+[ext_resource type="Texture2D" uid="uid://bt6wcrbg16s76" path="res://Assets/Menu/GameOver/Background.png" id="1_ysi7c"]
+[ext_resource type="Texture2D" uid="uid://drpmsxlfjka6e" path="res://Assets/Dog/Death.png" id="2_t8tx0"]
+[ext_resource type="AudioStream" uid="uid://ccex10e41jgk6" path="res://Assets/Menu/GameOver/death.mp3" id="3_pwyaa"]
+[ext_resource type="FontFile" uid="uid://cuo28wcy83qw8" path="res://Assets/Font/dpcomic.ttf" id="5_e5t3l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3x3k"]
+atlas = ExtResource("2_t8tx0")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44vyh"]
+atlas = ExtResource("2_t8tx0")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa2ce"]
+atlas = ExtResource("2_t8tx0")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30vpe"]
+atlas = ExtResource("2_t8tx0")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hha6p"]
+atlas = ExtResource("2_t8tx0")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc7a7"]
+atlas = ExtResource("2_t8tx0")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fvk12"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3x3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44vyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa2ce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30vpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30vpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30vpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30vpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30vpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30vpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hha6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hha6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hha6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hha6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hha6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hha6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mc7a7")
+}],
+"loop": false,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p85rw")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_ysi7c")
+
+[node name="DyingDog" type="AnimatedSprite2D" parent="."]
+position = Vector2(-20, -110)
+scale = Vector2(12, 12)
+sprite_frames = SubResource("SpriteFrames_fvk12")
+autoplay = "default"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_pwyaa")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="OneMoreTime" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -382.0
+offset_top = -315.0
+offset_right = -286.0
+offset_bottom = -292.0
+scale = Vector2(8, 8)
+theme_override_fonts/font = ExtResource("5_e5t3l")
+text = "ONE MORE TIME?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.79
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
