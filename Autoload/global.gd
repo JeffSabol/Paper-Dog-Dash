@@ -38,7 +38,7 @@ var default_settings = {
 		"fullscreen": false,
 	},
 	"game": {
-		"difficulty": DifficultyLevel.EASY,
+		"difficulty": DifficultyLevel.HARD,
 	}
 }
 
