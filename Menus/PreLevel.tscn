@@ -106,5 +106,6 @@ text = "New  Route"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.5
+one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
