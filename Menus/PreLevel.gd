@@ -10,4 +10,3 @@ func _ready():
 
 func _on_timer_timeout():
 	Global.start_next_level()
-A
