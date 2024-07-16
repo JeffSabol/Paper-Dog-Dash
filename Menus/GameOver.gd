@@ -23,4 +23,4 @@ func _go_to_main_menu():
 		# Go back to the first level
 		Global.level_count=1
 		Global.level_path="res://Levels/level_" + str(Global.level_count) + ".tscn"
-		Global._deferred_goto_next_level()
+		Global.goto_next_level()

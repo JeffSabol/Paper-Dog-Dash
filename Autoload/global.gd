@@ -12,7 +12,7 @@ var total_lives: int = 9999 # Default value that is overridden by set_difficulty
 
 # Level changing
 var current_scene = null
-var level_count: int = 2 # We want to change to level 2 after level 1
+var level_count: int = 1
 var level_path: String = "res://Levels/level_" + str(level_count) + ".tscn"
 
 # Newspaper handling
@@ -71,7 +71,7 @@ func apply_settings():
 func goto_scene(path: String) -> void:
 	# Deleting the current scene at this point is
 	# a bad idea, because it may still be executing code.
-	call_deferred("_deferred_goto_scene",path)
+	call_deferred("_deferred_goto_scene", path)
 
 func _deferred_goto_scene(path: String):
 	# It is now safe to remove the current scene
@@ -90,18 +90,15 @@ func _deferred_goto_scene(path: String):
 	get_tree().current_scene = current_scene
 
 func goto_next_level() -> void:
-	# Deleting the current scene at this point is
-	# a bad idea, because it may still be executing code.
-	call_deferred("_deferred_goto_next_level")
+	# Transition to the pre-level scene
+	var pre_level_scene_path = "res://Menus/PreLevel.tscn"
+	goto_scene(pre_level_scene_path)
 
-func _deferred_goto_next_level() -> void:
-	# It is now safe to remove the current scene
-	current_scene.queue_free()
-
-	# Load the new scene.
+func start_next_level() -> void:
+	# Load the actual level
 	var s = ResourceLoader.load(level_path)
 
-	# Instance the new scene.
+	# Instance the new level scene.
 	current_scene = s.instantiate()
 
 	# Add it to the active scene, as child of root.
@@ -133,7 +130,7 @@ func get_difficulty() -> int:
 	return current_difficulty
 
 func _input(event: InputEvent) -> void:
-	if current_scene.name.begins_with("level_") and event.is_action_pressed("ui_cancel") or event.is_action_pressed("ui_select") or event.is_action_pressed("pause_button"	):
+	if current_scene.name.begins_with("level_") and event.is_action_pressed("ui_cancel") or event.is_action_pressed("ui_select") or event.is_action_pressed("pause_button"):
 		toggle_pause()
 
 func toggle_pause() -> void:

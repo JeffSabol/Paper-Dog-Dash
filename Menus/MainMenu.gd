@@ -1,5 +1,5 @@
 # Jeff Sabol
-# MainMenu.gd : The scripting bhind navigating the main menu's control node. AKA the buttons and stuff.
+# MainMenu.gd : The scripting behind navigating the main menu's control node. AKA the buttons and stuff.
 extends Control
 
 # Buttons
@@ -15,7 +15,6 @@ var settings_menu = null
 func _ready():
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if not input_detected:
@@ -27,13 +26,12 @@ func _process(delta):
 			else:
 				print("PlayButton not found")
 
-
 func _on_play_button_pressed():
 	$ButtonSound.play()
 	# Add a slight delay so that the entire audio plays
 	await get_tree().create_timer($ButtonSound.stream.get_length()).timeout
-	Global.goto_scene("res://Levels/level_1.tscn")
-	
+	Global.goto_next_level()
+	#Global.goto_scene("res://Levels/level_1.tscn")
 
 func _on_settings_button_pressed():
 	$ButtonSound.play()
