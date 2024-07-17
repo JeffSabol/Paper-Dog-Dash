@@ -688,6 +688,9 @@ position = Vector2(3656, 137)
 position = Vector2(4273, 93)
 scale = Vector2(1.5, 1.5)
 
+[node name="Newspaper" parent="." instance=ExtResource("6_1165n")]
+position = Vector2(183, -6)
+
 [node name="Player" parent="." instance=ExtResource("2_a56jg")]
 position = Vector2(-105, -56)
 
@@ -707,9 +710,6 @@ remote_path = NodePath("../../Camera2D")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-105, -56)
 zoom = Vector2(2.5, 2.5)
-
-[node name="Newspaper" parent="." instance=ExtResource("6_1165n")]
-position = Vector2(183, -6)
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_7l2kp")
