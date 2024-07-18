@@ -154,3 +154,23 @@ func toggle_pause() -> void:
 			
 		if hud:
 			get_tree().paused = is_paused
+
+# Get the level count for level number passed in
+func get_level_name(level_count) -> String:
+	match (level_count):
+		1:
+			return "Level 1  New  Route"
+		2:
+			return "Level 2  Mole  Pathway"
+		3:
+			return "Level 3  Squaking  Hills"
+		4:
+			return "Level 4  Route  4"
+		5:
+			return "Level 5  The  Cavern"
+		62:
+			return "Level 6  The  Mole  Hideout"
+		_:
+			return "Level ???  Unknown"
+	# Level name ideas:
+	# Soaring Heights, Jumping Grounds,
