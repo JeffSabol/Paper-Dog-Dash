@@ -1,3 +1,4 @@
+# Jeff Sabol
 extends Control
 
 var bone_count_display : Label
@@ -10,6 +11,7 @@ func _ready():
 	update_time_elapsed_display()
 	$DateTime.text = get_datetime()
 	$LevelDesc.text = Global.get_level_name(Global.level_count - 1)
+	animate_success_image()
 
 func update_bone_count_display():
 	bone_count_display.text = "Bones Collected: " + str(Global.total_bones)
@@ -106,3 +108,10 @@ func is_leap_year(year: int) -> bool:
 func day_name(day: int) -> String:
 	var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 	return days[day]
+	
+func animate_success_image():
+	var tween = get_tree().create_tween()
+	tween.set_loops()
+	tween.tween_property($SuccessImage, "modulate", Color.RED, 2)
+	tween.tween_property($SuccessImage, "modulate", Color.GREEN, 2)
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cir0fiprkupvv"]
+[gd_scene load_steps=10 format=3 uid="uid://cir0fiprkupvv"]
 
 [ext_resource type="Script" path="res://Menus/EndOfLevel.gd" id="1_bu11d"]
 [ext_resource type="Texture2D" uid="uid://0vqbdsqpc3pu" path="res://Assets/Menu/EndOfLevel/EndOfLevel.png" id="2_267lg"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://cuo28wcy83qw8" path="res://Assets/Font/dpcomic.ttf" id="5_c6fl4"]
 [ext_resource type="AudioStream" uid="uid://bkcy7lxurv7gn" path="res://Assets/Audio/End_Of_Level_Music.wav" id="6_yrf7x"]
 [ext_resource type="FontFile" uid="uid://dp2rkrxe58itu" path="res://Assets/Font/ARCADECLASSIC.TTF" id="7_31hj4"]
+[ext_resource type="Texture2D" uid="uid://cw6c2a5p5iqjw" path="res://Assets/Menu/EndOfLevel/Success.png" id="8_l5f72"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8nj0v"]
 font = ExtResource("5_c6fl4")
@@ -40,21 +41,21 @@ script = ExtResource("3_i8jip")
 
 [node name="BoneCountDisplay" type="Label" parent="."]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 260.0
-offset_right = 411.0
-offset_bottom = 323.0
+offset_top = 304.0
+offset_right = 1280.0
+offset_bottom = 388.0
 text = "Bones Collected: 0"
 label_settings = SubResource("LabelSettings_8nj0v")
+horizontal_alignment = 1
 
 [node name="TimeDisplay" type="Label" parent="."]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 317.0
-offset_right = 409.0
-offset_bottom = 380.0
+offset_top = 360.0
+offset_right = 1280.0
+offset_bottom = 447.0
 text = "Time: 0"
 label_settings = SubResource("LabelSettings_8nj0v")
+horizontal_alignment = 1
 
 [node name="Success" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_yrf7x")
@@ -83,5 +84,14 @@ theme_override_fonts/font = ExtResource("7_31hj4")
 theme_override_font_sizes/font_size = 32
 text = "Saturday     Morning,      June  15  2024"
 horizontal_alignment = 2
+
+[node name="SuccessImage" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 154.0
+offset_right = 515.0
+offset_bottom = 195.0
+scale = Vector2(4, 4)
+texture = ExtResource("8_l5f72")
 
 [connection signal="pressed" from="ContinueButton" to="ContinueButton" method="_on_pressed"]
