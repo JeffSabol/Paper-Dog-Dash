@@ -1,13 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://cir0fiprkupvv"]
+[gd_scene load_steps=12 format=3 uid="uid://cir0fiprkupvv"]
 
 [ext_resource type="Script" path="res://Menus/EndOfLevel.gd" id="1_bu11d"]
 [ext_resource type="Texture2D" uid="uid://0vqbdsqpc3pu" path="res://Assets/Menu/EndOfLevel/EndOfLevel.png" id="2_267lg"]
 [ext_resource type="Texture2D" uid="uid://bv8o7tk4wgi5y" path="res://Assets/Menu/EndOfLevel/ContinueButton.png" id="2_c5mh8"]
+[ext_resource type="Texture2D" uid="uid://cvspwqlbqypql" path="res://Assets/Menu/EndOfLevel/Paper_Dog_Times.png" id="3_5wj5i"]
 [ext_resource type="Script" path="res://Menus/ContinueButton.gd" id="3_i8jip"]
 [ext_resource type="FontFile" uid="uid://cuo28wcy83qw8" path="res://Assets/Font/dpcomic.ttf" id="5_c6fl4"]
 [ext_resource type="AudioStream" uid="uid://bkcy7lxurv7gn" path="res://Assets/Audio/End_Of_Level_Music.wav" id="6_yrf7x"]
 [ext_resource type="FontFile" uid="uid://dp2rkrxe58itu" path="res://Assets/Font/ARCADECLASSIC.TTF" id="7_31hj4"]
 [ext_resource type="Texture2D" uid="uid://cw6c2a5p5iqjw" path="res://Assets/Menu/EndOfLevel/Success.png" id="8_l5f72"]
+[ext_resource type="Texture2D" uid="uid://d08cm3flanhqv" path="res://Assets/Menu/EndOfLevel/Cloud.png" id="10_lcqs8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8nj0v"]
 font = ExtResource("5_c6fl4")
@@ -23,11 +25,24 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bu11d")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("2_267lg")
+
+[node name="PaperDogTimes" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -382.5
+offset_top = 8.0
+offset_right = 382.5
+offset_bottom = 93.0
+grow_horizontal = 2
+texture = ExtResource("3_5wj5i")
+stretch_mode = 2
 
 [node name="ContinueButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -93,5 +108,23 @@ offset_right = 515.0
 offset_bottom = 195.0
 scale = Vector2(4, 4)
 texture = ExtResource("8_l5f72")
+
+[node name="CloudLeft" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 15.0
+offset_right = 283.0
+offset_bottom = 55.0
+scale = Vector2(-2, 2)
+texture = ExtResource("10_lcqs8")
+
+[node name="CloudRight" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1047.0
+offset_top = 16.0
+offset_right = 1099.0
+offset_bottom = 56.0
+scale = Vector2(2, 2)
+texture = ExtResource("10_lcqs8")
 
 [connection signal="pressed" from="ContinueButton" to="ContinueButton" method="_on_pressed"]
