@@ -54,20 +54,29 @@ texture_normal = ExtResource("2_c5mh8")
 stretch_mode = 0
 script = ExtResource("3_i8jip")
 
+[node name="SuccessImage" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 194.0
+offset_right = 515.0
+offset_bottom = 235.0
+scale = Vector2(4, 4)
+texture = ExtResource("8_l5f72")
+
 [node name="BoneCountDisplay" type="Label" parent="."]
 layout_mode = 0
-offset_top = 304.0
+offset_top = 344.0
 offset_right = 1280.0
-offset_bottom = 388.0
+offset_bottom = 428.0
 text = "Bones Collected: 0"
 label_settings = SubResource("LabelSettings_8nj0v")
 horizontal_alignment = 1
 
 [node name="TimeDisplay" type="Label" parent="."]
 layout_mode = 0
-offset_top = 360.0
+offset_top = 400.0
 offset_right = 1280.0
-offset_bottom = 447.0
+offset_bottom = 487.0
 text = "Time: 0"
 label_settings = SubResource("LabelSettings_8nj0v")
 horizontal_alignment = 1
@@ -99,15 +108,6 @@ theme_override_fonts/font = ExtResource("7_31hj4")
 theme_override_font_sizes/font_size = 32
 text = "Saturday     Morning,      June  15  2024"
 horizontal_alignment = 2
-
-[node name="SuccessImage" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 392.0
-offset_top = 154.0
-offset_right = 515.0
-offset_bottom = 195.0
-scale = Vector2(4, 4)
-texture = ExtResource("8_l5f72")
 
 [node name="CloudLeft" type="TextureRect" parent="."]
 layout_mode = 0
