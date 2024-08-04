@@ -1,8 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://dviobdk7fd168"]
+[gd_scene load_steps=13 format=3 uid="uid://dviobdk7fd168"]
 
 [ext_resource type="FontFile" uid="uid://dp2rkrxe58itu" path="res://Assets/Font/ARCADECLASSIC.TTF" id="1_2u7r7"]
 [ext_resource type="Texture2D" uid="uid://bhaqjgpoynt36" path="res://Assets/Dog/Bark.png" id="1_6gdmd"]
 [ext_resource type="Script" path="res://Menus/PreLevel.gd" id="1_kolfe"]
+[ext_resource type="Texture2D" uid="uid://cwionm5txfwln" path="res://Assets/Menu/PreLevel/Hamburger.png" id="4_mc61m"]
+[ext_resource type="Texture2D" uid="uid://frk2jrahqajy" path="res://Assets/Menu/PreLevel/Border.png" id="4_o3ct0"]
+[ext_resource type="Texture2D" uid="uid://hyytdddvaokm" path="res://Assets/Menu/PreLevel/Vanilla_Icecream.png" id="6_jjxtr"]
+[ext_resource type="Texture2D" uid="uid://cv8kemvndniu3" path="res://Assets/Environment/Bone.png" id="6_rdh4l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_se5br"]
 atlas = ExtResource("1_6gdmd")
@@ -57,7 +61,7 @@ offset_bottom = 720.0
 color = Color(0, 0, 0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(537, 312)
+position = Vector2(537, 147)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_njejf")
 autoplay = "default"
@@ -67,9 +71,9 @@ frame_progress = 1.0
 [node name="x" type="Label" parent="."]
 layout_mode = 0
 offset_left = 702.0
-offset_top = 360.0
+offset_top = 195.0
 offset_right = 858.0
-offset_bottom = 490.0
+offset_bottom = 325.0
 theme_override_fonts/font = ExtResource("1_2u7r7")
 theme_override_font_sizes/font_size = 128
 text = "x"
@@ -77,9 +81,9 @@ text = "x"
 [node name="Lives" type="Label" parent="."]
 layout_mode = 0
 offset_left = 800.0
-offset_top = 360.0
+offset_top = 195.0
 offset_right = 956.0
-offset_bottom = 490.0
+offset_bottom = 325.0
 theme_override_fonts/font = ExtResource("1_2u7r7")
 theme_override_font_sizes/font_size = 128
 text = "3"
@@ -87,9 +91,9 @@ text = "3"
 [node name="LevelName" type="Label" parent="."]
 layout_mode = 0
 offset_left = -2.0
-offset_top = 213.0
+offset_top = 48.0
 offset_right = 1278.0
-offset_bottom = 278.0
+offset_bottom = 113.0
 theme_override_fonts/font = ExtResource("1_2u7r7")
 theme_override_font_sizes/font_size = 64
 text = "New  Route"
@@ -98,5 +102,138 @@ horizontal_alignment = 1
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.5
 one_shot = true
+
+[node name="PowerUp1" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 102.0
+offset_top = 513.0
+offset_right = 142.0
+offset_bottom = 553.0
+
+[node name="background" type="ColorRect" parent="PowerUp1"]
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 4.00006
+offset_right = 42.0
+offset_bottom = 44.0001
+scale = Vector2(4.09, 4.09)
+
+[node name="Border" type="TextureRect" parent="PowerUp1"]
+visible = false
+layout_mode = 0
+offset_left = -1.0
+offset_right = 39.0
+offset_bottom = 40.0
+scale = Vector2(4.25, 4.25)
+texture = ExtResource("4_o3ct0")
+
+[node name="Label2" type="Label" parent="PowerUp1"]
+layout_mode = 0
+offset_left = -86.0
+offset_top = -120.0
+offset_right = 132.0
+offset_bottom = -55.0
+theme_override_fonts/font = ExtResource("1_2u7r7")
+theme_override_font_sizes/font_size = 64
+text = "Press 1"
+
+[node name="Hamburger" type="TextureRect" parent="PowerUp1"]
+layout_mode = 0
+offset_left = -33.0
+offset_top = -61.0
+offset_right = 7.0
+offset_bottom = -21.0
+scale = Vector2(3, 3)
+texture = ExtResource("4_mc61m")
+
+[node name="Bone" type="TextureRect" parent="PowerUp1"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 75.0
+offset_right = 82.0
+offset_bottom = 115.0
+scale = Vector2(2, 2)
+texture = ExtResource("6_rdh4l")
+
+[node name="Label" type="Label" parent="PowerUp1"]
+layout_mode = 0
+offset_left = -86.0
+offset_top = 89.0
+offset_right = 19.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("1_2u7r7")
+theme_override_font_sizes/font_size = 64
+text = "123"
+
+[node name="Powerup2" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 547.0
+offset_top = 519.0
+offset_right = 587.0
+offset_bottom = 559.0
+
+[node name="ColorRect3" type="ColorRect" parent="Powerup2"]
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 6.10352e-05
+offset_right = 44.0
+offset_bottom = 40.0001
+scale = Vector2(4.09, 4.09)
+
+[node name="Border2" type="TextureRect" parent="Powerup2"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = -4.0
+offset_right = 41.0
+offset_bottom = 36.0
+scale = Vector2(4.25, 4.25)
+texture = ExtResource("4_o3ct0")
+
+[node name="Icecream" type="TextureRect" parent="Powerup2"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -1.0
+offset_right = 46.0
+offset_bottom = 39.0
+scale = Vector2(4, 4)
+texture = ExtResource("6_jjxtr")
+
+[node name="Powerup3" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 945.0
+offset_top = 519.0
+offset_right = 985.0
+offset_bottom = 559.0
+
+[node name="ColorRect3" type="ColorRect" parent="Powerup3"]
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 6.10352e-05
+offset_right = 44.0
+offset_bottom = 40.0001
+scale = Vector2(4.09, 4.09)
+
+[node name="Border2" type="TextureRect" parent="Powerup3"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = -4.0
+offset_right = 41.0
+offset_bottom = 36.0
+scale = Vector2(4.25, 4.25)
+texture = ExtResource("4_o3ct0")
+
+[node name="Icecream" type="TextureRect" parent="Powerup3"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -1.0
+offset_right = 46.0
+offset_bottom = 39.0
+scale = Vector2(4, 4)
+texture = ExtResource("6_jjxtr")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
