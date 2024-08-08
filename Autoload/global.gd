@@ -31,6 +31,11 @@ var current_difficulty: int = DifficultyLevel.EASY
 var is_paused: bool = false
 var pause_menu: Control = null
 
+# Powerup prices
+var hamburger_price = 5
+var icecream_price = 5
+var wings_price = 5
+
 # Create new ConfigFile object.
 var config = ConfigFile.new()
 var default_settings = {
@@ -49,7 +54,7 @@ func _ready() -> void:
 	
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
-	
+
 func load_settings():
 	var err = config.load("res://settings.cfg")
 	if err != OK:
@@ -154,6 +159,7 @@ func toggle_pause() -> void:
 			
 		if hud:
 			get_tree().paused = is_paused
+			pause_menu.restore_focus()
 
 # Get the level count for level number passed in
 func get_level_name(level_count) -> String:
