@@ -8,8 +8,12 @@ func _ready():
 	# Start a timer or wait for player input to proceed to the next level
 	$Timer.start()
 	
-	#TODO
+	# Display the price counter for each powerup
 	set_powerup_price_display(get_powerup_prices())
+	
+	# Show powerups if level 2+
+	if Global.level_count > 1:
+		$HBoxContainer.show()
 
 func _on_timer_timeout():
 	Global.start_next_level()

@@ -1,12 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://dviobdk7fd168"]
+[gd_scene load_steps=19 format=3 uid="uid://dviobdk7fd168"]
 
 [ext_resource type="FontFile" uid="uid://dp2rkrxe58itu" path="res://Assets/Font/ARCADECLASSIC.TTF" id="1_2u7r7"]
 [ext_resource type="Texture2D" uid="uid://bhaqjgpoynt36" path="res://Assets/Dog/Bark.png" id="1_6gdmd"]
 [ext_resource type="Script" path="res://Menus/PreLevel.gd" id="1_kolfe"]
 [ext_resource type="Texture2D" uid="uid://cwionm5txfwln" path="res://Assets/Menu/PreLevel/Hamburger.png" id="4_mc61m"]
-[ext_resource type="Texture2D" uid="uid://frk2jrahqajy" path="res://Assets/Menu/PreLevel/Border.png" id="4_o3ct0"]
 [ext_resource type="Texture2D" uid="uid://hyytdddvaokm" path="res://Assets/Menu/PreLevel/Vanilla_Icecream.png" id="6_jjxtr"]
 [ext_resource type="Texture2D" uid="uid://cv8kemvndniu3" path="res://Assets/Environment/Bone.png" id="6_rdh4l"]
+[ext_resource type="Texture2D" uid="uid://o7dbrd2xl37t" path="res://Assets/Buttons/Spritesheet_UI_Flat_Select_02.png" id="6_u2uyf"]
 [ext_resource type="Texture2D" uid="uid://b8jsduqdty32c" path="res://Assets/Menu/PreLevel/Fried_Chicken.png" id="8_u0ivv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_se5br"]
@@ -39,6 +39,42 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0d2je")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5m56"]
+atlas = ExtResource("6_u2uyf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnd2w"]
+atlas = ExtResource("6_u2uyf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mttnf"]
+atlas = ExtResource("6_u2uyf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emfr7"]
+atlas = ExtResource("6_u2uyf")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t22b0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5m56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnd2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mttnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emfr7")
 }],
 "loop": true,
 "name": &"default",
@@ -105,6 +141,7 @@ wait_time = 2.5
 one_shot = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -125,30 +162,12 @@ layout_mode = 2
 tooltip_text = "
 "
 
-[node name="background" type="ColorRect" parent="HBoxContainer/Hamburger"]
-visible = false
-layout_mode = 0
-offset_left = 2.0
-offset_top = 4.00006
-offset_right = 42.0
-offset_bottom = 44.0001
-scale = Vector2(4.09, 4.09)
-
-[node name="Border" type="TextureRect" parent="HBoxContainer/Hamburger"]
-visible = false
-layout_mode = 0
-offset_left = -1.0
-offset_right = 39.0
-offset_bottom = 40.0
-scale = Vector2(4.25, 4.25)
-texture = ExtResource("4_o3ct0")
-
 [node name="Label2" type="Label" parent="HBoxContainer/Hamburger"]
 layout_mode = 0
 offset_left = -86.0
-offset_top = -120.0
+offset_top = -136.0
 offset_right = 132.0
-offset_bottom = -55.0
+offset_bottom = -71.0
 theme_override_fonts/font = ExtResource("1_2u7r7")
 theme_override_font_sizes/font_size = 64
 text = "1"
@@ -182,28 +201,29 @@ theme_override_fonts/font = ExtResource("1_2u7r7")
 theme_override_font_sizes/font_size = 64
 text = "123"
 
+[node name="Selector" type="AnimatedSprite2D" parent="HBoxContainer/Hamburger"]
+position = Vector2(25, 0)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_t22b0")
+autoplay = "default"
+frame = 2
+frame_progress = 0.263812
+
 [node name="Icecream" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="ColorRect3" type="ColorRect" parent="HBoxContainer/Icecream"]
-visible = false
+[node name="Price" type="Label" parent="HBoxContainer/Icecream"]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 6.10352e-05
-offset_right = 44.0
-offset_bottom = 40.0001
-scale = Vector2(4.09, 4.09)
-
-[node name="Border2" type="TextureRect" parent="HBoxContainer/Icecream"]
-visible = false
-layout_mode = 0
-offset_left = 1.0
-offset_top = -4.0
-offset_right = 41.0
-offset_bottom = 36.0
-scale = Vector2(4.25, 4.25)
-texture = ExtResource("4_o3ct0")
+offset_left = -86.0
+offset_top = -136.0
+offset_right = 132.0
+offset_bottom = -71.0
+theme_override_fonts/font = ExtResource("1_2u7r7")
+theme_override_font_sizes/font_size = 64
+text = "2
+"
+horizontal_alignment = 1
 
 [node name="Icecream" type="TextureRect" parent="HBoxContainer/Icecream"]
 layout_mode = 0
@@ -213,18 +233,6 @@ offset_right = -2.0
 offset_bottom = -18.0
 scale = Vector2(3, 3)
 texture = ExtResource("6_jjxtr")
-
-[node name="Button" type="Label" parent="HBoxContainer/Icecream"]
-layout_mode = 0
-offset_left = -86.0
-offset_top = -120.0
-offset_right = 132.0
-offset_bottom = -55.0
-theme_override_fonts/font = ExtResource("1_2u7r7")
-theme_override_font_sizes/font_size = 64
-text = "2
-"
-horizontal_alignment = 1
 
 [node name="Bone" type="TextureRect" parent="HBoxContainer/Icecream"]
 layout_mode = 0
@@ -249,24 +257,17 @@ text = "123"
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="ColorRect3" type="ColorRect" parent="HBoxContainer/Wings"]
-visible = false
+[node name="Button" type="Label" parent="HBoxContainer/Wings"]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 6.10352e-05
-offset_right = 44.0
-offset_bottom = 40.0001
-scale = Vector2(4.09, 4.09)
-
-[node name="Border2" type="TextureRect" parent="HBoxContainer/Wings"]
-visible = false
-layout_mode = 0
-offset_left = 1.0
-offset_top = -4.0
-offset_right = 41.0
-offset_bottom = 36.0
-scale = Vector2(4.25, 4.25)
-texture = ExtResource("4_o3ct0")
+offset_left = -86.0001
+offset_top = -136.0
+offset_right = 132.0
+offset_bottom = -71.0
+theme_override_fonts/font = ExtResource("1_2u7r7")
+theme_override_font_sizes/font_size = 64
+text = "3
+"
+horizontal_alignment = 1
 
 [node name="Wings" type="TextureRect" parent="HBoxContainer/Wings"]
 layout_mode = 0
@@ -276,18 +277,6 @@ offset_right = -2.0
 offset_bottom = -18.0
 scale = Vector2(3, 3)
 texture = ExtResource("8_u0ivv")
-
-[node name="Button" type="Label" parent="HBoxContainer/Wings"]
-layout_mode = 0
-offset_left = -86.0
-offset_top = -120.0
-offset_right = 132.0
-offset_bottom = -55.0
-theme_override_fonts/font = ExtResource("1_2u7r7")
-theme_override_font_sizes/font_size = 64
-text = "2
-"
-horizontal_alignment = 1
 
 [node name="Bone" type="TextureRect" parent="HBoxContainer/Wings"]
 layout_mode = 0
