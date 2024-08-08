@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dviobdk7fd168"]
+[gd_scene load_steps=14 format=3 uid="uid://dviobdk7fd168"]
 
 [ext_resource type="FontFile" uid="uid://dp2rkrxe58itu" path="res://Assets/Font/ARCADECLASSIC.TTF" id="1_2u7r7"]
 [ext_resource type="Texture2D" uid="uid://bhaqjgpoynt36" path="res://Assets/Dog/Bark.png" id="1_6gdmd"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://frk2jrahqajy" path="res://Assets/Menu/PreLevel/Border.png" id="4_o3ct0"]
 [ext_resource type="Texture2D" uid="uid://hyytdddvaokm" path="res://Assets/Menu/PreLevel/Vanilla_Icecream.png" id="6_jjxtr"]
 [ext_resource type="Texture2D" uid="uid://cv8kemvndniu3" path="res://Assets/Environment/Bone.png" id="6_rdh4l"]
+[ext_resource type="Texture2D" uid="uid://b8jsduqdty32c" path="res://Assets/Menu/PreLevel/Fried_Chicken.png" id="8_u0ivv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_se5br"]
 atlas = ExtResource("1_6gdmd")
@@ -103,14 +104,28 @@ horizontal_alignment = 1
 wait_time = 2.5
 one_shot = true
 
-[node name="PowerUp1" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 102.0
-offset_top = 513.0
-offset_right = 142.0
-offset_bottom = 553.0
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -654.0
+offset_top = -164.0
+offset_right = 620.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 486
+alignment = 1
 
-[node name="background" type="ColorRect" parent="PowerUp1"]
+[node name="Hamburger" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+tooltip_text = "
+"
+
+[node name="background" type="ColorRect" parent="HBoxContainer/Hamburger"]
 visible = false
 layout_mode = 0
 offset_left = 2.0
@@ -119,7 +134,7 @@ offset_right = 42.0
 offset_bottom = 44.0001
 scale = Vector2(4.09, 4.09)
 
-[node name="Border" type="TextureRect" parent="PowerUp1"]
+[node name="Border" type="TextureRect" parent="HBoxContainer/Hamburger"]
 visible = false
 layout_mode = 0
 offset_left = -1.0
@@ -128,7 +143,7 @@ offset_bottom = 40.0
 scale = Vector2(4.25, 4.25)
 texture = ExtResource("4_o3ct0")
 
-[node name="Label2" type="Label" parent="PowerUp1"]
+[node name="Label2" type="Label" parent="HBoxContainer/Hamburger"]
 layout_mode = 0
 offset_left = -86.0
 offset_top = -120.0
@@ -136,9 +151,10 @@ offset_right = 132.0
 offset_bottom = -55.0
 theme_override_fonts/font = ExtResource("1_2u7r7")
 theme_override_font_sizes/font_size = 64
-text = "Press 1"
+text = "1"
+horizontal_alignment = 1
 
-[node name="Hamburger" type="TextureRect" parent="PowerUp1"]
+[node name="Hamburger" type="TextureRect" parent="HBoxContainer/Hamburger"]
 layout_mode = 0
 offset_left = -33.0
 offset_top = -61.0
@@ -147,7 +163,7 @@ offset_bottom = -21.0
 scale = Vector2(3, 3)
 texture = ExtResource("4_mc61m")
 
-[node name="Bone" type="TextureRect" parent="PowerUp1"]
+[node name="Bone" type="TextureRect" parent="HBoxContainer/Hamburger"]
 layout_mode = 0
 offset_left = 42.0
 offset_top = 75.0
@@ -156,7 +172,7 @@ offset_bottom = 115.0
 scale = Vector2(2, 2)
 texture = ExtResource("6_rdh4l")
 
-[node name="Label" type="Label" parent="PowerUp1"]
+[node name="HamburgerPrice" type="Label" parent="HBoxContainer/Hamburger"]
 layout_mode = 0
 offset_left = -86.0
 offset_top = 89.0
@@ -166,14 +182,11 @@ theme_override_fonts/font = ExtResource("1_2u7r7")
 theme_override_font_sizes/font_size = 64
 text = "123"
 
-[node name="Powerup2" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 547.0
-offset_top = 519.0
-offset_right = 587.0
-offset_bottom = 559.0
+[node name="Icecream" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 
-[node name="ColorRect3" type="ColorRect" parent="Powerup2"]
+[node name="ColorRect3" type="ColorRect" parent="HBoxContainer/Icecream"]
 visible = false
 layout_mode = 0
 offset_left = 4.0
@@ -182,7 +195,7 @@ offset_right = 44.0
 offset_bottom = 40.0001
 scale = Vector2(4.09, 4.09)
 
-[node name="Border2" type="TextureRect" parent="Powerup2"]
+[node name="Border2" type="TextureRect" parent="HBoxContainer/Icecream"]
 visible = false
 layout_mode = 0
 offset_left = 1.0
@@ -192,23 +205,51 @@ offset_bottom = 36.0
 scale = Vector2(4.25, 4.25)
 texture = ExtResource("4_o3ct0")
 
-[node name="Icecream" type="TextureRect" parent="Powerup2"]
+[node name="Icecream" type="TextureRect" parent="HBoxContainer/Icecream"]
 layout_mode = 0
-offset_left = 6.0
-offset_top = -1.0
-offset_right = 46.0
-offset_bottom = 39.0
-scale = Vector2(4, 4)
+offset_left = -42.0
+offset_top = -58.0
+offset_right = -2.0
+offset_bottom = -18.0
+scale = Vector2(3, 3)
 texture = ExtResource("6_jjxtr")
 
-[node name="Powerup3" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 945.0
-offset_top = 519.0
-offset_right = 985.0
-offset_bottom = 559.0
+[node name="Button" type="Label" parent="HBoxContainer/Icecream"]
+layout_mode = 0
+offset_left = -86.0
+offset_top = -120.0
+offset_right = 132.0
+offset_bottom = -55.0
+theme_override_fonts/font = ExtResource("1_2u7r7")
+theme_override_font_sizes/font_size = 64
+text = "2
+"
+horizontal_alignment = 1
 
-[node name="ColorRect3" type="ColorRect" parent="Powerup3"]
+[node name="Bone" type="TextureRect" parent="HBoxContainer/Icecream"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 75.0
+offset_right = 82.0
+offset_bottom = 115.0
+scale = Vector2(2, 2)
+texture = ExtResource("6_rdh4l")
+
+[node name="IcecreamPrice" type="Label" parent="HBoxContainer/Icecream"]
+layout_mode = 0
+offset_left = -86.0
+offset_top = 89.0
+offset_right = 19.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("1_2u7r7")
+theme_override_font_sizes/font_size = 64
+text = "123"
+
+[node name="Wings" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect3" type="ColorRect" parent="HBoxContainer/Wings"]
 visible = false
 layout_mode = 0
 offset_left = 4.0
@@ -217,7 +258,7 @@ offset_right = 44.0
 offset_bottom = 40.0001
 scale = Vector2(4.09, 4.09)
 
-[node name="Border2" type="TextureRect" parent="Powerup3"]
+[node name="Border2" type="TextureRect" parent="HBoxContainer/Wings"]
 visible = false
 layout_mode = 0
 offset_left = 1.0
@@ -227,13 +268,44 @@ offset_bottom = 36.0
 scale = Vector2(4.25, 4.25)
 texture = ExtResource("4_o3ct0")
 
-[node name="Icecream" type="TextureRect" parent="Powerup3"]
+[node name="Wings" type="TextureRect" parent="HBoxContainer/Wings"]
 layout_mode = 0
-offset_left = 6.0
-offset_top = -1.0
-offset_right = 46.0
-offset_bottom = 39.0
-scale = Vector2(4, 4)
-texture = ExtResource("6_jjxtr")
+offset_left = -42.0
+offset_top = -58.0
+offset_right = -2.0
+offset_bottom = -18.0
+scale = Vector2(3, 3)
+texture = ExtResource("8_u0ivv")
+
+[node name="Button" type="Label" parent="HBoxContainer/Wings"]
+layout_mode = 0
+offset_left = -86.0
+offset_top = -120.0
+offset_right = 132.0
+offset_bottom = -55.0
+theme_override_fonts/font = ExtResource("1_2u7r7")
+theme_override_font_sizes/font_size = 64
+text = "2
+"
+horizontal_alignment = 1
+
+[node name="Bone" type="TextureRect" parent="HBoxContainer/Wings"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 75.0
+offset_right = 82.0
+offset_bottom = 115.0
+scale = Vector2(2, 2)
+texture = ExtResource("6_rdh4l")
+
+[node name="WingsPrice" type="Label" parent="HBoxContainer/Wings"]
+layout_mode = 0
+offset_left = -86.0
+offset_top = 89.0
+offset_right = 19.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("1_2u7r7")
+theme_override_font_sizes/font_size = 64
+text = "123"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -31,6 +31,11 @@ var current_difficulty: int = DifficultyLevel.EASY
 var is_paused: bool = false
 var pause_menu: Control = null
 
+# Powerup prices
+var hamburger_price = 5
+var icecream_price = 5
+var wings_price = 5
+
 # Create new ConfigFile object.
 var config = ConfigFile.new()
 var default_settings = {
