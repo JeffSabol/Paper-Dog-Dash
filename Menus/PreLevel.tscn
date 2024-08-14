@@ -101,7 +101,7 @@ offset_bottom = 720.0
 color = Color(0, 0, 0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(537, 147)
+position = Vector2(537, 114)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_njejf")
 autoplay = "default"
@@ -111,9 +111,9 @@ frame_progress = 1.0
 [node name="x" type="Label" parent="."]
 layout_mode = 0
 offset_left = 702.0
-offset_top = 195.0
+offset_top = 162.0
 offset_right = 858.0
-offset_bottom = 325.0
+offset_bottom = 292.0
 theme_override_fonts/font = ExtResource("1_2u7r7")
 theme_override_font_sizes/font_size = 128
 text = "x"
@@ -121,9 +121,9 @@ text = "x"
 [node name="Lives" type="Label" parent="."]
 layout_mode = 0
 offset_left = 800.0
-offset_top = 195.0
+offset_top = 162.0
 offset_right = 956.0
-offset_bottom = 325.0
+offset_bottom = 292.0
 theme_override_fonts/font = ExtResource("1_2u7r7")
 theme_override_font_sizes/font_size = 128
 text = "3"
@@ -131,11 +131,10 @@ text = "3"
 [node name="LevelName" type="Label" parent="."]
 layout_mode = 0
 offset_left = -2.0
-offset_top = 48.0
 offset_right = 1278.0
-offset_bottom = 113.0
+offset_bottom = 114.0
 theme_override_fonts/font = ExtResource("1_2u7r7")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 96
 text = "New  Route"
 horizontal_alignment = 1
 
@@ -150,6 +149,33 @@ sprite_frames = SubResource("SpriteFrames_t22b0")
 autoplay = "default"
 frame = 2
 frame_progress = 0.263812
+
+[node name="Bone" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 154.0
+offset_right = 99.0
+offset_bottom = 194.0
+scale = Vector2(2, 2)
+texture = ExtResource("6_rdh4l")
+
+[node name="BoneX" type="Label" parent="."]
+offset_left = 151.0
+offset_top = 194.0
+offset_right = 307.0
+offset_bottom = 324.0
+theme_override_fonts/font = ExtResource("1_2u7r7")
+theme_override_font_sizes/font_size = 48
+text = "x"
+
+[node name="BoneCount" type="Label" parent="."]
+offset_left = 189.0
+offset_top = 170.0
+offset_right = 345.0
+offset_bottom = 300.0
+theme_override_fonts/font = ExtResource("1_2u7r7")
+theme_override_font_sizes/font_size = 80
+text = "123"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -181,24 +207,16 @@ offset_bottom = -21.0
 scale = Vector2(3, 3)
 texture = ExtResource("4_mc61m")
 
-[node name="Bone" type="TextureRect" parent="HBoxContainer/Hamburger"]
-layout_mode = 0
-offset_left = 42.0
-offset_top = 75.0
-offset_right = 82.0
-offset_bottom = 115.0
-scale = Vector2(2, 2)
-texture = ExtResource("6_rdh4l")
-
 [node name="HamburgerPrice" type="Label" parent="HBoxContainer/Hamburger"]
 layout_mode = 0
-offset_left = -86.0
+offset_left = -28.0
 offset_top = 89.0
-offset_right = 19.0
+offset_right = 77.0
 offset_bottom = 154.0
 theme_override_fonts/font = ExtResource("1_2u7r7")
 theme_override_font_sizes/font_size = 64
 text = "123"
+horizontal_alignment = 1
 
 [node name="Input" type="TextureRect" parent="HBoxContainer/Hamburger"]
 layout_mode = 0
@@ -222,25 +240,6 @@ offset_bottom = -18.0
 scale = Vector2(3, 3)
 texture = ExtResource("6_jjxtr")
 
-[node name="Bone" type="TextureRect" parent="HBoxContainer/Icecream"]
-layout_mode = 0
-offset_left = 42.0
-offset_top = 75.0
-offset_right = 82.0
-offset_bottom = 115.0
-scale = Vector2(2, 2)
-texture = ExtResource("6_rdh4l")
-
-[node name="IcecreamPrice" type="Label" parent="HBoxContainer/Icecream"]
-layout_mode = 0
-offset_left = -86.0
-offset_top = 89.0
-offset_right = 19.0
-offset_bottom = 154.0
-theme_override_fonts/font = ExtResource("1_2u7r7")
-theme_override_font_sizes/font_size = 64
-text = "123"
-
 [node name="Input2" type="TextureRect" parent="HBoxContainer/Icecream"]
 offset_left = -20.0
 offset_top = -178.0
@@ -248,6 +247,16 @@ offset_right = 20.0
 offset_bottom = -138.0
 scale = Vector2(2, 2)
 texture = ExtResource("9_012j1")
+
+[node name="IcecreamPrice" type="Label" parent="HBoxContainer/Icecream"]
+offset_left = -28.0
+offset_top = 89.0
+offset_right = 77.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("1_2u7r7")
+theme_override_font_sizes/font_size = 64
+text = "123"
+horizontal_alignment = 1
 
 [node name="Wings" type="Control" parent="HBoxContainer"]
 layout_mode = 2
@@ -262,25 +271,6 @@ offset_bottom = -18.0
 scale = Vector2(3, 3)
 texture = ExtResource("8_u0ivv")
 
-[node name="Bone" type="TextureRect" parent="HBoxContainer/Wings"]
-layout_mode = 0
-offset_left = 42.0
-offset_top = 75.0
-offset_right = 82.0
-offset_bottom = 115.0
-scale = Vector2(2, 2)
-texture = ExtResource("6_rdh4l")
-
-[node name="WingsPrice" type="Label" parent="HBoxContainer/Wings"]
-layout_mode = 0
-offset_left = -86.0
-offset_top = 89.0
-offset_right = 19.0
-offset_bottom = 154.0
-theme_override_fonts/font = ExtResource("1_2u7r7")
-theme_override_font_sizes/font_size = 64
-text = "123"
-
 [node name="Input" type="TextureRect" parent="HBoxContainer/Wings"]
 offset_left = -14.0
 offset_top = -178.0
@@ -288,5 +278,15 @@ offset_right = 26.0
 offset_bottom = -138.0
 scale = Vector2(2, 2)
 texture = ExtResource("11_mm3n5")
+
+[node name="WingsPrice" type="Label" parent="HBoxContainer/Wings"]
+offset_left = -28.0
+offset_top = 89.0
+offset_right = 77.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("1_2u7r7")
+theme_override_font_sizes/font_size = 64
+text = "123"
+horizontal_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

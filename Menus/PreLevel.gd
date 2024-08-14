@@ -14,6 +14,8 @@ func _ready():
 	# Show powerups if level 2+
 	if Global.level_count > 1:
 		$HBoxContainer.show()
+		
+	$BoneCount.text = str(Global.total_bones)
 
 func _on_timer_timeout():
 	Global.start_next_level()
