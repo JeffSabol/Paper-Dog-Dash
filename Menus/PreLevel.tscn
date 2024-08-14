@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dviobdk7fd168"]
+[gd_scene load_steps=22 format=3 uid="uid://dviobdk7fd168"]
 
 [ext_resource type="FontFile" uid="uid://dp2rkrxe58itu" path="res://Assets/Font/ARCADECLASSIC.TTF" id="1_2u7r7"]
 [ext_resource type="Texture2D" uid="uid://bhaqjgpoynt36" path="res://Assets/Dog/Bark.png" id="1_6gdmd"]
@@ -7,7 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://hyytdddvaokm" path="res://Assets/Menu/PreLevel/Vanilla_Icecream.png" id="6_jjxtr"]
 [ext_resource type="Texture2D" uid="uid://cv8kemvndniu3" path="res://Assets/Environment/Bone.png" id="6_rdh4l"]
 [ext_resource type="Texture2D" uid="uid://o7dbrd2xl37t" path="res://Assets/Buttons/Spritesheet_UI_Flat_Select_02.png" id="6_u2uyf"]
+[ext_resource type="Texture2D" uid="uid://chelkbbgc0lgj" path="res://Assets/Buttons/input/1.png" id="7_bpmpb"]
 [ext_resource type="Texture2D" uid="uid://b8jsduqdty32c" path="res://Assets/Menu/PreLevel/Fried_Chicken.png" id="8_u0ivv"]
+[ext_resource type="Texture2D" uid="uid://cj5afwwx342ah" path="res://Assets/Buttons/input/2.png" id="9_012j1"]
+[ext_resource type="Texture2D" uid="uid://b1wuws0yrw2li" path="res://Assets/Buttons/input/3.png" id="11_mm3n5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_se5br"]
 atlas = ExtResource("1_6gdmd")
@@ -137,11 +140,18 @@ text = "New  Route"
 horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 3.0
 one_shot = true
 
+[node name="Selector" type="AnimatedSprite2D" parent="."]
+position = Vector2(162, 556)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_t22b0")
+autoplay = "default"
+frame = 2
+frame_progress = 0.263812
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -161,17 +171,6 @@ alignment = 1
 layout_mode = 2
 tooltip_text = "
 "
-
-[node name="Label2" type="Label" parent="HBoxContainer/Hamburger"]
-layout_mode = 0
-offset_left = -86.0
-offset_top = -136.0
-offset_right = 132.0
-offset_bottom = -71.0
-theme_override_fonts/font = ExtResource("1_2u7r7")
-theme_override_font_sizes/font_size = 64
-text = "1"
-horizontal_alignment = 1
 
 [node name="Hamburger" type="TextureRect" parent="HBoxContainer/Hamburger"]
 layout_mode = 0
@@ -201,29 +200,18 @@ theme_override_fonts/font = ExtResource("1_2u7r7")
 theme_override_font_sizes/font_size = 64
 text = "123"
 
-[node name="Selector" type="AnimatedSprite2D" parent="HBoxContainer/Hamburger"]
-position = Vector2(25, 0)
-scale = Vector2(6, 6)
-sprite_frames = SubResource("SpriteFrames_t22b0")
-autoplay = "default"
-frame = 2
-frame_progress = 0.263812
+[node name="Input" type="TextureRect" parent="HBoxContainer/Hamburger"]
+layout_mode = 0
+offset_left = -14.0
+offset_top = -178.0
+offset_right = 26.0
+offset_bottom = -138.0
+scale = Vector2(2, 2)
+texture = ExtResource("7_bpmpb")
 
 [node name="Icecream" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-
-[node name="Price" type="Label" parent="HBoxContainer/Icecream"]
-layout_mode = 0
-offset_left = -86.0
-offset_top = -136.0
-offset_right = 132.0
-offset_bottom = -71.0
-theme_override_fonts/font = ExtResource("1_2u7r7")
-theme_override_font_sizes/font_size = 64
-text = "2
-"
-horizontal_alignment = 1
 
 [node name="Icecream" type="TextureRect" parent="HBoxContainer/Icecream"]
 layout_mode = 0
@@ -253,21 +241,17 @@ theme_override_fonts/font = ExtResource("1_2u7r7")
 theme_override_font_sizes/font_size = 64
 text = "123"
 
+[node name="Input2" type="TextureRect" parent="HBoxContainer/Icecream"]
+offset_left = -20.0
+offset_top = -178.0
+offset_right = 20.0
+offset_bottom = -138.0
+scale = Vector2(2, 2)
+texture = ExtResource("9_012j1")
+
 [node name="Wings" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-
-[node name="Button" type="Label" parent="HBoxContainer/Wings"]
-layout_mode = 0
-offset_left = -86.0001
-offset_top = -136.0
-offset_right = 132.0
-offset_bottom = -71.0
-theme_override_fonts/font = ExtResource("1_2u7r7")
-theme_override_font_sizes/font_size = 64
-text = "3
-"
-horizontal_alignment = 1
 
 [node name="Wings" type="TextureRect" parent="HBoxContainer/Wings"]
 layout_mode = 0
@@ -296,5 +280,13 @@ offset_bottom = 154.0
 theme_override_fonts/font = ExtResource("1_2u7r7")
 theme_override_font_sizes/font_size = 64
 text = "123"
+
+[node name="Input" type="TextureRect" parent="HBoxContainer/Wings"]
+offset_left = -14.0
+offset_top = -178.0
+offset_right = 26.0
+offset_bottom = -138.0
+scale = Vector2(2, 2)
+texture = ExtResource("11_mm3n5")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
