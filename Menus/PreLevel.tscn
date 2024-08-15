@@ -160,6 +160,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("6_rdh4l")
 
 [node name="BoneX" type="Label" parent="."]
+layout_mode = 0
 offset_left = 151.0
 offset_top = 194.0
 offset_right = 307.0
@@ -169,6 +170,7 @@ theme_override_font_sizes/font_size = 48
 text = "x"
 
 [node name="BoneCount" type="Label" parent="."]
+layout_mode = 0
 offset_left = 189.0
 offset_top = 170.0
 offset_right = 345.0
@@ -241,6 +243,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("6_jjxtr")
 
 [node name="Input2" type="TextureRect" parent="HBoxContainer/Icecream"]
+layout_mode = 0
 offset_left = -20.0
 offset_top = -178.0
 offset_right = 20.0
@@ -249,6 +252,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("9_012j1")
 
 [node name="IcecreamPrice" type="Label" parent="HBoxContainer/Icecream"]
+layout_mode = 0
 offset_left = -28.0
 offset_top = 89.0
 offset_right = 77.0
@@ -272,6 +276,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("8_u0ivv")
 
 [node name="Input" type="TextureRect" parent="HBoxContainer/Wings"]
+layout_mode = 0
 offset_left = -14.0
 offset_top = -178.0
 offset_right = 26.0
@@ -280,6 +285,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("11_mm3n5")
 
 [node name="WingsPrice" type="Label" parent="HBoxContainer/Wings"]
+layout_mode = 0
 offset_left = -28.0
 offset_top = 89.0
 offset_right = 77.0
