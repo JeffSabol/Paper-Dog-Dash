@@ -143,6 +143,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="Selector" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(162, 556)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_t22b0")

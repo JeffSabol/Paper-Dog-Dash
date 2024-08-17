@@ -1,4 +1,9 @@
+# Jeff Sabol
+# Controls the UI for the pre-level screen. Mainly for selecting the powerups.
 extends Control
+
+var current_selection
+enum powerup {NONE, BURGER, ICECREAM, WINGS}
 
 func _ready():
 	# Set the lives and level name labels
@@ -16,6 +21,62 @@ func _ready():
 		$HBoxContainer.show()
 		
 	$BoneCount.text = str(Global.total_bones)
+	
+	current_selection = powerup.NONE
+
+func _input(event):
+	print("current_selection: " + str(current_selection))
+	if Input.is_action_just_pressed("ui_left"):
+		print("User pressed left!")
+		if current_selection == 0:
+			# Switch to burger
+			$Selector.show()
+			$Selector.global_position = Vector2(162,556)
+			current_selection = powerup.BURGER
+		elif current_selection == 1:
+			# Switch to wings
+			$Selector.show()
+			$Selector.global_position = Vector2(1135,556)
+			current_selection = powerup.WINGS
+		elif current_selection == 2:
+			# Switch to burger
+			$Selector.show()
+			$Selector.global_position = Vector2(162,556)
+			current_selection = powerup.BURGER
+		elif current_selection == 3:
+			# Switch to icecream
+			$Selector.show()
+			$Selector.global_position = Vector2(637,556)
+			current_selection = powerup.ICECREAM
+
+	elif Input.is_action_just_pressed("ui_right"):
+		print($Selector.global_position)
+		if current_selection == 0:
+			# Switch to burger
+			$Selector.show()
+			$Selector.global_position = Vector2(162,556)
+			current_selection = powerup.BURGER
+		elif current_selection == 1:
+			# Switch to icecream
+			$Selector.show()
+			$Selector.global_position = Vector2(637,556)
+			current_selection = powerup.ICECREAM
+		elif current_selection == 2:
+			# Switch to wings
+			$Selector.show()
+			$Selector.global_position = Vector2(1135,556)
+			current_selection = powerup.WINGS
+		elif current_selection == 3:
+			# TODO should I remember the last selected position or nah?
+			# Time is limited in this menu...
+			# Switch back to burger
+			$Selector.show()
+			$Selector.global_position = Vector2(162,556)
+			current_selection = powerup.BURGER
+		print("User pressed right!")
+	elif Input.is_action_just_pressed("ui_cancel"):
+		$Selector.hide()
+		current_selection = powerup.NONE
 
 func _on_timer_timeout():
 	Global.start_next_level()
