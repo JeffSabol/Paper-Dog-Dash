@@ -5,6 +5,7 @@ extends Control
 var current_selection
 enum powerup {NONE, BURGER, ICECREAM, WINGS}
 
+# TODO do or don't let the player buy power ups on level 1? and hide it add?
 func _ready():
 	# Set the lives and level name labels
 	$Lives.text = str(Global.total_lives)
@@ -24,10 +25,10 @@ func _ready():
 	
 	current_selection = powerup.NONE
 
+# TODO ignore input when in game
 func _input(event):
 	print("current_selection: " + str(current_selection))
 	if Input.is_action_just_pressed("ui_left"):
-		print("User pressed left!")
 		if current_selection == 0:
 			# Switch to burger
 			$Selector.show()
@@ -73,10 +74,28 @@ func _input(event):
 			$Selector.show()
 			$Selector.global_position = Vector2(162,556)
 			current_selection = powerup.BURGER
-		print("User pressed right!")
 	elif Input.is_action_just_pressed("ui_cancel"):
 		$Selector.hide()
 		current_selection = powerup.NONE
+	elif Input.is_action_just_pressed("keyboard_0"):
+		# Hide the selector
+		$Selector.hide()
+		current_selection = powerup.NONE
+	elif Input.is_action_just_pressed("keyboard_1"):
+		# Switch to burger
+		$Selector.show()
+		$Selector.global_position = Vector2(162,556)
+		current_selection = powerup.BURGER
+	elif Input.is_action_just_pressed("keyboard_2"):
+		# Switch to icecream
+		$Selector.show()
+		$Selector.global_position = Vector2(637,556)
+		current_selection = powerup.ICECREAM
+	elif Input.is_action_just_pressed("keyboard_3"):
+		# Switch to wings
+		$Selector.show()
+		$Selector.global_position = Vector2(1135,556)
+		current_selection = powerup.WINGS
 
 func _on_timer_timeout():
 	Global.start_next_level()
