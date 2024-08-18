@@ -12,15 +12,16 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if can_return_to_menu and Input.is_anything_pressed():
-		_go_to_main_menu()
+		_go_to_first_level()
 		
 func _on_timer_timeout():
 	can_return_to_menu = true
 	$OneMoreTime.show()
 	pass
 	
-func _go_to_main_menu():
+func _go_to_first_level():
 		# Go back to the first level
-		Global.level_count=1
-		Global.level_path="res://Levels/level_" + str(Global.level_count) + ".tscn"
+		Global.total_bones = 0
+		Global.level_count = 1
+		Global.level_path = "res://Levels/level_" + str(Global.level_count) + ".tscn"
 		Global.goto_next_level()

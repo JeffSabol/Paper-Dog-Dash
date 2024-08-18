@@ -2,17 +2,15 @@
 # Scripting for the player's HUD on-screen. Controls the bone value and time for a level.
 extends Control
 
-var bones = 0
 var time_left = 170
 
 func _ready():
 	# Initialize the values for bones, display time, and level time.
-	$BoneCounter/Bones.text = str(bones)
+	$BoneCounter/Bones.text = str(Global.total_bones)
 	$TimeCounter/Seconds.text = str(time_left)
 	Global.total_time = time_left
 
 func _on_bone_picked_up():
-	bones += 1
 	_ready()
 
 func updateTimer():
