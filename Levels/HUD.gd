@@ -4,11 +4,27 @@ extends Control
 
 var time_left = 170
 
+func _process(delta: float) -> void:
+	if (Global.config.get_value("counter", "speedrun")):
+		$SpeedrunCounter.show()
+	else:
+		$SpeedrunCounter.hide()
+	$SpeedrunCounter.text = get_formatted_time()
+
 func _ready():
 	# Initialize the values for bones, display time, and level time.
 	$BoneCounter/Bones.text = str(Global.total_bones)
 	$TimeCounter/Seconds.text = str(time_left)
 	Global.total_time = time_left
+
+
+func get_formatted_time() -> String:
+	var milliseconds = int(Global.elapsed_time) % 1000
+	var total_seconds = int(Global.elapsed_time / 1000)
+	var seconds = total_seconds % 60
+	var minutes = (total_seconds / 60) % 60
+	return "%02d:%02d:%03d" % [minutes, seconds, milliseconds]
+
 
 func _on_bone_picked_up():
 	_ready()

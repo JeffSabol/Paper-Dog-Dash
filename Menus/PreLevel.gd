@@ -27,7 +27,6 @@ func _ready():
 
 # TODO ignore input when in game
 func _input(event):
-	print("current_selection: " + str(current_selection))
 	if Input.is_action_just_pressed("ui_left"):
 		if current_selection == 0:
 			# Switch to burger
@@ -51,7 +50,6 @@ func _input(event):
 			current_selection = powerup.ICECREAM
 
 	elif Input.is_action_just_pressed("ui_right"):
-		print($Selector.global_position)
 		if current_selection == 0:
 			# Switch to burger
 			$Selector.show()

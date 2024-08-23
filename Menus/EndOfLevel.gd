@@ -113,4 +113,3 @@ func animate_success_image():
 	tween.set_loops()
 	tween.tween_property($SuccessImage, "modulate", Color.RED, 2)
 	tween.tween_property($SuccessImage, "modulate", Color.GREEN, 2)
-

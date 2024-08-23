@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cc8fx2uvaws46"]
+[gd_scene load_steps=10 format=3 uid="uid://cc8fx2uvaws46"]
 
 [ext_resource type="Script" path="res://Levels/HUD.gd" id="1_0a344"]
 [ext_resource type="Texture2D" uid="uid://cv8kemvndniu3" path="res://Assets/Environment/Bone.png" id="2_eosqq"]
@@ -22,6 +22,10 @@ outline_color = Color(0, 0, 0, 1)
 font = ExtResource("3_hhlkd")
 font_size = 39
 outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s4vgj"]
+outline_size = 7
 outline_color = Color(0, 0, 0, 1)
 
 [node name="HUD" type="Control"]
@@ -117,5 +121,17 @@ offset_right = 47.0
 offset_bottom = -88.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("5_5hjin")
+
+[node name="SpeedrunCounter" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -229.0
+offset_top = 136.0
+offset_right = -136.0
+offset_bottom = 161.0
+theme_override_fonts/font = ExtResource("3_hhlkd")
+theme_override_font_sizes/font_size = 26
+text = "00:00:000"
+label_settings = SubResource("LabelSettings_s4vgj")
 
 [connection signal="timeout" from="TimeCounter/LevelTimer" to="." method="_on_level_timer_timeout"]

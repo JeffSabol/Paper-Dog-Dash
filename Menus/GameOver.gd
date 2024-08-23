@@ -21,6 +21,7 @@ func _on_timer_timeout():
 	
 func _go_to_first_level():
 		# Go back to the first level
+		Global.elapsed_time = 0.0
 		Global.total_bones = 0
 		Global.level_count = 1
 		Global.level_path = "res://Levels/level_" + str(Global.level_count) + ".tscn"
