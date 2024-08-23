@@ -30,6 +30,7 @@ func _on_play_button_pressed():
 	$ButtonSound.play()
 	# Add a slight delay so that the entire audio plays
 	Global.level_count = 1
+	Global.elapsed_time = 0.0
 	Global.level_path = "res://Levels/level_" + str(1) + ".tscn"
 	await get_tree().create_timer($ButtonSound.stream.get_length()).timeout
 	Global.goto_next_level()
