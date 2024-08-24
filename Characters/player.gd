@@ -198,8 +198,8 @@ func above_head_is_empty() -> bool:
 
 # Update animations based on player state
 func update_animations():
-	if is_peeing:
-		player_sprite.play("pee")
+	#if is_peeing:
+	#	player_sprite.play("pee_collar")
 
 	# Update state based on velocity
 	if abs(velocity.x) < 10 and not is_peeing and not is_hurt:
@@ -212,26 +212,29 @@ func update_animations():
 
 	match state:
 		PlayerState.STANDING:
-			player_sprite.play("idle")
+			#if has_collar:
+			#	player_sprite.play("idle_collar")
+			player_sprite.play("idle_collar")
 		PlayerState.WALKING:
-			player_sprite.play("walk")
+			player_sprite.play("walk_collar")
 		PlayerState.JUMPING:
-			player_sprite.play("jump")
+			if (player_sprite.animation != "jump_collar"):
+				player_sprite.play("jump_collar")
 		PlayerState.FALLING:
-			player_sprite.play("fall")
+			player_sprite.play("fall_collar")
 		PlayerState.PEEING:
-			player_sprite.play("pee")
+			player_sprite.play("pee_collar")
 		PlayerState.HURT:
 			if is_crouching:
 				if is_hurt:
 					player_sprite.play("crawl_hurt")
 				else:
-					player_sprite.play("crawl")
+					player_sprite.play("crawl_collar")
 			else:
 				player_sprite.play("hurt")
 
 	if is_crouching and player_sprite.animation != "crawl" and !is_hurt:
-		player_sprite.play("crawl")
+		player_sprite.play("crawl_collar")
 		
 	# Flip sprite based on movement direction
 	player_sprite.flip_h = velocity.x < 0
