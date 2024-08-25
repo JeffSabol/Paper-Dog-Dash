@@ -7,8 +7,11 @@ enum DifficultyLevel { EASY, MEDIUM, HARD }
 # Medium: Enemies do not die upon the player being hurt. 3 attempts per level.
 # Hard : Enemies one hit the player. Only 1 attempt per level.
 
+# Collar
+var has_collar: bool = true
+
 # Lives
-var total_lives: int = 9999 # Default value that is overridden by set_difficulty()
+var total_lives: int = 100 # Default value that is overridden by set_difficulty()
 
 # Level changing
 var current_scene = null
@@ -133,7 +136,7 @@ func set_difficulty(new_difficulty: int) -> void:
 	
 	match current_difficulty:
 		DifficultyLevel.EASY:
-			total_lives = 9999 # infinite lives
+			total_lives = 100
 		DifficultyLevel.MEDIUM:
 			total_lives = 3
 		DifficultyLevel.HARD:

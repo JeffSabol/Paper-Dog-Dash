@@ -37,22 +37,28 @@ func _physics_process(delta):
 		var collider = ray_cast.get_collider()
 		var collider2 = ray_cast2.get_collider()
 		if collider and collider.name == "Player":
-			collider.hurt()  # Apply damage to the player if collided
-		# TODO move this all into a simple Global.subtract_time() TODO
-			Global.total_time -= 5
-			if(Global.current_difficulty == Global.DifficultyLevel.HARD):
-				Global.total_time = 0
-			if(Global.current_difficulty == Global.DifficultyLevel.EASY):
+			if $StunTimer.is_stopped():
+				$StunTimer.start()
+				collider.hurt()  # Apply damage to the player if collided
+				# TODO move this all into a simple Global.subtract_time() TODO
+				Global.total_time -= 5
+				if(Global.current_difficulty == Global.DifficultyLevel.HARD):
+					print("collider.is_invincible: "+str(collider.is_invincible))
+					if !collider.is_invincible:
+						print("got here.")
+						Global.total_time = 0
 				enter_kill_state()  # Added to make the game more fair
 		if collider2 and collider2.name == "Player":
-			collider2.hurt()  # Apply damage to the player if collided
-			Global.total_time -= 5
-			if(Global.current_difficulty == Global.DifficultyLevel.HARD):
-				Global.total_time = 0
-			if(Global.current_difficulty == Global.DifficultyLevel.EASY):
+			if $StunTimer.is_stopped():
+				$StunTimer.start()
+				collider2.hurt()  # Apply damage to the player if collided
+				Global.total_time -= 5
+				if(Global.current_difficulty == Global.DifficultyLevel.HARD):
+					print("collider2.is_invincible: "+str(collider2.is_invincible))
+					if !collider2.is_invincible:
+						print("got here.")
+						Global.total_time = 0
 				enter_kill_state()  # Added to make the game more fair
-		# TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
-		
 	# Move and slide with the current velocity
 	move_and_slide()
 

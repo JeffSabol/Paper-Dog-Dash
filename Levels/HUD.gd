@@ -36,6 +36,7 @@ func updateTimer():
 	$TimeCounter/Seconds.text = str(time_left)
 	
 	if time_left <= 0:
+		Global.has_collar = true
 		Global.total_lives -= 1
 		if (Global.total_lives > 0):
 			# Restart the current level

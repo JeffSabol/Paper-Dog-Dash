@@ -27,7 +27,8 @@ var state = PlayerState.STANDING
 var is_crouching = false 
 var stuck_under_object = false
 var is_peeing = false
-var is_hurt = false
+@export var is_hurt = false
+@export var is_invincible = false
 var standing_collision_shape = preload("res://Characters/CollisionBoxes/player.tres")
 var crouching_collision_shape = preload("res://Characters/CollisionBoxes/playerCROUCHING.tres")
 
@@ -54,6 +55,8 @@ var can_jump_during_coyote_time = false
 
 # Physics processing
 func _physics_process(delta):
+	if !$InvincibilityTimer.is_stopped():
+		is_invincible = true
 	update_jump_buffer(delta)
 	handle_jump_input()
 	handle_gravity_and_state(delta)
@@ -68,11 +71,10 @@ func _physics_process(delta):
 func handle_jump_input():
 	if is_peeing or is_hurt:
 		return
-		
+
 	var jump_button_just_pressed = Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("Jump")
 	var controller_jump_just_pressed = Input.is_joy_button_pressed(0, JOY_BUTTON_B) and not controller_jump_pressed
-	
-	
+
 	if (jump_button_just_pressed or controller_jump_just_pressed) and not is_peeing and not is_hurt:
 		if is_on_floor() or can_jump_during_coyote_time:
 			perform_jump()
@@ -212,29 +214,49 @@ func update_animations():
 
 	match state:
 		PlayerState.STANDING:
-			#if has_collar:
-			#	player_sprite.play("idle_collar")
-			player_sprite.play("idle_collar")
+			if Global.has_collar:
+				player_sprite.play("idle_collar")
+			else:
+				player_sprite.play("idle")
 		PlayerState.WALKING:
-			player_sprite.play("walk_collar")
+			if Global.has_collar:
+				player_sprite.play("walk_collar")
+			else:
+				player_sprite.play("walk")
 		PlayerState.JUMPING:
-			if (player_sprite.animation != "jump_collar"):
-				player_sprite.play("jump_collar")
+			if Global.has_collar:
+				if (player_sprite.animation != "jump_collar"):
+					player_sprite.play("jump_collar")
+			else:
+				if (player_sprite.animation != "jump"):
+					player_sprite.play("jump")
 		PlayerState.FALLING:
-			player_sprite.play("fall_collar")
+			if Global.has_collar:
+				player_sprite.play("fall_collar")
+			else:
+				player_sprite.play("fall")
 		PlayerState.PEEING:
-			player_sprite.play("pee_collar")
+			if Global.has_collar:
+				player_sprite.play("pee_collar")
+			else:
+				player_sprite.play("pee")
 		PlayerState.HURT:
 			if is_crouching:
 				if is_hurt:
 					player_sprite.play("crawl_hurt")
 				else:
-					player_sprite.play("crawl_collar")
+					if Global.has_collar:
+						player_sprite.play("crawl_collar")
+					else:
+						player_sprite.play("crawl")
 			else:
 				player_sprite.play("hurt")
 
 	if is_crouching and player_sprite.animation != "crawl" and !is_hurt:
-		player_sprite.play("crawl_collar")
+		if Global.has_collar:
+			player_sprite.play("crawl_collar")
+		else:
+			player_sprite.play("crawl")
 		
 	# Flip sprite based on movement direction
 	player_sprite.flip_h = velocity.x < 0
@@ -280,6 +302,10 @@ func perform_jump():
 # Hurt functionality
 func hurt():
 	state = PlayerState.HURT
+	if Global.has_collar == true:
+		$InvincibilityTimer.start()
+		is_invincible = true
+	Global.has_collar = false
 	is_hurt = true
 	pee_timer.start(2.5)
 	$Hurt.play()
@@ -298,3 +324,5 @@ func update_collision_shape_for_standing():
 	collision_shape.shape = standing_collision_shape
 	collision_shape.position.y = STANDING_COLLISION_Y_POS
 	
+func _on_invincibility_timer_timeout() -> void:
+	is_invincible = false

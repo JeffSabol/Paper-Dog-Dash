@@ -151,4 +151,8 @@ shape = SubResource("RectangleShape2D_e68p0")
 [node name="Death" type="AudioStreamPlayer2D" parent="."]
 volume_db = -14.0
 
+[node name="StunTimer" type="Timer" parent="."]
+wait_time = 2.6
+one_shot = true
+
 [connection signal="body_entered" from="StompDetector" to="." method="_on_stomp_detector_body_entered"]

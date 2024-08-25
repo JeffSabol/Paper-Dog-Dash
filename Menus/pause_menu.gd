@@ -12,7 +12,7 @@ func _process(delta):
 	pass
 
 func restore_focus():
-	$VBoxContainer/ResumeButton.grab_focus()
+	$VBoxContainer/ResumeButton.grab_focusD()
 
 func _on_settings_button_pressed():
 	$ButtonSound.play()

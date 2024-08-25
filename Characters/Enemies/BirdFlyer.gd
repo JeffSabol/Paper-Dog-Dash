@@ -68,7 +68,7 @@ func _on_body_entered(body):
 		attack_zone_enabled = false
 		body.hurt()
 		Global.total_time -= 10
-		if Global.current_difficulty == Global.DifficultyLevel.HARD:
+		if Global.current_difficulty == Global.DifficultyLevel.HARD && body.is_invincible == false:
 			Global.total_time = 0
 		die()
 

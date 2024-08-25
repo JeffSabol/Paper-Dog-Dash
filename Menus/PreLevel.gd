@@ -7,6 +7,7 @@ enum powerup {NONE, BURGER, ICECREAM, WINGS}
 
 # TODO do or don't let the player buy power ups on level 1? and hide it add?
 func _ready():
+	Global.has_collar = true
 	# Set the lives and level name labels
 	$Lives.text = str(Global.total_lives)
 	$LevelName.text = Global.get_level_name(Global.level_count)
