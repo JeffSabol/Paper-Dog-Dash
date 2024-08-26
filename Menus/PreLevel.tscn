@@ -153,34 +153,35 @@ frame_progress = 0.263812
 
 [node name="Bone" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 59.0
-offset_top = 154.0
-offset_right = 99.0
-offset_bottom = 194.0
+offset_left = 554.0
+offset_top = 306.0
+offset_right = 594.0
+offset_bottom = 346.0
 scale = Vector2(2, 2)
 texture = ExtResource("6_rdh4l")
 
 [node name="BoneX" type="Label" parent="."]
 layout_mode = 0
-offset_left = 151.0
-offset_top = 194.0
-offset_right = 307.0
-offset_bottom = 324.0
+offset_left = 646.0
+offset_top = 346.0
+offset_right = 802.0
+offset_bottom = 476.0
 theme_override_fonts/font = ExtResource("1_2u7r7")
 theme_override_font_sizes/font_size = 48
 text = "x"
 
 [node name="BoneCount" type="Label" parent="."]
 layout_mode = 0
-offset_left = 189.0
-offset_top = 170.0
-offset_right = 345.0
-offset_bottom = 300.0
+offset_left = 684.0
+offset_top = 322.0
+offset_right = 840.0
+offset_bottom = 452.0
 theme_override_fonts/font = ExtResource("1_2u7r7")
 theme_override_font_sizes/font_size = 80
 text = "123"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5

@@ -7,6 +7,8 @@ enum powerup {NONE, BURGER, ICECREAM, WINGS}
 
 # TODO do or don't let the player buy power ups on level 1? and hide it add?
 func _ready():
+	get_tree().queue_delete($Selector)
+	get_tree().queue_delete($HBoxContainer)
 	Global.has_collar = true
 	# Set the lives and level name labels
 	$Lives.text = str(Global.total_lives)
@@ -31,69 +33,69 @@ func _input(event):
 	if Input.is_action_just_pressed("ui_left"):
 		if current_selection == 0:
 			# Switch to burger
-			$Selector.show()
-			$Selector.global_position = Vector2(162,556)
+			#$Selector.show()
+			#$Selector.global_position = Vector2(162,556)
 			current_selection = powerup.BURGER
 		elif current_selection == 1:
 			# Switch to wings
-			$Selector.show()
-			$Selector.global_position = Vector2(1135,556)
+			#$Selector.show()
+			#$Selector.global_position = Vector2(1135,556)
 			current_selection = powerup.WINGS
 		elif current_selection == 2:
 			# Switch to burger
-			$Selector.show()
-			$Selector.global_position = Vector2(162,556)
+			#$Selector.show()
+			#$Selector.global_position = Vector2(162,556)
 			current_selection = powerup.BURGER
 		elif current_selection == 3:
 			# Switch to icecream
-			$Selector.show()
-			$Selector.global_position = Vector2(637,556)
+			#$Selector.show()
+			#$Selector.global_position = Vector2(637,556)
 			current_selection = powerup.ICECREAM
 
 	elif Input.is_action_just_pressed("ui_right"):
 		if current_selection == 0:
 			# Switch to burger
-			$Selector.show()
-			$Selector.global_position = Vector2(162,556)
+			#$Selector.show()
+			#$Selector.global_position = Vector2(162,556)
 			current_selection = powerup.BURGER
 		elif current_selection == 1:
 			# Switch to icecream
-			$Selector.show()
-			$Selector.global_position = Vector2(637,556)
+			#$Selector.show()
+			#$Selector.global_position = Vector2(637,556)
 			current_selection = powerup.ICECREAM
 		elif current_selection == 2:
 			# Switch to wings
-			$Selector.show()
-			$Selector.global_position = Vector2(1135,556)
+			#$Selector.show()
+			#$Selector.global_position = Vector2(1135,556)
 			current_selection = powerup.WINGS
 		elif current_selection == 3:
 			# TODO should I remember the last selected position or nah?
 			# Time is limited in this menu...
 			# Switch back to burger
-			$Selector.show()
-			$Selector.global_position = Vector2(162,556)
+			#$Selector.show()
+			#$Selector.global_position = Vector2(162,556)
 			current_selection = powerup.BURGER
 	elif Input.is_action_just_pressed("ui_cancel"):
-		$Selector.hide()
+		#$Selector.hide()
 		current_selection = powerup.NONE
 	elif Input.is_action_just_pressed("keyboard_0"):
 		# Hide the selector
-		$Selector.hide()
+		#$Selector.hide()
 		current_selection = powerup.NONE
 	elif Input.is_action_just_pressed("keyboard_1"):
 		# Switch to burger
-		$Selector.show()
-		$Selector.global_position = Vector2(162,556)
+		#$Selector.show()
+		#$Selector.global_position = Vector2(162,556)
 		current_selection = powerup.BURGER
 	elif Input.is_action_just_pressed("keyboard_2"):
 		# Switch to icecream
-		$Selector.show()
-		$Selector.global_position = Vector2(637,556)
+		#$Selector.show()
+		#$Selector.global_position = Vector2(637,556)
 		current_selection = powerup.ICECREAM
 	elif Input.is_action_just_pressed("keyboard_3"):
 		# Switch to wings
-		$Selector.show()
-		$Selector.global_position = Vector2(1135,556)
+		#$Selector.show()
+		#$Selector.global_position = Vector2(1135,556)
 		current_selection = powerup.WINGS
 
 func _on_timer_timeout():
@@ -107,6 +109,7 @@ func get_powerup_prices():
 	return powerup_prices
 
 func set_powerup_price_display(prices: Array):
-	$HBoxContainer/Hamburger/HamburgerPrice.text = str(prices[0])
-	$HBoxContainer/Icecream/IcecreamPrice.text = str(prices[1])
-	$HBoxContainer/Wings/WingsPrice.text = str(prices[2])
+	pass
+	#$HBoxContainer/Hamburger/HamburgerPrice.text = str(prices[0])
+	#$HBoxContainer/Icecream/IcecreamPrice.text = str(prices[1])
+	#$HBoxContainer/Wings/WingsPrice.text = str(prices[2])
