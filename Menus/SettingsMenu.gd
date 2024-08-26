@@ -79,3 +79,11 @@ func _on_difficulty_button_pressed():
 			$ScrollContainer/VBoxContainer/DifficultyButton.texture_normal = hard_button_normal
 	Global.config.set_value("game", "difficulty", Global.current_difficulty)
 	Global.config.save("res://settings.cfg")
+
+func _on_speedrun_counter_button_pressed() -> void:
+	$ButtonSound.play()
+	
+	# Toggle the speedrun counter in the game's HUD
+	var speedrun_counter = not Global.config.get_value("counter", "speedrun", Global.default_settings["counter"]["speedrun"])
+	Global.config.set_value("counter", "speedrun", speedrun_counter)
+	Global.apply_settings()

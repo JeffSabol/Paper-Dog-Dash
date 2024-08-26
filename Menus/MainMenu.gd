@@ -13,7 +13,7 @@ var settings_menu = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	Global.total_bones = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -29,7 +29,9 @@ func _process(delta):
 func _on_play_button_pressed():
 	$ButtonSound.play()
 	# Add a slight delay so that the entire audio plays
+	Global.has_collar = true
 	Global.level_count = 1
+	Global.elapsed_time = 0.0
 	Global.level_path = "res://Levels/level_" + str(1) + ".tscn"
 	await get_tree().create_timer($ButtonSound.stream.get_length()).timeout
 	Global.goto_next_level()

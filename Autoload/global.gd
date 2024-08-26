@@ -7,8 +7,11 @@ enum DifficultyLevel { EASY, MEDIUM, HARD }
 # Medium: Enemies do not die upon the player being hurt. 3 attempts per level.
 # Hard : Enemies one hit the player. Only 1 attempt per level.
 
+# Collar
+var has_collar: bool = true
+
 # Lives
-var total_lives: int = 9999 # Default value that is overridden by set_difficulty()
+var total_lives: int = 100 # Default value that is overridden by set_difficulty()
 
 # Level changing
 var current_scene = null
@@ -22,7 +25,8 @@ var has_newspaper: bool = false
 var total_bones: int = 0
 
 # Time handling
-var total_time: int = 170 
+var total_time: int = 170 # Level timer until game ends due to music running out
+var elapsed_time: float = 0.0
 
 # Difficulty handling
 var current_difficulty: int = DifficultyLevel.EASY
@@ -44,8 +48,15 @@ var default_settings = {
 	},
 	"game": {
 		"difficulty": DifficultyLevel.HARD,
+	},
+	"counter" : {
+		"speedrun": false,
 	}
 }
+
+func _process(delta: float) -> void:
+	if not is_paused:
+		elapsed_time += delta * 1000
 
 func _ready() -> void:
 	load_settings()
@@ -125,7 +136,7 @@ func set_difficulty(new_difficulty: int) -> void:
 	
 	match current_difficulty:
 		DifficultyLevel.EASY:
-			total_lives = 9999 # infinite lives
+			total_lives = 100
 		DifficultyLevel.MEDIUM:
 			total_lives = 3
 		DifficultyLevel.HARD:

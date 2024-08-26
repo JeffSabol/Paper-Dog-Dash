@@ -25,4 +25,5 @@ func _on_pressed():
 		Global.pause_menu = null
 		
 	Global.level_count = 1
+	Global.elapsed_time = 0.0
 	Global.goto_scene("res://Menus/MainMenu.tscn")

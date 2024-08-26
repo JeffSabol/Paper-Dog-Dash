@@ -1,8 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://dviobdk7fd168"]
+[gd_scene load_steps=22 format=3 uid="uid://dviobdk7fd168"]
 
 [ext_resource type="FontFile" uid="uid://dp2rkrxe58itu" path="res://Assets/Font/ARCADECLASSIC.TTF" id="1_2u7r7"]
 [ext_resource type="Texture2D" uid="uid://bhaqjgpoynt36" path="res://Assets/Dog/Bark.png" id="1_6gdmd"]
 [ext_resource type="Script" path="res://Menus/PreLevel.gd" id="1_kolfe"]
+[ext_resource type="Texture2D" uid="uid://cwionm5txfwln" path="res://Assets/Menu/PreLevel/Hamburger.png" id="4_mc61m"]
+[ext_resource type="Texture2D" uid="uid://hyytdddvaokm" path="res://Assets/Menu/PreLevel/Vanilla_Icecream.png" id="6_jjxtr"]
+[ext_resource type="Texture2D" uid="uid://cv8kemvndniu3" path="res://Assets/Environment/Bone.png" id="6_rdh4l"]
+[ext_resource type="Texture2D" uid="uid://o7dbrd2xl37t" path="res://Assets/Buttons/Spritesheet_UI_Flat_Select_02.png" id="6_u2uyf"]
+[ext_resource type="Texture2D" uid="uid://chelkbbgc0lgj" path="res://Assets/Buttons/input/1.png" id="7_bpmpb"]
+[ext_resource type="Texture2D" uid="uid://b8jsduqdty32c" path="res://Assets/Menu/PreLevel/Fried_Chicken.png" id="8_u0ivv"]
+[ext_resource type="Texture2D" uid="uid://cj5afwwx342ah" path="res://Assets/Buttons/input/2.png" id="9_012j1"]
+[ext_resource type="Texture2D" uid="uid://b1wuws0yrw2li" path="res://Assets/Buttons/input/3.png" id="11_mm3n5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_se5br"]
 atlas = ExtResource("1_6gdmd")
@@ -40,6 +48,42 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5m56"]
+atlas = ExtResource("6_u2uyf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnd2w"]
+atlas = ExtResource("6_u2uyf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mttnf"]
+atlas = ExtResource("6_u2uyf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emfr7"]
+atlas = ExtResource("6_u2uyf")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t22b0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5m56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnd2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mttnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emfr7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="PreLevel" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -57,7 +101,7 @@ offset_bottom = 720.0
 color = Color(0, 0, 0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(537, 312)
+position = Vector2(537, 114)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_njejf")
 autoplay = "default"
@@ -67,9 +111,9 @@ frame_progress = 1.0
 [node name="x" type="Label" parent="."]
 layout_mode = 0
 offset_left = 702.0
-offset_top = 360.0
+offset_top = 162.0
 offset_right = 858.0
-offset_bottom = 490.0
+offset_bottom = 292.0
 theme_override_fonts/font = ExtResource("1_2u7r7")
 theme_override_font_sizes/font_size = 128
 text = "x"
@@ -77,9 +121,9 @@ text = "x"
 [node name="Lives" type="Label" parent="."]
 layout_mode = 0
 offset_left = 800.0
-offset_top = 360.0
+offset_top = 162.0
 offset_right = 956.0
-offset_bottom = 490.0
+offset_bottom = 292.0
 theme_override_fonts/font = ExtResource("1_2u7r7")
 theme_override_font_sizes/font_size = 128
 text = "3"
@@ -87,16 +131,170 @@ text = "3"
 [node name="LevelName" type="Label" parent="."]
 layout_mode = 0
 offset_left = -2.0
-offset_top = 213.0
 offset_right = 1278.0
-offset_bottom = 278.0
+offset_bottom = 114.0
 theme_override_fonts/font = ExtResource("1_2u7r7")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 96
 text = "New  Route"
 horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 3.0
 one_shot = true
+
+[node name="Selector" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(162, 556)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_t22b0")
+autoplay = "default"
+frame = 2
+frame_progress = 0.263812
+
+[node name="Bone" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 554.0
+offset_top = 306.0
+offset_right = 594.0
+offset_bottom = 346.0
+scale = Vector2(2, 2)
+texture = ExtResource("6_rdh4l")
+
+[node name="BoneX" type="Label" parent="."]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 346.0
+offset_right = 802.0
+offset_bottom = 476.0
+theme_override_fonts/font = ExtResource("1_2u7r7")
+theme_override_font_sizes/font_size = 48
+text = "x"
+
+[node name="BoneCount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 684.0
+offset_top = 322.0
+offset_right = 840.0
+offset_bottom = 452.0
+theme_override_fonts/font = ExtResource("1_2u7r7")
+theme_override_font_sizes/font_size = 80
+text = "123"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -654.0
+offset_top = -164.0
+offset_right = 620.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 486
+alignment = 1
+
+[node name="Hamburger" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+tooltip_text = "
+"
+
+[node name="Hamburger" type="TextureRect" parent="HBoxContainer/Hamburger"]
+layout_mode = 0
+offset_left = -33.0
+offset_top = -61.0
+offset_right = 7.0
+offset_bottom = -21.0
+scale = Vector2(3, 3)
+texture = ExtResource("4_mc61m")
+
+[node name="HamburgerPrice" type="Label" parent="HBoxContainer/Hamburger"]
+layout_mode = 0
+offset_left = -28.0
+offset_top = 89.0
+offset_right = 77.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("1_2u7r7")
+theme_override_font_sizes/font_size = 64
+text = "123"
+horizontal_alignment = 1
+
+[node name="Input" type="TextureRect" parent="HBoxContainer/Hamburger"]
+layout_mode = 0
+offset_left = -14.0
+offset_top = -178.0
+offset_right = 26.0
+offset_bottom = -138.0
+scale = Vector2(2, 2)
+texture = ExtResource("7_bpmpb")
+
+[node name="Icecream" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Icecream" type="TextureRect" parent="HBoxContainer/Icecream"]
+layout_mode = 0
+offset_left = -42.0
+offset_top = -58.0
+offset_right = -2.0
+offset_bottom = -18.0
+scale = Vector2(3, 3)
+texture = ExtResource("6_jjxtr")
+
+[node name="Input2" type="TextureRect" parent="HBoxContainer/Icecream"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -178.0
+offset_right = 20.0
+offset_bottom = -138.0
+scale = Vector2(2, 2)
+texture = ExtResource("9_012j1")
+
+[node name="IcecreamPrice" type="Label" parent="HBoxContainer/Icecream"]
+layout_mode = 0
+offset_left = -28.0
+offset_top = 89.0
+offset_right = 77.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("1_2u7r7")
+theme_override_font_sizes/font_size = 64
+text = "123"
+horizontal_alignment = 1
+
+[node name="Wings" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Wings" type="TextureRect" parent="HBoxContainer/Wings"]
+layout_mode = 0
+offset_left = -42.0
+offset_top = -58.0
+offset_right = -2.0
+offset_bottom = -18.0
+scale = Vector2(3, 3)
+texture = ExtResource("8_u0ivv")
+
+[node name="Input" type="TextureRect" parent="HBoxContainer/Wings"]
+layout_mode = 0
+offset_left = -14.0
+offset_top = -178.0
+offset_right = 26.0
+offset_bottom = -138.0
+scale = Vector2(2, 2)
+texture = ExtResource("11_mm3n5")
+
+[node name="WingsPrice" type="Label" parent="HBoxContainer/Wings"]
+layout_mode = 0
+offset_left = -28.0
+offset_top = 89.0
+offset_right = 77.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("1_2u7r7")
+theme_override_font_sizes/font_size = 64
+text = "123"
+horizontal_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
