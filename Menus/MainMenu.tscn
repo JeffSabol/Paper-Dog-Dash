@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bvn5gy6ac6uio"]
+[gd_scene load_steps=45 format=3 uid="uid://bvn5gy6ac6uio"]
 
 [ext_resource type="Texture2D" uid="uid://b1gijyai74025" path="res://Assets/PixelFrog/Terrain/Terrain (16x16).png" id="1_5ycr6"]
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_x1hmu"]
@@ -22,6 +22,8 @@
 [ext_resource type="AudioStream" uid="uid://dna4jh67p0p13" path="res://Assets/Audio/menu/Menu SFX/Menu_SFX_Play.wav" id="18_6ljou"]
 [ext_resource type="Texture2D" uid="uid://o8l5v014wuay" path="res://Assets/Enemies/Bird/BirdSpriteBig.png" id="19_l7gds"]
 [ext_resource type="Texture2D" uid="uid://2biensu5qcq5" path="res://Assets/Enemies/Bird/BirdFly.png" id="20_owb2x"]
+[ext_resource type="FontFile" uid="uid://cuo28wcy83qw8" path="res://Assets/Font/dpcomic.ttf" id="23_olafx"]
+[ext_resource type="Script" path="res://Menus/version.gd" id="24_2uqxg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oy7is"]
 resource_name = "1"
@@ -306,6 +308,11 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_3afvd"]
+font = ExtResource("23_olafx")
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
 [node name="MainMenu" type="Node2D"]
 
 [node name="Backdrop" type="TextureRect" parent="."]
@@ -406,6 +413,15 @@ script = ExtResource("18_3ttsq")
 position = Vector2(-105, -82)
 sprite_frames = SubResource("SpriteFrames_rgwlx")
 animation = &"fly"
+
+[node name="Version" type="Label" parent="."]
+offset_left = -568.0
+offset_top = 299.0
+offset_right = -480.0
+offset_bottom = 322.0
+text = "Alpha_0.1.0"
+label_settings = SubResource("LabelSettings_3afvd")
+script = ExtResource("24_2uqxg")
 
 [connection signal="timeout" from="Player/WalkTimer" to="Player" method="_on_walk_timer_timeout"]
 [connection signal="timeout" from="Player/TurnTimer" to="Player" method="_on_turn_timer_timeout"]
