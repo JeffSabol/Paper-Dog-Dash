@@ -51,6 +51,9 @@ var default_settings = {
 	},
 	"counter" : {
 		"speedrun": false,
+	},
+	"sound" : {
+		"master": true,
 	}
 }
 

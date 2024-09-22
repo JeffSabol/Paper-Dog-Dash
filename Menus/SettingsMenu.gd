@@ -7,8 +7,16 @@ var easy_button_normal = preload("res://Assets/Menu/Settings/Easy.png")
 var medium_button_normal = preload("res://Assets/Menu/Settings/Medium.png")
 var hard_button_normal = preload("res://Assets/Menu/Settings/Hard.png")
 
+# Master Volume button textures
+var master_volume_on = preload("res://Assets/Menu/Settings/MasterVolumeOn.png")
+var master_volume_off = preload("res://Assets/Menu/Settings/MasterVolumeOff.png")
+
+# Original master volume
+var original_master_volume
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	original_master_volume = AudioServer.get_bus_volume_db(0)
 	# Fixes the difficulty button always being the easy texture upon opening the settings menu.
 	match Global.current_difficulty:
 		Global.DifficultyLevel.EASY:
@@ -17,11 +25,17 @@ func _ready():
 			$ScrollContainer/VBoxContainer/DifficultyButton.texture_normal = medium_button_normal
 		Global.DifficultyLevel.HARD:
 			$ScrollContainer/VBoxContainer/DifficultyButton.texture_normal = hard_button_normal
+			
+	if Global.config.get_value("sound", "master"):
+		$ScrollContainer/VBoxContainer/MasterVolumeButton.texture_normal = master_volume_on
+	else:
+		$ScrollContainer/VBoxContainer/MasterVolumeButton.texture_normal = master_volume_off
 
 func _on_exit_button_pressed():
 	$ButtonSound.play()
 	
-	# Revert to the previously saved settings
+	# Revert to the prevgit aqiously saved settings
+	AudioServer.set_bus_volume_db(0, original_master_volume)
 	Global.load_settings()
 	Global.apply_settings()
 	hide()
@@ -43,6 +57,10 @@ func _on_reset_button_pressed():
 	$ScrollContainer/VBoxContainer/DifficultyButton.texture_normal = easy_button_normal
 	Global.current_difficulty = Global.DifficultyLevel.EASY
 	Global.config.set_value("game", "difficulty", Global.current_difficulty)
+	# Set the master volume back to normal
+	Global.config.set_value("sound", "master", true)
+	$ScrollContainer/VBoxContainer/MasterVolumeButton.texture_normal = master_volume_on
+	AudioServer.set_bus_volume_db(0, 0)
 	Global.config.save("res://settings.cfg")
 	
 func _input(event: InputEvent) -> void:
@@ -86,4 +104,18 @@ func _on_speedrun_counter_button_pressed() -> void:
 	# Toggle the speedrun counter in the game's HUD
 	var speedrun_counter = not Global.config.get_value("counter", "speedrun", Global.default_settings["counter"]["speedrun"])
 	Global.config.set_value("counter", "speedrun", speedrun_counter)
+	Global.apply_settings()
+
+func _on_master_volume_button_pressed() -> void:
+	$ButtonSound.play()
+	
+	# Toggle mute
+	if Global.config.get_value("sound", "master"):
+		$ScrollContainer/VBoxContainer/MasterVolumeButton.texture_normal = master_volume_off
+		AudioServer.set_bus_volume_db(0, -256.0)
+		Global.config.set_value("sound", "master", false)
+	else:
+		AudioServer.set_bus_volume_db(0, 0)
+		$ScrollContainer/VBoxContainer/MasterVolumeButton.texture_normal = master_volume_on
+		Global.config.set_value("sound", "master", true)
 	Global.apply_settings()
