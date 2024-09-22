@@ -34,7 +34,7 @@ func _ready():
 func _on_exit_button_pressed():
 	$ButtonSound.play()
 	
-	# Revert to the prevgit aqiously saved settings
+	# Revert to the previously saved settings
 	AudioServer.set_bus_volume_db(0, original_master_volume)
 	Global.load_settings()
 	Global.apply_settings()
