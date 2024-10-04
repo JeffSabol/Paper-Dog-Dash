@@ -157,7 +157,7 @@ func toggle_pause() -> void:
 	is_paused = !is_paused
 	
 	if current_scene.name.begins_with("level_"):
-		var hud = current_scene.get_node("Player/HUD")
+		var hud = current_scene.get_node("Camera2D/CanvasLayer/HUD")
 			
 		if is_paused:
 			if not pause_menu:
