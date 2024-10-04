@@ -1138,14 +1138,18 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(671, 405)
 zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
 [node name="HUD" parent="Camera2D/CanvasLayer" instance=ExtResource("17_a8ev3")]
-offset_left = 640.0
-offset_top = 397.0
-offset_right = 680.0
-offset_bottom = 437.0
+offset_left = 588.0
+offset_top = 276.0
+offset_right = 628.0
+offset_bottom = 316.0
+scale = Vector2(2, 2)
+size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("20_44ysl")

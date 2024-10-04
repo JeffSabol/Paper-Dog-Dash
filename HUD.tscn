@@ -47,18 +47,18 @@ offset_bottom = 74.0
 
 [node name="BoneTexture" type="TextureRect" parent="BoneCounter"]
 layout_mode = 0
-offset_left = -164.0
+offset_left = -212.0
 offset_top = -159.0
-offset_right = -124.0
+offset_right = -172.0
 offset_bottom = -119.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_eosqq")
 
 [node name="X" type="Label" parent="BoneCounter"]
 layout_mode = 0
-offset_left = -124.0
+offset_left = -172.0
 offset_top = -154.0
-offset_right = -84.0
+offset_right = -132.0
 offset_bottom = -121.0
 text = "x"
 label_settings = SubResource("LabelSettings_mdrut")
@@ -66,9 +66,9 @@ label_settings = SubResource("LabelSettings_mdrut")
 [node name="Bones" type="Label" parent="BoneCounter"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -98.0
+offset_left = -146.0
 offset_top = -159.0
-offset_right = -14.0
+offset_right = -62.0
 offset_bottom = -97.0
 text = "32"
 label_settings = SubResource("LabelSettings_ew5pt")
@@ -83,18 +83,18 @@ offset_bottom = 74.0
 
 [node name="HourGlass" type="TextureRect" parent="TimeCounter"]
 layout_mode = 0
-offset_left = 225.0
+offset_left = 273.0
 offset_top = -158.0
-offset_right = 265.0
+offset_right = 313.0
 offset_bottom = -118.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("4_38xit")
 
 [node name="Colon" type="Label" parent="TimeCounter"]
 layout_mode = 0
-offset_left = 264.0
+offset_left = 312.0
 offset_top = -159.0
-offset_right = 304.0
+offset_right = 352.0
 offset_bottom = -126.0
 text = ":"
 label_settings = SubResource("LabelSettings_mdrut")
@@ -105,10 +105,10 @@ autostart = true
 [node name="Seconds" type="Label" parent="TimeCounter"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 280.0
-offset_top = -159.0
-offset_right = 364.0
-offset_bottom = -97.0
+offset_left = 327.0
+offset_top = -158.0
+offset_right = 411.0
+offset_bottom = -96.0
 text = "32"
 label_settings = SubResource("LabelSettings_0qbx0")
 
