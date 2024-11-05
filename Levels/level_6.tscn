@@ -182,6 +182,7 @@ texture = ExtResource("12_hjgw1")
 12:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:9/0 = 0
 14:9/0 = 0
+14:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:9/0 = 0
 17:9/0 = 0
 18:9/0 = 0
@@ -194,8 +195,11 @@ texture = ExtResource("12_hjgw1")
 7:10/0 = 0
 8:10/0 = 0
 13:10/0 = 0
+13:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:10/0 = 0
+14:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:10/0 = 0
+15:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:10/0 = 0
 19:10/0 = 0
 20:10/0 = 0
@@ -1112,17 +1116,11 @@ position = Vector2(50, 798)
 [node name="BossBone2" parent="BoneList" instance=ExtResource("13_1ukjw")]
 position = Vector2(66, 798)
 
-[node name="BossBone3" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(82, 798)
-
 [node name="BossBone4" parent="BoneList" instance=ExtResource("13_1ukjw")]
 position = Vector2(50, 814)
 
 [node name="BossBone5" parent="BoneList" instance=ExtResource("13_1ukjw")]
 position = Vector2(66, 814)
-
-[node name="BossBone6" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(82, 814)
 
 [node name="BossBone7" parent="BoneList" instance=ExtResource("13_1ukjw")]
 position = Vector2(50, 830)
@@ -1130,17 +1128,11 @@ position = Vector2(50, 830)
 [node name="BossBone8" parent="BoneList" instance=ExtResource("13_1ukjw")]
 position = Vector2(66, 830)
 
-[node name="BossBone9" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(82, 830)
-
 [node name="BossBone10" parent="BoneList" instance=ExtResource("13_1ukjw")]
 position = Vector2(50, 846)
 
 [node name="BossBone11" parent="BoneList" instance=ExtResource("13_1ukjw")]
 position = Vector2(66, 846)
-
-[node name="BossBone12" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(82, 846)
 
 [node name="BossBone13" parent="BoneList" instance=ExtResource("13_1ukjw")]
 position = Vector2(50, 862)
@@ -1148,17 +1140,11 @@ position = Vector2(50, 862)
 [node name="BossBone14" parent="BoneList" instance=ExtResource("13_1ukjw")]
 position = Vector2(66, 862)
 
-[node name="BossBone15" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(82, 862)
-
 [node name="BossBone16" parent="BoneList" instance=ExtResource("13_1ukjw")]
 position = Vector2(50, 878)
 
 [node name="BossBone17" parent="BoneList" instance=ExtResource("13_1ukjw")]
 position = Vector2(66, 878)
-
-[node name="BossBone18" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(82, 878)
 
 [node name="BossBone19" parent="BoneList" instance=ExtResource("13_1ukjw")]
 position = Vector2(50, 894)
@@ -1166,26 +1152,17 @@ position = Vector2(50, 894)
 [node name="BossBone20" parent="BoneList" instance=ExtResource("13_1ukjw")]
 position = Vector2(66, 894)
 
-[node name="BossBone21" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(82, 894)
-
 [node name="BossBone22" parent="BoneList" instance=ExtResource("13_1ukjw")]
 position = Vector2(50, 910)
 
 [node name="BossBone23" parent="BoneList" instance=ExtResource("13_1ukjw")]
 position = Vector2(66, 910)
 
-[node name="BossBone24" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(82, 910)
-
 [node name="BossBone25" parent="BoneList" instance=ExtResource("13_1ukjw")]
 position = Vector2(50, 926)
 
 [node name="BossBone26" parent="BoneList" instance=ExtResource("13_1ukjw")]
 position = Vector2(66, 926)
-
-[node name="BossBone27" parent="BoneList" instance=ExtResource("13_1ukjw")]
-position = Vector2(82, 926)
 
 [node name="Bone6" parent="BoneList" instance=ExtResource("13_1ukjw")]
 position = Vector2(2466, 105)
@@ -1302,31 +1279,22 @@ polygon = PackedVector2Array(-44, -38, -44, -14, -48, -14, -48, -10, -60, -10, -
 [connection signal="bone_picked_up" from="BoneList/Bone7_G3" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/BossBone1" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/BossBone2" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/BossBone3" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/BossBone4" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/BossBone5" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/BossBone6" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/BossBone7" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/BossBone8" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/BossBone9" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/BossBone10" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/BossBone11" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/BossBone12" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/BossBone13" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/BossBone14" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/BossBone15" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/BossBone16" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/BossBone17" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/BossBone18" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/BossBone19" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/BossBone20" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/BossBone21" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/BossBone22" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/BossBone23" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/BossBone24" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/BossBone25" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/BossBone26" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
-[connection signal="bone_picked_up" from="BoneList/BossBone27" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone6" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone7" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="bone_picked_up" from="BoneList/Bone8" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
