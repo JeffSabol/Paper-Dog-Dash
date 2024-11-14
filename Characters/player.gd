@@ -53,6 +53,9 @@ var coyote_time_duration = 0.10
 var coyote_time_timer = 0.0
 var can_jump_during_coyote_time = false
 
+# Prevent crouching in tunnel stuck glitch
+var is_in_tunnel = false
+
 # Physics processing
 func _physics_process(delta):
 	if !$InvincibilityTimer.is_stopped():
@@ -183,7 +186,7 @@ func move_character(direction: int, delta: float):
 
 # Handle the crouch logic
 func handle_crouch_logic():
-	if Input.is_action_just_pressed("ui_down"):
+	if Input.is_action_just_pressed("ui_down") and not is_in_tunnel:
 		crouch()
 	elif Input.is_action_just_released("ui_down"):
 		if above_head_is_empty() and is_on_floor():
@@ -326,3 +329,9 @@ func update_collision_shape_for_standing():
 	
 func _on_invincibility_timer_timeout() -> void:
 	is_invincible = false
+
+func _on_no_duck_zone_body_entered(body: Node2D) -> void:
+	is_in_tunnel = true
+
+func _on_no_duck_zone_body_exited(body: Node2D) -> void:
+	is_in_tunnel = false

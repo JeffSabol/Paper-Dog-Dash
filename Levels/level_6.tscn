@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://d05vpq88xgqg3"]
+[gd_scene load_steps=71 format=3 uid="uid://d05vpq88xgqg3"]
 
 [ext_resource type="Texture2D" uid="uid://ds3hm1p7grakb" path="res://Assets/Environment/Background.png" id="1_mrr0r"]
 [ext_resource type="Script" path="res://Levels/level_6.gd" id="1_rcl6w"]
@@ -526,6 +526,9 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t0rn6"]
 size = Vector2(48, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3gmq"]
+size = Vector2(32, 415.5)
 
 [node name="level_6" type="Node2D"]
 position = Vector2(-8, 0)
@@ -1229,6 +1232,13 @@ shape = SubResource("RectangleShape2D_t0rn6")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boss/Area2D"]
 polygon = PackedVector2Array(-44, -38, -44, -14, -48, -14, -48, -10, -60, -10, -60, -6, -64, -6, -64, 2, -60, 2, -60, 6, -56, 6, -56, 10, -52, 10, -52, 18, -56, 18, -56, 22, -60, 22, -60, 26, -56, 26, -56, 30, -52, 30, -52, 34, -48, 34, -48, 38, 44, 38, 44, 34, 48, 34, 48, 30, 52, 30, 52, 18, 60, 18, 60, 14, 64, 14, 64, 10, 60, 10, 60, 6, 56, 6, 56, -3, 8, -3, 7, -3, 7, -14, 8, -14, 8, -38, 4, -38, 4, -34, 0, -34, 0, -30, -4, -30, -4, -34, -8, -34, -8, -38, -12, -38, -12, -34, -16, -34, -16, -30, -20, -30, -20, -34, -24, -34, -24, -38, -28, -38, -28, -34, -32, -34, -32, -30, -36, -30, -36, -34, -40, -34, -40, -38)
 
+[node name="NoDuckZone" type="Area2D" parent="."]
+position = Vector2(824, 856)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoDuckZone"]
+position = Vector2(-10, -86.75)
+shape = SubResource("RectangleShape2D_w3gmq")
+
 [connection signal="timeout" from="Walker Spawner/Timer" to="Walker Spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="Walker Spawner2/Timer" to="Walker Spawner2" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Walkers/MoleWalkerLTR/StompDetector" to="Walkers/MoleWalkerLTR" method="_on_stomp_detector_body_entered"]
@@ -1301,3 +1311,5 @@ polygon = PackedVector2Array(-44, -38, -44, -14, -48, -14, -48, -10, -60, -10, -
 [connection signal="bone_picked_up" from="BoneList/Bone9" to="Camera2D/CanvasLayer/HUD" method="_on_bone_picked_up"]
 [connection signal="body_entered" from="BossZone" to="." method="_on_boss_zone_body_entered"]
 [connection signal="body_exited" from="BossZone" to="." method="_on_boss_zone_body_exited"]
+[connection signal="body_entered" from="NoDuckZone" to="Player" method="_on_no_duck_zone_body_entered"]
+[connection signal="body_exited" from="NoDuckZone" to="Player" method="_on_no_duck_zone_body_exited"]
