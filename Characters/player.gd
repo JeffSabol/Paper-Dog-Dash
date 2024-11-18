@@ -331,7 +331,8 @@ func _on_invincibility_timer_timeout() -> void:
 	is_invincible = false
 
 func _on_no_duck_zone_body_entered(body: Node2D) -> void:
-	is_in_tunnel = true
+	if body.name == "Player":
+		is_in_tunnel = true
 
 func _on_no_duck_zone_body_exited(body: Node2D) -> void:
 	is_in_tunnel = false
