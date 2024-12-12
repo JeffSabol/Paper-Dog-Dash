@@ -1217,7 +1217,7 @@ position = Vector2(671, 405)
 [node name="RemoteTransform2D" parent="Player" instance=ExtResource("21_2lk3c")]
 
 [node name="Boss" type="CharacterBody2D" parent="."]
-position = Vector2(974, 1146)
+position = Vector2(974, 1145)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Boss"]
 scale = Vector2(0.5, 0.5)
@@ -1233,7 +1233,7 @@ position = Vector2(32, -9)
 shape = SubResource("RectangleShape2D_t0rn6")
 
 [node name="NoDuckZone" type="Area2D" parent="."]
-position = Vector2(824, 856)
+position = Vector2(825, 856)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NoDuckZone"]
 position = Vector2(-10, -86.75)
