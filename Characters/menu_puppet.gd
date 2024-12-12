@@ -17,7 +17,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	player_sprite.speed_scale = 0.5
-	player_sprite.play("idle")
+	player_sprite.play("idle_collar")
 
 func _physics_process(delta):
 	# Apply gravity
