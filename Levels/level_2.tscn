@@ -367,6 +367,7 @@ scale = Vector2(1.5, 1.5)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-4395, -120)
 zoom = Vector2(2.5, 2.5)
+process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 

@@ -342,6 +342,7 @@ scale = Vector2(1.5, 1.5)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-67, 56)
 zoom = Vector2(2.5, 2.5)
+process_callback = 0
 
 [node name="Newspaper" parent="." instance=ExtResource("17_sl0r6")]
 position = Vector2(632, -135)

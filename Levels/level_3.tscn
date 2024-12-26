@@ -710,6 +710,7 @@ max_distance = 20000.0
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-2762, -377)
 zoom = Vector2(2.5, 2.5)
+process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
