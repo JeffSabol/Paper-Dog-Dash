@@ -98,9 +98,9 @@ text = "LEVEL 1 - NEW ROUTE"
 
 [node name="DateTime" type="Label" parent="."]
 layout_mode = 0
-offset_left = 417.0
+offset_left = 437.0
 offset_top = 117.0
-offset_right = 1236.0
+offset_right = 1256.0
 offset_bottom = 161.0
 scale = Vector2(0.992669, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
