@@ -6,7 +6,6 @@ func _ready():
 	# Check if Paper Dog is running within the winter season
 	
 	if is_within_winter_dates():
-		print("ayoo is_within_winter_dates(): " + str(is_within_winter_dates()))
 		$TileMap.hide()
 		$Snowmap.show()
 		$SnowFlakes.show()
