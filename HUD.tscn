@@ -123,12 +123,11 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("5_5hjin")
 
 [node name="SpeedrunCounter" type="Label" parent="."]
-visible = false
 layout_mode = 0
-offset_left = -229.0
-offset_top = 136.0
-offset_right = -136.0
-offset_bottom = 161.0
+offset_left = -280.0
+offset_top = 200.0
+offset_right = -187.0
+offset_bottom = 225.0
 theme_override_fonts/font = ExtResource("3_hhlkd")
 theme_override_font_sizes/font_size = 26
 text = "00:00:000"
