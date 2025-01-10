@@ -35,6 +35,12 @@ func updateTimer():
 	Global.total_time = time_left
 	$TimeCounter/Seconds.text = str(time_left)
 	
+	# Play the time running out music
+	if time_left == 10:
+		var audio_player = AudioStreamPlayer.new()
+		$"../../../Level Music".stream = load("res://Assets/Audio/Gameplay Music/Time_Running_Out_Music.wav")
+		$"../../../Level Music".play()
+	
 	if time_left <= 0:
 		Global.has_collar = true
 		Global.total_lives -= 1
