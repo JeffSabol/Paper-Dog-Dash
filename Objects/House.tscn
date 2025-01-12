@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtsc0g5olhra3"]
+[gd_scene load_steps=5 format=3 uid="uid://dtsc0g5olhra3"]
 
 [ext_resource type="Script" path="res://Objects/House.gd" id="1_i2am0"]
 [ext_resource type="Texture2D" uid="uid://dsrbvxaulcc57" path="res://Assets/Environment/House.png" id="1_i8nr2"]
+[ext_resource type="AudioStream" uid="uid://b01l4fuatnaej" path="res://Assets/Audio/Gameplay Music/Success_Music.wav" id="3_j35tn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnhvs"]
 size = Vector2(44, 45)
@@ -15,5 +16,8 @@ texture = ExtResource("1_i8nr2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_gnhvs")
+
+[node name="SuccessMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_j35tn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

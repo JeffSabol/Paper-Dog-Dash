@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://cktb2fpg1coaf"]
+
+[ext_resource type="Shader" path="res://Menus/IrisOut.gdshader" id="1_emhbt"]
+[ext_resource type="Script" path="res://Menus/iris_out.gd" id="1_mp858"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lw00k"]
+shader = ExtResource("1_emhbt")
+shader_parameter/circle_size = 0.0
+
+[sub_resource type="Animation" id="Animation_dgou3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_xbxdx"]
+resource_name = "close"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_jebxs"]
+resource_name = "open"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_16apt"]
+_data = {
+"RESET": SubResource("Animation_dgou3"),
+"close": SubResource("Animation_xbxdx"),
+"open": SubResource("Animation_jebxs")
+}
+
+[node name="IrisOut" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 0
+script = ExtResource("1_mp858")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_lw00k")
+layout_mode = 0
+offset_left = -635.0
+offset_top = -357.0
+offset_right = 645.0
+offset_bottom = 363.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+libraries = {
+"": SubResource("AnimationLibrary_16apt")
+}
+
+[connection signal="animation_finished" from="ColorRect/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
