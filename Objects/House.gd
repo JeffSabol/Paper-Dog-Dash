@@ -11,6 +11,8 @@ func _on_body_entered(body):
 		$"../Level Music".stop()
 		$SuccessMusic.play()
 		var transition = transition_scene.instantiate()
+		# Make the animation appears on top of all other nodes
+		transition.z_index = 20
 		$"../Camera2D".add_child(transition)
 		transition.start_transition()
 		await get_tree().create_timer(2).timeout
