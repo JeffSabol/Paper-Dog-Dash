@@ -5,9 +5,12 @@
 extends Area2D
 
 @onready var transition_scene = load("res://Menus/IrisOut.tscn")
+# Fixes the player re-entering the house and messing up the scene transition animation
+var is_already_ending = false
 
 func _on_body_entered(body):
-	if body is Player and Global.has_newspaper:
+	if body is Player and Global.has_newspaper and not is_already_ending:
+		is_already_ending = true
 		$"../Level Music".stop()
 		$SuccessMusic.play()
 		var transition = transition_scene.instantiate()
