@@ -8,6 +8,7 @@ extends Area2D
 
 func _on_body_entered(body):
 	if body is Player and Global.has_newspaper:
+		$"../Level Music".stop()
 		$SuccessMusic.play()
 		var transition = transition_scene.instantiate()
 		$"../Camera2D".add_child(transition)
