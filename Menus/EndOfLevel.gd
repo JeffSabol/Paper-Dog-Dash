@@ -111,5 +111,5 @@ func day_name(day: int) -> String:
 func animate_success_image():
 	var tween = get_tree().create_tween()
 	tween.set_loops()
-	tween.tween_property($SuccessImage, "modulate", Color.RED, 2)
-	tween.tween_property($SuccessImage, "modulate", Color.GREEN, 2)
+	tween.tween_property($SuccessImage, "modulate", Color.PALE_GREEN, 2)
+	tween.tween_property($SuccessImage, "modulate", Color.DARK_GREEN, 2)
