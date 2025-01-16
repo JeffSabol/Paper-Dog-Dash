@@ -113,3 +113,6 @@ func animate_success_image():
 	tween.set_loops()
 	tween.tween_property($SuccessImage, "modulate", Color.PALE_GREEN, 2)
 	tween.tween_property($SuccessImage, "modulate", Color.DARK_GREEN, 2)
+
+func _on_success_finished() -> void:
+	$EndOfLevelMusic.play()

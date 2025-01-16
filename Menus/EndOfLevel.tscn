@@ -81,7 +81,7 @@ text = "Time: 0"
 label_settings = SubResource("LabelSettings_8nj0v")
 horizontal_alignment = 1
 
-[node name="Success" type="AudioStreamPlayer2D" parent="."]
+[node name="EndOfLevelMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_yrf7x")
 autoplay = true
 
@@ -128,3 +128,4 @@ scale = Vector2(2, 2)
 texture = ExtResource("10_lcqs8")
 
 [connection signal="pressed" from="ContinueButton" to="ContinueButton" method="_on_pressed"]
+[connection signal="finished" from="EndOfLevelMusic" to="." method="_on_success_finished"]
